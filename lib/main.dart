@@ -33,7 +33,7 @@ class _MyAppState extends State<MyApp> {
         GlobalCupertinoLocalizations.delegate,
       ],
       debugShowCheckedModeBanner: false,
-      initialRoute: "home",
+      initialRoute: "signup",
       routes: {
         "login": (context) => login(),
         "signup": (context) => signup(),
