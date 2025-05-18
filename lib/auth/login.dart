@@ -59,6 +59,7 @@ class _loginState extends State<login> {
                   Padding(
                     padding: const EdgeInsets.all(20),
                     child: TextFormField(
+                      controller: email,
                       decoration: InputDecoration(
                         label: Text("الايميل"),
                         border: OutlineInputBorder(
@@ -71,8 +72,9 @@ class _loginState extends State<login> {
                   Padding(
                     padding: const EdgeInsets.all(20),
                     child: TextFormField(
+                      controller: password,
                       decoration: InputDecoration(
-                        label: Text("اسم المستخدم"),
+                        label: Text("كلمة المرور "),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(15)),
                         ),
