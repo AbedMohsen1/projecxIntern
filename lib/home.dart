@@ -58,9 +58,7 @@ class _homeState extends State<home> {
         centerTitle: true,
         title: Text(
           "حصيلة",
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold,
-                          
-                                      letterSpacing: 1.5,
+          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold,letterSpacing: 1.5,
 ),
         ),
       ),
