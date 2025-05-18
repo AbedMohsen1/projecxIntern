@@ -25,8 +25,6 @@ class _loginState extends State<login> {
           body: SingleChildScrollView(
             child: Center(
               child: Column(
-                // crossAxisAlignment: CrossAxisAlignment.center,
-                // mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(height: 100),
                   Row(
@@ -86,15 +84,20 @@ class _loginState extends State<login> {
                     padding: const EdgeInsets.only(right: 20, left: 20),
                     child: ElevatedButton(
                       onPressed: () async {
-                        final credential = await FirebaseAuth.instance
-                            .signInWithEmailAndPassword(
-                              email: email.text,
-                              password: password.text,
-                            );
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => home()),
-                        );
+                        try {
+                          final credential = await FirebaseAuth.instance
+                              .signInWithEmailAndPassword(
+                                email: email.text,
+                                password: password.text,
+                              );
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => home()),
+                          );
+                        } on FirebaseAuthException catch (e) {
+                          print('Failed with error code: ${e.code}');
+                          print(e.message);
+                        }
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.blue,
