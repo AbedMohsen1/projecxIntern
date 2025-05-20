@@ -1,9 +1,11 @@
-// ignore_for_file: unused_local_variable, camel_case_types, use_build_context_synchronously
+// ignore_for_file: file_names, avoid_print
 
+import 'package:ahd/Theme/color_managment.dart';
 import 'package:ahd/auth/login.dart';
 import 'package:ahd/home.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 class signup extends StatefulWidget {
   const signup({super.key});
@@ -13,167 +15,238 @@ class signup extends StatefulWidget {
 }
 
 class _signupState extends State<signup> {
-  TextEditingController username = TextEditingController();
-  TextEditingController email = TextEditingController();
-  TextEditingController password = TextEditingController();
   bool _obscure = true;
+
+  late TextEditingController _emailTextController;
+  late TextEditingController _passwordTextController;
+  late TextEditingController _usernameTextController;
+  String? _emailError;
+  String? _passwordError;
+  String? _usernameError;
+
+  @override
+  void initState() {
+    super.initState();
+    _emailTextController = TextEditingController();
+    _passwordTextController = TextEditingController();
+    _usernameTextController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    _emailTextController.dispose();
+    _passwordTextController.dispose();
+    _usernameTextController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: SafeArea(
-        child: Scaffold(
-          body: SingleChildScrollView(
-            child: Center(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(height: 100),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(0),
+                  child: SvgPicture.asset('img/Group8.svg'),
+                ),
+                SizedBox(width: 20),
+                Text(
+                  "حصيلة",
+                  style: TextStyle(
+                    fontSize: 30,
+                    letterSpacing: 0.8,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ],
+            ),
+            Container(height: 50),
 
-                children: [
-                  Container(height: 100),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "حصيلة",
-                        style: TextStyle(
-                          fontSize: 30,
-                          letterSpacing: 1.5,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      SizedBox(width: 20),
-                      ClipOval(
-                        child: Image.asset(
-                          "img/person.jpg",
-                          height: 70,
-                          width: 70,
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 50),
-                  Text(
-                    "إنشاء حساب جديد",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(20),
-                    child: TextFormField(
-                      controller: username,
-                      decoration: InputDecoration(
-                        label: Text("اسم المستخدم"),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(15)),
-                        ),
-                      ),
-                    ),
-                  ),
-
-                  Padding(
-                    padding: const EdgeInsets.all(20),
-                    child: TextFormField(
-                      controller: email,
-                      decoration: InputDecoration(
-                        label: Text("الايميل"),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(15)),
-                        ),
-                      ),
-                    ),
-                  ),
-
-                  Padding(
-                    padding: const EdgeInsets.all(20),
-                    child: TextFormField(
-                      controller: password,
-
-                      decoration: InputDecoration(
-                        label: Text("كلمة المرور"),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(15)),
-                        ),
-                        suffixIcon: IconButton(
-                          onPressed: () => setState(() => _obscure = !_obscure),
-                          icon: Icon(
-                            _obscure ? Icons.visibility : Icons.visibility_off,
-                          ),
-                        ),
-                      ),
-                      obscureText: _obscure,
-                    ),
-                  ),
-
-                  Padding(
-                    padding: const EdgeInsets.only(right: 20, left: 20),
-                    child: ElevatedButton(
-                      onPressed: () async {
-                        try {
-                          final credential = await FirebaseAuth.instance
-                              .createUserWithEmailAndPassword(
-                                email: email.text,
-                                password: password.text,
-                              );
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => home()),
-                          );
-                        } on FirebaseAuthException catch (e) {
-                          if (e.code == 'weak-password') {
-                            print('The password provided is too weak.');
-                          } else if (e.code == 'email-already-in-use') {
-                            print('The account already exists for that email.');
-                          }
-                        } catch (e) {
-                          print(e);
-                        }
-                      },
-                      style: ElevatedButton.styleFrom(
-                        minimumSize: Size(double.infinity, 50),
-                        backgroundColor: Colors.blue,
-                      ),
-
-                      child: Text(
-                        "إنشاء حساب",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 15,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text('هل لديك حساب بالفعل ؟'),
-                      TextButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => login()),
-                          );
-                        },
-                        style: TextButton.styleFrom(
-                          visualDensity: const VisualDensity(
-                            vertical: VisualDensity.minimumDensity,
-                            horizontal: VisualDensity.minimumDensity,
-                          ),
-                        ),
-                        child: const Text(
-                          'تسجيل الدخول',
-                          style: TextStyle(color: Colors.lightBlueAccent),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
+            Padding(
+              padding: EdgeInsets.all(0),
+              child: Text(
+                "إنشاء حساب جديد",
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
               ),
             ),
-          ),
+            Container(height: 50),
+            Padding(
+              padding: const EdgeInsets.only(right: 30, left: 30),
+              child: TextField(
+                controller: _usernameTextController,
+                showCursor: true,
+                decoration: InputDecoration(
+                  hintText: 'اسم المستخدم',
+                  helperStyle: const TextStyle(
+                    color: Colors.black45,
+                    fontWeight: FontWeight.w300,
+                    letterSpacing: 1,
+                  ),
+                  filled: false,
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: BorderSide(color: Colors.grey.shade400),
+                  ),
+                  errorBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: BorderSide(color: Colors.red.shade200),
+                  ),
+                  errorText: _usernameError,
+                ),
+              ),
+            ),
+            SizedBox(height: 40),
+
+            Padding(
+              padding: const EdgeInsets.only(right: 30, left: 30),
+              child: TextField(
+                controller: _emailTextController,
+                keyboardType: TextInputType.emailAddress,
+                showCursor: true,
+                decoration: InputDecoration(
+                  hintText: 'الايميل',
+                  helperStyle: const TextStyle(
+                    color: Colors.black45,
+                    fontWeight: FontWeight.w300,
+                    letterSpacing: 1,
+                  ),
+                  filled: false,
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: BorderSide(color: Colors.grey.shade400),
+                  ),
+                  errorBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: BorderSide(color: Colors.red.shade200),
+                  ),
+                  errorText: _emailError,
+                ),
+              ),
+            ),
+            SizedBox(height: 40),
+            Padding(
+              padding: const EdgeInsets.only(right: 30, left: 30),
+              child: TextField(
+                controller: _passwordTextController,
+                minLines: 1,
+                maxLines: 1,
+                obscureText: _obscure,
+                decoration: InputDecoration(
+                  hintText: 'كلمة المرور',
+                  suffixIcon: IconButton(
+                    onPressed: () => setState(() => _obscure = !_obscure),
+                    icon: Icon(
+                      _obscure ? Icons.visibility : Icons.visibility_off,
+                    ),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: BorderSide(color: Colors.grey.shade400),
+                  ),
+
+                  errorBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: BorderSide(color: Colors.red.shade200),
+                  ),
+                  errorText: _passwordError,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 30),
+              child: Align(
+                alignment: AlignmentDirectional.centerEnd,
+                child: TextButton(
+                  onPressed: () {},
+                  style: TextButton.styleFrom(
+                    visualDensity: const VisualDensity(
+                      vertical: VisualDensity.minimumDensity,
+                    ),
+                  ),
+                  child: Text(
+                    "نسيت كلمة المرور",
+                    style: TextStyle(color: AppColors.black),
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(right: 50, left: 50, top: 40),
+              child: ElevatedButton(
+                onPressed: () {
+                  _checkData();
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: AppColors.backTest,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  minimumSize: const Size(double.infinity, 45),
+                ),
+                child: Text(
+                  'انشاء حساب',
+
+                  style: TextStyle(color: HexColor("#FFFFFF")),
+                ),
+              ),
+            ),
+            SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text('تسجيل الدخول', style: TextStyle(color: AppColors.blu)),
+                TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => login()),
+                    );
+                  },
+                  style: TextButton.styleFrom(
+                    visualDensity: const VisualDensity(
+                      vertical: VisualDensity.minimumDensity,
+                      horizontal: VisualDensity.minimumDensity,
+                    ),
+                  ),
+                  child: Text(
+                    'هل لديك حساب بالفعل ؟',
+                    style: TextStyle(color: AppColors.black),
+                  ),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );
+  }
+
+  Object _checkData() {
+    setState(() {
+      _emailError =
+          _emailTextController.text.isEmpty ? "الرجاء ادخال الايميل" : null;
+      _passwordError =
+          _passwordTextController.text.isEmpty
+              ? "الرجاء ادخال كلمة المرور"
+              : null;
+      _usernameError =
+          _usernameTextController.text.isEmpty
+              ? "الرجاء ادخال اسم المستخدم "
+              : null;
+    });
+    if (_emailTextController.text.isNotEmpty &&
+        _passwordTextController.text.isNotEmpty) {
+      return Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => home()),
+      );
+    }
+    return false;
   }
 }
