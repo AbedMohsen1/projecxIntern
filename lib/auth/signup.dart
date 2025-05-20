@@ -227,7 +227,7 @@ class _signupState extends State<signup> {
     );
   }
 
-  Object _checkData() {
+  bool _checkData() {
     setState(() {
       _emailError =
           _emailTextController.text.isEmpty ? "الرجاء ادخال الايميل" : null;
@@ -241,11 +241,10 @@ class _signupState extends State<signup> {
               : null;
     });
     if (_emailTextController.text.isNotEmpty &&
-        _passwordTextController.text.isNotEmpty) {
-      return Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => home()),
-      );
+        _passwordTextController.text.isNotEmpty &&
+        _usernameTextController.text.isNotEmpty) {
+      Navigator.push(context, MaterialPageRoute(builder: (context) => home()));
+      return true;
     }
     return false;
   }

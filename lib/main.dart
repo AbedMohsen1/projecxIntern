@@ -1,16 +1,11 @@
 import 'package:ahd/Widget/homepage.dart';
 import 'package:ahd/auth/login.dart';
 import 'package:ahd/auth/signup.dart';
-import 'package:ahd/firebase_options.dart';
 import 'package:ahd/home.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-
   runApp(const MyApp());
 }
 
@@ -33,12 +28,12 @@ class _MyAppState extends State<MyApp> {
         GlobalCupertinoLocalizations.delegate,
       ],
       debugShowCheckedModeBanner: false,
-      initialRoute: "signup",
+      initialRoute: "home",
       routes: {
         "login": (context) => login(),
         "signup": (context) => signup(),
-        "homepage": (context) => homepage(),
         "home": (context) => home(),
+        "homepage": (context) => homepage(),
       },
     );
   }

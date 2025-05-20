@@ -6,6 +6,7 @@ import 'package:ahd/Widget/Profile.dart';
 import 'package:ahd/Widget/homepage.dart';
 import 'package:ahd/Widget/stores.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class home extends StatefulWidget {
   const home({super.key});
@@ -34,32 +35,78 @@ class _homeState extends State<home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            DrawerHeader(
+              decoration: BoxDecoration(color: Colors.grey),
+              child: Align(alignment: Alignment.topCenter),
+            ),
+
+            TextButton(
+              onPressed: () {},
+              child: Text(
+                "",
+                style: TextStyle(
+                  fontSize: 15,
+                  color: Colors.black,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+            TextButton(
+              onPressed: () {},
+              child: Text(
+                "",
+                style: TextStyle(
+                  fontSize: 15,
+                  color: Colors.black,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+
+            SizedBox(height: 20),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "",
+                  style: TextStyle(
+                    fontSize: 15,
+                    color: Colors.black,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ],
+            ),
+            Text(
+              "",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 12,
+                color: Colors.redAccent,
+                fontWeight: FontWeight.w300,
+              ),
+            ),
+          ],
+        ),
+      ),
+
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        leading: IconButton(
-          icon: Icon(Icons.menu, color: Colors.black),
-          onPressed: () {},
-        ),
 
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(left: 20),
-            child: ClipOval(
-              child: Image.asset(
-                'img/img6.png',
-                width: 50,
-                height: 50,
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
-        ],
+        actions: [SvgPicture.asset('img/img5.svg')],
         centerTitle: true,
         title: Text(
           "حصيلة",
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold,letterSpacing: 1.5,
-),
+          style: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 1.5,
+          ),
         ),
       ),
       body: _screens[_selectedIndex],
