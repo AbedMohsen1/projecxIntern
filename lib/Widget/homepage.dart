@@ -1,6 +1,8 @@
 // ignore_for_file: camel_case_types
 
+import 'package:ahd/Theme/color_managment.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class homepage extends StatefulWidget {
   const homepage({super.key});
@@ -36,17 +38,14 @@ class _homepageState extends State<homepage> {
             child: Container(
               height: 200,
               decoration: BoxDecoration(
-                border: Border.all(color: Colors.black),
-                color: Colors.blue.shade100,
+                border: Border.all(color: AppColors.black),
+                color: AppColors.blu2,
                 borderRadius: BorderRadius.circular(12),
-                image: DecorationImage(
-                  image: AssetImage('img/img5.png'),
-                  alignment: Alignment.bottomLeft,
-                  fit: BoxFit.contain,
-                ),
               ),
               child: Column(
                 children: [
+                  SvgPicture.asset('img/img8.svg', width: 10, height: 10),
+
                   Row(
                     children: [
                       Padding(
@@ -71,13 +70,14 @@ class _homepageState extends State<homepage> {
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.all(Radius.circular(15)),
-                          color: Colors.grey[700],
+                          color: AppColors.black,
                         ),
                         width: 90,
                         padding: const EdgeInsets.all(10),
                         child: Text(
                           "نص وهمي",
-                          style: TextStyle(color: Colors.white),
+                          textAlign: TextAlign.center,
+                          style: TextStyle(color: AppColors.white),
                         ),
                       ),
                     ),
@@ -95,9 +95,19 @@ class _homepageState extends State<homepage> {
             ),
           ),
           SizedBox(height: 20),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          ListView(
+            scrollDirection: Axis.horizontal,
             children: [
+              CircleAvatar(
+                radius: 40,
+                backgroundColor: Colors.white,
+                child: Image.asset('img/img7.jpg'),
+              ),
+              CircleAvatar(
+                radius: 40,
+                backgroundColor: Colors.white,
+                child: Image.asset('img/img7.jpg'),
+              ),
               CircleAvatar(
                 radius: 40,
                 backgroundColor: Colors.white,
@@ -138,7 +148,57 @@ class _homepageState extends State<homepage> {
             ],
           ),
           SizedBox(height: 30),
-
+          Row(
+            children: [
+              SizedBox(width: 20),
+              Text(
+                "أشهر التصنيفات",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              Spacer(),
+              Padding(
+                padding: const EdgeInsets.only(left: 10),
+                child: Row(
+                  children: [
+                    Text("المزيد", style: TextStyle(color: Colors.blue)),
+                    SizedBox(width: 5),
+                    Icon(Icons.arrow_forward, color: Colors.blue),
+                    SizedBox(width: 5),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 30),
+          ListView(
+            children: [
+              CircleAvatar(
+                radius: 40,
+                backgroundColor: Colors.white,
+                child: Image.asset('img/img7.jpg'),
+              ),
+              CircleAvatar(
+                radius: 40,
+                backgroundColor: Colors.white,
+                child: Image.asset('img/img7.jpg'),
+              ),
+              CircleAvatar(
+                radius: 40,
+                backgroundColor: Colors.white,
+                child: Image.asset('img/img7.jpg'),
+              ),
+              CircleAvatar(
+                radius: 30,
+                backgroundColor: Colors.grey[300],
+                child: Image.asset('img/img3.png'),
+              ),
+              CircleAvatar(
+                radius: 30,
+                backgroundColor: Colors.grey[300],
+                child: Image.asset('img/img2.png'),
+              ),
+            ],
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
