@@ -1,8 +1,6 @@
-// ignore_for_file: file_names, avoid_print
-
-import 'package:ahd/Theme/color_managment.dart';
-import 'package:ahd/auth/login.dart';
-import 'package:ahd/home.dart';
+import 'package:ahd/router/routers.dart';
+import 'package:ahd/theme/color_managment.dart';
+import 'package:ahd/screens/auth/login.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -67,7 +65,6 @@ class _signupState extends State<signup> {
               ],
             ),
             Container(height: 50),
-
             Padding(
               padding: EdgeInsets.all(0),
               child: Text(
@@ -102,7 +99,6 @@ class _signupState extends State<signup> {
               ),
             ),
             SizedBox(height: 40),
-
             Padding(
               padding: const EdgeInsets.only(right: 30, left: 30),
               child: TextField(
@@ -149,7 +145,6 @@ class _signupState extends State<signup> {
                     borderRadius: BorderRadius.circular(10),
                     borderSide: BorderSide(color: Colors.grey.shade400),
                   ),
-
                   errorBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                     borderSide: BorderSide(color: Colors.red.shade200),
@@ -191,7 +186,6 @@ class _signupState extends State<signup> {
                 ),
                 child: Text(
                   'انشاء حساب',
-
                   style: TextStyle(color: HexColor("#FFFFFF")),
                 ),
               ),
@@ -228,22 +222,21 @@ class _signupState extends State<signup> {
   }
 
   bool _checkData() {
+    final Routers routers = Routers();
     setState(() {
       _emailError =
           _emailTextController.text.isEmpty ? "الرجاء ادخال الايميل" : null;
-      _passwordError =
-          _passwordTextController.text.isEmpty
-              ? "الرجاء ادخال كلمة المرور"
-              : null;
-      _usernameError =
-          _usernameTextController.text.isEmpty
-              ? "الرجاء ادخال اسم المستخدم "
-              : null;
+      _passwordError = _passwordTextController.text.isEmpty
+          ? "الرجاء ادخال كلمة المرور"
+          : null;
+      _usernameError = _usernameTextController.text.isEmpty
+          ? "الرجاء ادخال اسم المستخدم "
+          : null;
     });
     if (_emailTextController.text.isNotEmpty &&
         _passwordTextController.text.isNotEmpty &&
         _usernameTextController.text.isNotEmpty) {
-      Navigator.push(context, MaterialPageRoute(builder: (context) => home()));
+      routers.navigateToBottomBarScreen(context);
       return true;
     }
     return false;

@@ -1,21 +1,22 @@
 // ignore_for_file: camel_case_types
 
-import 'package:ahd/Widget/Categories.dart';
-import 'package:ahd/Widget/Favorites.dart';
-import 'package:ahd/Widget/Profile.dart';
-import 'package:ahd/Widget/homepage.dart';
-import 'package:ahd/Widget/stores.dart';
+import 'package:ahd/widget/Categories.dart';
+import 'package:ahd/widget/Favorites.dart';
+import 'package:ahd/widget/Profile.dart';
+import 'package:ahd/widget/homepage.dart';
+import 'package:ahd/widget/stores.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class home extends StatefulWidget {
-  const home({super.key});
+class BottomBarScreen extends StatefulWidget {
+  static const String routeName = 'bottom_bar_screen';
+  const BottomBarScreen({super.key});
 
   @override
-  State<home> createState() => _homeState();
+  State<BottomBarScreen> createState() => _BottomBarScreenState();
 }
 
-class _homeState extends State<home> {
+class _BottomBarScreenState extends State<BottomBarScreen> {
   int _selectedIndex = 0;
 
   final List<Widget> _screens = [
@@ -42,7 +43,6 @@ class _homeState extends State<home> {
               decoration: BoxDecoration(color: Colors.grey),
               child: Align(alignment: Alignment.topCenter),
             ),
-
             TextButton(
               onPressed: () {},
               child: Text(
@@ -65,7 +65,6 @@ class _homeState extends State<home> {
                 ),
               ),
             ),
-
             SizedBox(height: 20),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -93,11 +92,9 @@ class _homeState extends State<home> {
           ],
         ),
       ),
-
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-
         actions: [SvgPicture.asset('img/img5.svg')],
         centerTitle: true,
         title: Text(
@@ -110,7 +107,6 @@ class _homeState extends State<home> {
         ),
       ),
       body: _screens[_selectedIndex],
-
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
@@ -123,12 +119,10 @@ class _homeState extends State<home> {
             icon: Icon(Icons.home_outlined),
             label: "الرئيسية",
           ),
-
           BottomNavigationBarItem(
             icon: Icon(Icons.store_outlined),
             label: "المتاجر",
           ),
-
           BottomNavigationBarItem(
             icon: Icon(Icons.category_outlined),
             label: "التصنيفات",

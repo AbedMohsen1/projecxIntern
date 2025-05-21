@@ -1,8 +1,8 @@
 // ignore_for_file: file_names, avoid_print
 
-import 'package:ahd/Theme/color_managment.dart';
-import 'package:ahd/auth/signup.dart';
-import 'package:ahd/home.dart';
+import 'package:ahd/theme/color_managment.dart';
+import 'package:ahd/screens/auth/signup.dart';
+import 'package:ahd/screens/bottom_main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -63,7 +63,6 @@ class _loginState extends State<login> {
               ],
             ),
             Container(height: 50),
-
             Padding(
               padding: EdgeInsets.all(0),
               child: Text(
@@ -118,7 +117,6 @@ class _loginState extends State<login> {
                     borderRadius: BorderRadius.circular(10),
                     borderSide: BorderSide(color: Colors.grey.shade400),
                   ),
-
                   errorBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                     borderSide: BorderSide(color: Colors.red.shade200),
@@ -160,7 +158,6 @@ class _loginState extends State<login> {
                 ),
                 child: Text(
                   'تسجيل الدخول',
-
                   style: TextStyle(color: HexColor("#FFFFFF")),
                 ),
               ),
@@ -200,14 +197,14 @@ class _loginState extends State<login> {
     setState(() {
       _emailError =
           _emailTextController.text.isEmpty ? "الرجاء ادخال الايميل" : null;
-      _passwordError =
-          _passwordTextController.text.isEmpty
-              ? "الرجاء ادخال كلمة المرور"
-              : null;
+      _passwordError = _passwordTextController.text.isEmpty
+          ? "الرجاء ادخال كلمة المرور"
+          : null;
     });
     if (_emailTextController.text.isNotEmpty &&
         _passwordTextController.text.isNotEmpty) {
-      Navigator.push(context, MaterialPageRoute(builder: (context) => home()));
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => BottomBarScreen()));
       return true;
     }
     return false;

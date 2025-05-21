@@ -1,6 +1,6 @@
 // ignore_for_file: camel_case_types
 
-import 'package:ahd/Theme/color_managment.dart';
+import 'package:ahd/theme/color_managment.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -111,11 +111,9 @@ class _homepageState extends State<homepage> {
             SizedBox(height: 30),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
-
               child: Row(
                 children: [
                   SizedBox(width: 20),
-
                   Container(
                     padding: EdgeInsets.all(19),
                     decoration: BoxDecoration(
@@ -134,7 +132,6 @@ class _homepageState extends State<homepage> {
                     child: SvgPicture.asset('img/img2.svg'),
                   ),
                   SizedBox(width: 15),
-
                   Container(
                     padding: EdgeInsets.all(19),
                     decoration: BoxDecoration(
@@ -144,7 +141,6 @@ class _homepageState extends State<homepage> {
                     child: SvgPicture.asset('img/img3.svg'),
                   ),
                   SizedBox(width: 15),
-
                   Container(
                     padding: EdgeInsets.all(19),
                     decoration: BoxDecoration(
@@ -179,10 +175,8 @@ class _homepageState extends State<homepage> {
               ],
             ),
             SizedBox(height: 30),
-
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
-
               child: Row(
                 children: [
                   Padding(
@@ -214,9 +208,6 @@ class _homepageState extends State<homepage> {
                                 child: SvgPicture.asset('img/img3.svg'),
                               ),
                               DottedBorder(
-                                options: RectDottedBorderOptions(
-                                  color: AppColors.Container,
-                                ),
                                 child: Padding(
                                   padding: const EdgeInsets.all(10),
                                   child: Text(
@@ -230,7 +221,6 @@ class _homepageState extends State<homepage> {
                               ),
                               Padding(
                                 padding: EdgeInsets.all(15),
-
                                 child: Text("ريال سعودي 35 خصم"),
                               ),
                             ],
@@ -239,7 +229,6 @@ class _homepageState extends State<homepage> {
                       ],
                     ),
                   ),
-
                   Padding(
                     padding: const EdgeInsets.all(20),
                     child: Row(
@@ -269,9 +258,6 @@ class _homepageState extends State<homepage> {
                                 child: SvgPicture.asset('img/img2.svg'),
                               ),
                               DottedBorder(
-                                options: RectDottedBorderOptions(
-                                  color: AppColors.Container,
-                                ),
                                 child: Padding(
                                   padding: const EdgeInsets.all(10),
                                   child: Text(
@@ -285,7 +271,6 @@ class _homepageState extends State<homepage> {
                               ),
                               Padding(
                                 padding: EdgeInsets.all(15),
-
                                 child: Text("ريال سعودي 35 خصم"),
                               ),
                             ],
@@ -294,7 +279,6 @@ class _homepageState extends State<homepage> {
                       ],
                     ),
                   ),
-
                   Padding(
                     padding: const EdgeInsets.all(20),
                     child: Row(
@@ -324,9 +308,6 @@ class _homepageState extends State<homepage> {
                                 child: SvgPicture.asset('img/img4.svg'),
                               ),
                               DottedBorder(
-                                options: RectDottedBorderOptions(
-                                  color: AppColors.Container,
-                                ),
                                 child: Padding(
                                   padding: const EdgeInsets.all(10),
                                   child: Text(
@@ -340,7 +321,6 @@ class _homepageState extends State<homepage> {
                               ),
                               Padding(
                                 padding: EdgeInsets.all(15),
-
                                 child: Text("ريال سعودي 35 خصم"),
                               ),
                             ],
@@ -403,14 +383,12 @@ class _homepageState extends State<homepage> {
                     border: Border.all(color: AppColors.border),
                     borderRadius: BorderRadius.circular(25),
                   ),
-
                   child: Padding(
                     padding: const EdgeInsets.all(15),
                     child: Row(
                       children: [
                         SvgPicture.asset('img/img10.svg'),
                         SizedBox(width: 5),
-
                         Text(
                           "الصحة والجمال",
                           style: TextStyle(color: AppColors.black),
@@ -421,7 +399,6 @@ class _homepageState extends State<homepage> {
                 ),
               ],
             ),
-
             SizedBox(height: 30),
             Row(
               children: [
@@ -503,7 +480,6 @@ class _homepageState extends State<homepage> {
                                 ),
                               SizedBox(height: 20),
                               SvgPicture.asset('img/img12.svg'),
-
                               SizedBox(height: 30),
                               Row(
                                 children: [
@@ -512,7 +488,6 @@ class _homepageState extends State<homepage> {
                                     style: const TextStyle(fontSize: 12),
                                   ),
                                   Spacer(),
-
                                   Container(
                                     decoration: BoxDecoration(
                                       color: AppColors.blu2,
@@ -532,22 +507,19 @@ class _homepageState extends State<homepage> {
                                 ],
                               ),
                               SizedBox(height: 20),
-
                               Text(
                                 "كاميرا رياضية تعمل تحت الماء بجودة عالية وإضاءة مع شاشة",
                                 style: const TextStyle(fontSize: 14),
                               ),
                               SizedBox(height: 20),
-
                               ElevatedButton(
                                 onPressed: () {},
                                 style: ElevatedButton.styleFrom(
                                   minimumSize: const Size(double.infinity, 45),
-
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(10),
                                   ),
-                                  backgroundColor: AppColors.blu2,
+                                  backgroundColor: AppColors.primaryColor,
                                 ),
                                 child: Text(
                                   'تفعيل العرض',
@@ -615,9 +587,7 @@ class _homepageState extends State<homepage> {
                                   ),
                                 ),
                               SizedBox(height: 20),
-
                               SvgPicture.asset('img/img12.svg'),
-
                               SizedBox(height: 30),
                               Row(
                                 children: [
@@ -626,7 +596,6 @@ class _homepageState extends State<homepage> {
                                     style: const TextStyle(fontSize: 12),
                                   ),
                                   Spacer(),
-
                                   Container(
                                     decoration: BoxDecoration(
                                       color: AppColors.blu2,
@@ -646,18 +615,15 @@ class _homepageState extends State<homepage> {
                                 ],
                               ),
                               SizedBox(height: 20),
-
                               Text(
                                 "كاميرا رياضية تعمل تحت الماء بجودة عالية وإضاءة مع شاشة",
                                 style: const TextStyle(fontSize: 14),
                               ),
                               SizedBox(height: 20),
-
                               ElevatedButton(
                                 onPressed: () {},
                                 style: ElevatedButton.styleFrom(
                                   minimumSize: const Size(double.infinity, 45),
-
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(10),
                                   ),
@@ -677,7 +643,6 @@ class _homepageState extends State<homepage> {
                 ],
               ),
             ),
-
             SizedBox(height: 30),
             Row(
               children: [
@@ -759,7 +724,6 @@ class _homepageState extends State<homepage> {
                                 ),
                               SizedBox(height: 20),
                               SvgPicture.asset('img/img13.svg'),
-
                               SizedBox(height: 30),
                               Row(
                                 children: [
@@ -768,7 +732,6 @@ class _homepageState extends State<homepage> {
                                     style: const TextStyle(fontSize: 12),
                                   ),
                                   Spacer(),
-
                                   Container(
                                     decoration: BoxDecoration(
                                       color: AppColors.blu2,
@@ -788,18 +751,15 @@ class _homepageState extends State<homepage> {
                                 ],
                               ),
                               SizedBox(height: 20),
-
                               Text(
                                 "كاميرا رياضية تعمل تحت الماء بجودة عالية وإضاءة مع شاشة",
                                 style: const TextStyle(fontSize: 14),
                               ),
                               SizedBox(height: 20),
-
                               ElevatedButton(
                                 onPressed: () {},
                                 style: ElevatedButton.styleFrom(
                                   minimumSize: const Size(double.infinity, 45),
-
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(10),
                                   ),
@@ -871,9 +831,7 @@ class _homepageState extends State<homepage> {
                                   ),
                                 ),
                               SizedBox(height: 20),
-
                               SvgPicture.asset('img/img13.svg'),
-
                               SizedBox(height: 30),
                               Row(
                                 children: [
@@ -882,7 +840,6 @@ class _homepageState extends State<homepage> {
                                     style: const TextStyle(fontSize: 12),
                                   ),
                                   Spacer(),
-
                                   Container(
                                     decoration: BoxDecoration(
                                       color: AppColors.blu2,
@@ -902,18 +859,15 @@ class _homepageState extends State<homepage> {
                                 ],
                               ),
                               SizedBox(height: 20),
-
                               Text(
                                 "كاميرا رياضية تعمل تحت الماء بجودة عالية وإضاءة مع شاشة",
                                 style: const TextStyle(fontSize: 14),
                               ),
                               SizedBox(height: 20),
-
                               ElevatedButton(
                                 onPressed: () {},
                                 style: ElevatedButton.styleFrom(
                                   minimumSize: const Size(double.infinity, 45),
-
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(10),
                                   ),
@@ -933,7 +887,6 @@ class _homepageState extends State<homepage> {
                 ],
               ),
             ),
-
             SizedBox(height: 30),
             Row(
               children: [
@@ -1015,7 +968,6 @@ class _homepageState extends State<homepage> {
                                 ),
                               SizedBox(height: 20),
                               Image.asset('img/img14.jpg'),
-
                               SizedBox(height: 30),
                               Row(
                                 children: [
@@ -1024,7 +976,6 @@ class _homepageState extends State<homepage> {
                                     style: const TextStyle(fontSize: 12),
                                   ),
                                   Spacer(),
-
                                   Container(
                                     decoration: BoxDecoration(
                                       color: AppColors.blu2,
@@ -1044,13 +995,11 @@ class _homepageState extends State<homepage> {
                                 ],
                               ),
                               SizedBox(height: 20),
-
                               Text(
                                 "كاميرا رياضية تعمل تحت الماء بجودة عالية وإضاءة مع شاشة",
                                 style: const TextStyle(fontSize: 14),
                               ),
                               SizedBox(height: 20),
-
                               Text(
                                 'ريال 1500',
                                 style: TextStyle(
@@ -1129,7 +1078,6 @@ class _homepageState extends State<homepage> {
                                   ),
                                 ),
                               SizedBox(height: 20),
-
                               Image.asset('img/img14.jpg'),
                               SizedBox(height: 30),
                               Row(
@@ -1139,7 +1087,6 @@ class _homepageState extends State<homepage> {
                                     style: const TextStyle(fontSize: 12),
                                   ),
                                   Spacer(),
-
                                   Container(
                                     decoration: BoxDecoration(
                                       color: AppColors.blu2,
@@ -1159,13 +1106,11 @@ class _homepageState extends State<homepage> {
                                 ],
                               ),
                               SizedBox(height: 20),
-
                               Text(
                                 "كاميرا رياضية تعمل تحت الماء بجودة عالية وإضاءة مع شاشة",
                                 style: const TextStyle(fontSize: 14),
                               ),
                               SizedBox(height: 20),
-
                               Text(
                                 'ريال 1500',
                                 style: TextStyle(

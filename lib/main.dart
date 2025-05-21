@@ -1,7 +1,5 @@
-import 'package:ahd/Widget/homepage.dart';
-import 'package:ahd/auth/login.dart';
-import 'package:ahd/auth/signup.dart';
-import 'package:ahd/home.dart';
+import 'package:ahd/router/routers.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -19,6 +17,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
+    final Routers routers = Routers();
     return MaterialApp(
       locale: Locale('ar'),
       supportedLocales: [Locale('ar')],
@@ -29,12 +28,7 @@ class _MyAppState extends State<MyApp> {
       ],
       debugShowCheckedModeBanner: false,
       initialRoute: "home",
-      routes: {
-        "login": (context) => login(),
-        "signup": (context) => signup(),
-        "home": (context) => home(),
-        "homepage": (context) => homepage(),
-      },
+      routes: routers.routers,
     );
   }
 }
