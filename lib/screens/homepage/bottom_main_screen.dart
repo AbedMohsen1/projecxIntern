@@ -156,8 +156,7 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
         ),
       ),
       appBar: AppBar(
-          backgroundColor: Colors.white,
-          elevation: 0,
+          backgroundColor: AppColors.white,
           actions: [
             Padding(
               padding: const EdgeInsets.only(left: 20),
@@ -191,11 +190,12 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
         showUnselectedLabels: true,
-        selectedItemColor: Colors.blue,
-        unselectedItemColor: Colors.black,
+        selectedItemColor: AppColors.blu,
+        unselectedItemColor: AppColors.black,
         unselectedFontSize: 12,
         items: [
           BottomNavigationBarItem(
+            backgroundColor: AppColors.white,
             icon: Icon(Icons.home_outlined),
             label: "الرئيسية",
           ),
