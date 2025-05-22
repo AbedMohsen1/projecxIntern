@@ -79,6 +79,9 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
                         SvgPicture.asset(
                           'img/world.svg',
                         ),
+                        SizedBox(
+                          width: 10,
+                        ),
                         Text(
                           "وقت السفر",
                           style:
@@ -153,19 +156,36 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
         ),
       ),
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        actions: [SvgPicture.asset('img/img5.svg')],
-        centerTitle: true,
-        title: Text(
-          "حصيلة",
-          style: TextStyle(
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
-            letterSpacing: 1.5,
-          ),
-        ),
-      ),
+          backgroundColor: Colors.white,
+          elevation: 0,
+          actions: [
+            Padding(
+              padding: const EdgeInsets.only(left: 20),
+              child: Image.asset('img/img15.jpg'),
+            )
+          ],
+          centerTitle: true,
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SvgPicture.asset(
+                'img/Group8.svg',
+                width: 35,
+                height: 35,
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Text(
+                "حصيلة",
+                style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 1.5,
+                ),
+              ),
+            ],
+          )),
       body: _screens[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
