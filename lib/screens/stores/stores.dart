@@ -2,14 +2,14 @@
 
 import 'package:flutter/material.dart';
 
-class stores extends StatefulWidget {
-  const stores({super.key});
+class Stores extends StatefulWidget {
+  const Stores({super.key});
 
   @override
-  State<stores> createState() => _storesState();
+  State<Stores> createState() => _StoresState();
 }
 
-class _storesState extends State<stores> {
+class _StoresState extends State<Stores> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(body: Center(child: Text("المتاجر")));

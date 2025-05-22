@@ -1,18 +1,19 @@
 // ignore_for_file: camel_case_types
 
+import 'package:ahd/components/logo_home_page.dart';
 import 'package:ahd/theme/color_managment.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class homepage extends StatefulWidget {
-  const homepage({super.key});
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
 
   @override
-  State<homepage> createState() => _homepageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _homepageState extends State<homepage> {
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -114,40 +115,20 @@ class _homepageState extends State<homepage> {
               child: Row(
                 children: [
                   SizedBox(width: 20),
-                  Container(
-                    padding: EdgeInsets.all(19),
-                    decoration: BoxDecoration(
-                      border: Border.all(color: AppColors.border),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: SvgPicture.asset('img/img1.svg'),
+                  LogoHomePage(
+                    imagePath: 'img/img1.svg',
                   ),
                   SizedBox(width: 15),
-                  Container(
-                    padding: EdgeInsets.all(19),
-                    decoration: BoxDecoration(
-                      border: Border.all(color: AppColors.border),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: SvgPicture.asset('img/img2.svg'),
+                  LogoHomePage(
+                    imagePath: 'img/img2.svg',
                   ),
                   SizedBox(width: 15),
-                  Container(
-                    padding: EdgeInsets.all(19),
-                    decoration: BoxDecoration(
-                      border: Border.all(color: AppColors.border),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: SvgPicture.asset('img/img3.svg'),
+                  LogoHomePage(
+                    imagePath: 'img/img3.svg',
                   ),
                   SizedBox(width: 15),
-                  Container(
-                    padding: EdgeInsets.all(19),
-                    decoration: BoxDecoration(
-                      border: Border.all(color: AppColors.border),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: SvgPicture.asset('img/img4.svg'),
+                  LogoHomePage(
+                    imagePath: 'img/img4.svg',
                   ),
                 ],
               ),
@@ -200,12 +181,8 @@ class _homepageState extends State<homepage> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Container(
-                                padding: EdgeInsets.all(19),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                child: SvgPicture.asset('img/img3.svg'),
+                              LogoHomePage(
+                                imagePath: 'img/img3.svg',
                               ),
                               DottedBorder(
                                 child: Padding(
@@ -300,12 +277,8 @@ class _homepageState extends State<homepage> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Container(
-                                padding: EdgeInsets.all(19),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                child: SvgPicture.asset('img/img4.svg'),
+                              LogoHomePage(
+                                imagePath: 'img/img4.svg',
                               ),
                               DottedBorder(
                                 child: Padding(
@@ -367,7 +340,9 @@ class _homepageState extends State<homepage> {
                     padding: const EdgeInsets.all(15),
                     child: Row(
                       children: [
-                        SvgPicture.asset('img/img10.svg'),
+                        LogoHomePage(
+                          imagePath: 'img/img10.svg',
+                        ),
                         SizedBox(width: 5),
                         Text(
                           "الصحة والجمال",
@@ -387,7 +362,9 @@ class _homepageState extends State<homepage> {
                     padding: const EdgeInsets.all(15),
                     child: Row(
                       children: [
-                        SvgPicture.asset('img/img10.svg'),
+                        LogoHomePage(
+                          imagePath: 'img/img10.svg',
+                        ),
                         SizedBox(width: 5),
                         Text(
                           "الصحة والجمال",
@@ -479,7 +456,9 @@ class _homepageState extends State<homepage> {
                                   ),
                                 ),
                               SizedBox(height: 20),
-                              SvgPicture.asset('img/img12.svg'),
+                              LogoHomePage(
+                                imagePath: 'img/img12.svg',
+                              ),
                               SizedBox(height: 30),
                               Row(
                                 children: [
@@ -519,7 +498,7 @@ class _homepageState extends State<homepage> {
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(10),
                                   ),
-                                  backgroundColor: AppColors.primaryColor,
+                                  backgroundColor: AppColors.blu2,
                                 ),
                                 child: Text(
                                   'تفعيل العرض',
@@ -587,7 +566,9 @@ class _homepageState extends State<homepage> {
                                   ),
                                 ),
                               SizedBox(height: 20),
-                              SvgPicture.asset('img/img12.svg'),
+                              LogoHomePage(
+                                imagePath: 'img/img12.svg',
+                              ),
                               SizedBox(height: 30),
                               Row(
                                 children: [
@@ -723,7 +704,9 @@ class _homepageState extends State<homepage> {
                                   ),
                                 ),
                               SizedBox(height: 20),
-                              SvgPicture.asset('img/img13.svg'),
+                              LogoHomePage(
+                                imagePath: 'img/img13.svg',
+                              ),
                               SizedBox(height: 30),
                               Row(
                                 children: [
@@ -831,7 +814,9 @@ class _homepageState extends State<homepage> {
                                   ),
                                 ),
                               SizedBox(height: 20),
-                              SvgPicture.asset('img/img13.svg'),
+                              LogoHomePage(
+                                imagePath: 'img/img13.svg',
+                              ),
                               SizedBox(height: 30),
                               Row(
                                 children: [
@@ -916,7 +901,6 @@ class _homepageState extends State<homepage> {
                   Padding(
                     padding: const EdgeInsets.all(20),
                     child: Row(
-                      // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Container(
                           width: 200,

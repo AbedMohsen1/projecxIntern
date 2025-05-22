@@ -1,20 +1,18 @@
-// ignore_for_file: file_names, avoid_print
-
 import 'package:ahd/theme/color_managment.dart';
-import 'package:ahd/screens/auth/signup.dart';
-import 'package:ahd/screens/bottom_main_screen.dart';
+import 'package:ahd/screens/auth/sign_up.dart';
+import 'package:ahd/screens/homepage/bottom_main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hexcolor/hexcolor.dart';
 
-class login extends StatefulWidget {
-  const login({super.key});
+class Login extends StatefulWidget {
+  const Login({super.key});
 
   @override
-  State<login> createState() => _loginState();
+  State<Login> createState() => _LoginState();
 }
 
-class _loginState extends State<login> {
+class _LoginState extends State<Login> {
   bool _obscure = true;
 
   late TextEditingController _emailTextController;
@@ -171,7 +169,7 @@ class _loginState extends State<login> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => signup()),
+                      MaterialPageRoute(builder: (context) => SignUp()),
                     );
                   },
                   style: TextButton.styleFrom(
