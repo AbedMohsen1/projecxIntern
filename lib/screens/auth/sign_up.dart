@@ -178,7 +178,7 @@ class _SignUpState extends State<SignUp> {
                   _checkData();
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: AppColors.backTest,
+                  backgroundColor: AppColors.black,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),

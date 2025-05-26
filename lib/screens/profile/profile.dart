@@ -1,7 +1,11 @@
 import 'package:ahd/screens/favorites/favorites.dart';
+import 'package:ahd/screens/profile/about_in_app.dart';
 import 'package:ahd/screens/profile/followed_stores.dart';
 import 'package:ahd/screens/profile/info.dart';
+import 'package:ahd/screens/profile/privacy_policy.dart';
 import 'package:ahd/screens/profile/subscription_record.dart';
+import 'package:ahd/screens/profile/terms_and_conditions.dart';
+import 'package:ahd/screens/profile/terms_of_use.dart';
 import 'package:ahd/screens/profile/text_button.dart';
 import 'package:ahd/theme/color_managment.dart';
 import 'package:flutter/material.dart';
@@ -109,7 +113,12 @@ class _ProfileState extends State<Profile> {
                         title: 'الاعدادات',
                         icons: Icon(Icons.settings)),
                     TextButtonProfile(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => AboutInApp()));
+                        },
                         title: 'عن حصيلة',
                         icons: Icon(Icons.info_outline)),
                     TextButtonProfile(
@@ -117,15 +126,30 @@ class _ProfileState extends State<Profile> {
                         title: 'تواصل معنا',
                         icons: Icon(Icons.mail_outline)),
                     TextButtonProfile(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => PrivacyPolicy()));
+                        },
                         title: 'سياسة الخصوصية',
                         icons: Icon(Icons.lock_outline)),
                     TextButtonProfile(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => TermsOfUse()));
+                        },
                         title: 'سياسة الاستخدام',
                         icons: Icon(Icons.rule)),
                     TextButtonProfile(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => TermsAndConditions()));
+                        },
                         title: 'الشروط والاحكام',
                         icons: Icon(Icons.article_outlined)),
                     TextButtonProfile(

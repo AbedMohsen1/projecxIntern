@@ -19,7 +19,7 @@ class _CategoriesState extends State<Categories> {
     return Scaffold(
         backgroundColor: AppColors.white,
         appBar: AppBar(
-          backgroundColor: AppColors.backTest,
+          backgroundColor: AppColors.blu,
           centerTitle: true,
           title: Text(
             "المتاجر",

@@ -19,7 +19,7 @@ class _StoresState extends State<Stores> {
     return Scaffold(
         backgroundColor: AppColors.white,
         appBar: AppBar(
-          backgroundColor: AppColors.backTest,
+          backgroundColor: AppColors.blu,
           centerTitle: true,
           title: Text(
             "المتاجر",
