@@ -15,7 +15,7 @@ class LogoHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        padding: EdgeInsets.all(19),
+        padding: EdgeInsets.all(20),
         decoration: decoration,
         child: SvgPicture.asset(imagePath),
       ),

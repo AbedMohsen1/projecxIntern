@@ -1,5 +1,9 @@
-// ignore_for_file: file_names
-
+import 'package:ahd/screens/favorites/favorites.dart';
+import 'package:ahd/screens/profile/followed_stores.dart';
+import 'package:ahd/screens/profile/info.dart';
+import 'package:ahd/screens/profile/subscription_record.dart';
+import 'package:ahd/screens/profile/text_button.dart';
+import 'package:ahd/theme/color_managment.dart';
 import 'package:flutter/material.dart';
 
 class Profile extends StatefulWidget {
@@ -12,6 +16,133 @@ class Profile extends StatefulWidget {
 class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Center(child: Text("البروفايل")));
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: AppColors.blu,
+        centerTitle: true,
+        title: Text(
+          "البروفايل",
+          style: TextStyle(color: AppColors.white),
+        ),
+      ),
+      backgroundColor: AppColors.white,
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.all(30),
+                child: Column(
+                  children: [
+                    CircleAvatar(),
+
+                    // SvgPicture.asset('img/Group13641'),
+                    // Image.asset('img/Group13641.png'),
+                    Text(
+                      "محمد عبدالله",
+                      style: TextStyle(
+                          color: AppColors.black,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    TextButtonProfile(
+                        onPressed: () {},
+                        title: 'أضف اعلانك',
+                        icons: Icon(Icons.add_circle_outline)),
+                    TextButtonProfile(
+                        onPressed: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => Info()));
+                        },
+                        title: 'البيانات الشخصية',
+                        icons: Icon(Icons.person_outline)),
+                    TextButtonProfile(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Favorites()));
+                        },
+                        title: 'المفضلة',
+                        icons: Icon(Icons.favorite_border)),
+                    TextButtonProfile(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => FollowedStores()));
+                        },
+                        title: 'المتاجر المتابعة',
+                        icons: Icon(Icons.storefront_sharp)),
+                    Row(
+                      children: [
+                        TextButtonProfile(
+                            onPressed: () {},
+                            title: 'اللغة',
+                            icons: Icon(Icons.language)),
+                        Spacer(),
+                        TextButtonProfile(
+                          onPressed: () {},
+                          title: 'العربية',
+                        ),
+                        TextButtonProfile(
+                          onPressed: () {},
+                          title: 'English',
+                        ),
+                      ],
+                    ),
+                    TextButtonProfile(
+                        onPressed: () {},
+                        title: 'الدولة',
+                        icons: Icon(Icons.location_on_outlined)),
+                    TextButtonProfile(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => SubscriptionRecord()));
+                        },
+                        title: 'سجل الاشتراكات',
+                        icons: Icon(Icons.access_time)),
+                    TextButtonProfile(
+                        onPressed: () {},
+                        title: 'الاعدادات',
+                        icons: Icon(Icons.settings)),
+                    TextButtonProfile(
+                        onPressed: () {},
+                        title: 'عن حصيلة',
+                        icons: Icon(Icons.info_outline)),
+                    TextButtonProfile(
+                        onPressed: () {},
+                        title: 'تواصل معنا',
+                        icons: Icon(Icons.mail_outline)),
+                    TextButtonProfile(
+                        onPressed: () {},
+                        title: 'سياسة الخصوصية',
+                        icons: Icon(Icons.lock_outline)),
+                    TextButtonProfile(
+                        onPressed: () {},
+                        title: 'سياسة الاستخدام',
+                        icons: Icon(Icons.rule)),
+                    TextButtonProfile(
+                        onPressed: () {},
+                        title: 'الشروط والاحكام',
+                        icons: Icon(Icons.article_outlined)),
+                    TextButtonProfile(
+                        onPressed: () {},
+                        title: 'الأسئلة الشائعة',
+                        icons: Icon(Icons.help_outline)),
+                    TextButtonProfile(
+                        onPressed: () {},
+                        title: 'تسجيل الخروج',
+                        icons: Icon(Icons.logout)),
+                  ],
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
