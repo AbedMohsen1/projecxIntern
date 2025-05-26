@@ -1,7 +1,6 @@
 import 'package:ahd/components/gender_selector.dart';
 import 'package:ahd/theme/color_managment.dart';
 import 'package:flutter/material.dart';
-import 'package:hexcolor/hexcolor.dart';
 // import 'package:flutter_svg/svg.dart';
 
 class Info extends StatefulWidget {
@@ -57,7 +56,16 @@ class _InfoState extends State<Info> {
       body: Center(
         child: Column(
           children: [
-            Text("البيانات الشخصية"),
+            Padding(
+              padding: const EdgeInsets.all(20),
+              child: Align(
+                alignment: Alignment.centerRight,
+                child: Text(
+                  "البيانات الشخصية",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+              ),
+            ),
             // SvgPicture.asset('img/Group13641'),
             CircleAvatar(),
             Row(
@@ -181,7 +189,7 @@ class _InfoState extends State<Info> {
               child: ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: AppColors.black,
+                  backgroundColor: AppColors.blu,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),
@@ -189,7 +197,7 @@ class _InfoState extends State<Info> {
                 ),
                 child: Text(
                   'تحديث',
-                  style: TextStyle(color: HexColor("#FFFFFF")),
+                  style: TextStyle(color: AppColors.white),
                 ),
               ),
             ),
