@@ -1,6 +1,5 @@
 import 'package:ahd/Theme/color_managment.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class TextButtonProfile extends StatelessWidget {
   final void Function() onPressed;
@@ -28,7 +27,7 @@ class TextButtonProfile extends StatelessWidget {
                 onPressed: onPressed,
                 child: Text(
                   title,
-                  style: GoogleFonts.cairo(
+                  style: TextStyle(
                       color: textColor ?? AppColors.black,
                       fontWeight: FontWeight.w600,
                       fontSize: 15),

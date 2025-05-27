@@ -1,11 +1,8 @@
-// ignore_for_file: file_names
-
 import 'package:ahd/Theme/color_managment.dart';
 import 'package:ahd/models/data_model.dart';
 import 'package:ahd/screens/categories/categories_home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class Categories extends StatefulWidget {
   const Categories({super.key});
@@ -24,7 +21,7 @@ class _CategoriesState extends State<Categories> {
           centerTitle: true,
           title: Text(
             "التصنيفات",
-            style: GoogleFonts.cairo(color: AppColors.white),
+            style: TextStyle(color: AppColors.white),
           ),
         ),
         body: SingleChildScrollView(
@@ -36,8 +33,8 @@ class _CategoriesState extends State<Categories> {
                     padding: const EdgeInsets.all(20),
                     child: Text(
                       "المتاجر الأكثر شهرة",
-                      style: GoogleFonts.cairo(
-                          fontWeight: FontWeight.bold, fontSize: 18),
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                     ),
                   ),
                 ],
@@ -60,8 +57,7 @@ class _CategoriesState extends State<Categories> {
                   alignment: Alignment.centerRight,
                   child: Text(
                     "جميع المتاجر",
-                    style: GoogleFonts.cairo(
-                        fontSize: 18, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                 ),
               ),
@@ -93,7 +89,7 @@ class _CategoriesState extends State<Categories> {
                           Expanded(
                             child: Text(
                               item["name"]!,
-                              style: GoogleFonts.cairo(
+                              style: TextStyle(
                                   color: AppColors.black, fontSize: 12),
                               overflow: TextOverflow.ellipsis,
                             ),

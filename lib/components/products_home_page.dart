@@ -1,6 +1,5 @@
 import 'package:ahd/Theme/color_managment.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class ProductsHomePage extends StatelessWidget {
   const ProductsHomePage({super.key});
@@ -47,7 +46,7 @@ class ProductsHomePage extends StatelessWidget {
                           ),
                           child: Text(
                             'حصرياً',
-                            style: GoogleFonts.cairo(
+                            style: TextStyle(
                               fontSize: 12,
                               color: AppColors.blu,
                               fontWeight: FontWeight.bold,
@@ -61,13 +60,13 @@ class ProductsHomePage extends StatelessWidget {
                     ),
                   ),
                 SizedBox(height: 20),
-                Image.asset('img/img14.jpg'),
+                Image.asset('assets//img14.jpg'),
                 SizedBox(height: 30),
                 Row(
                   children: [
                     Text(
                       "متجر امازون",
-                      style: GoogleFonts.cairo(fontSize: 12),
+                      style: TextStyle(fontSize: 12),
                     ),
                     Spacer(),
                     Container(
@@ -79,7 +78,7 @@ class ProductsHomePage extends StatelessWidget {
                         padding: const EdgeInsets.all(10),
                         child: Text(
                           "خصم 80%",
-                          style: GoogleFonts.cairo(
+                          style: TextStyle(
                             fontSize: 12,
                             color: AppColors.white,
                           ),
@@ -91,12 +90,12 @@ class ProductsHomePage extends StatelessWidget {
                 SizedBox(height: 20),
                 Text(
                   "كاميرا رياضية تعمل تحت الماء بجودة عالية وإضاءة مع شاشة",
-                  style: GoogleFonts.cairo(fontSize: 14),
+                  style: TextStyle(fontSize: 14),
                 ),
                 SizedBox(height: 20),
                 Text(
                   'ريال 1500',
-                  style: GoogleFonts.cairo(
+                  style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                     color: AppColors.black,
@@ -105,7 +104,7 @@ class ProductsHomePage extends StatelessWidget {
                 SizedBox(height: 5),
                 Text(
                   'ريال 2500',
-                  style: GoogleFonts.cairo(
+                  style: TextStyle(
                     fontSize: 14,
                     color: AppColors.dis,
                     decoration: TextDecoration.lineThrough,

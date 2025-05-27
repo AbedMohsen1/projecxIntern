@@ -1,11 +1,8 @@
-// ignore_for_file: camel_case_types
-
 import 'package:ahd/Theme/color_managment.dart';
 import 'package:ahd/components/logo_home_page.dart';
 import 'package:ahd/models/data_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class Stores extends StatefulWidget {
   const Stores({super.key});
@@ -24,7 +21,7 @@ class _StoresState extends State<Stores> {
           centerTitle: true,
           title: Text(
             "المتاجر",
-            style: GoogleFonts.cairo(color: AppColors.white),
+            style: TextStyle(color: AppColors.white),
           ),
         ),
         body: SingleChildScrollView(
@@ -36,8 +33,8 @@ class _StoresState extends State<Stores> {
                     padding: const EdgeInsets.all(20),
                     child: Text(
                       "المتاجر الأكثر شهرة",
-                      style: GoogleFonts.cairo(
-                          fontWeight: FontWeight.bold, fontSize: 18),
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                     ),
                   ),
                 ],
@@ -48,7 +45,7 @@ class _StoresState extends State<Stores> {
                   children: [
                     SizedBox(width: 20),
                     LogoHomePage(
-                      imagePath: 'img/img4.svg',
+                      imagePath: 'assets/img/img4.svg',
                       decoration: BoxDecoration(
                         border: Border.all(color: AppColors.border),
                         borderRadius: BorderRadius.circular(20),
@@ -56,7 +53,7 @@ class _StoresState extends State<Stores> {
                     ),
                     SizedBox(width: 20),
                     LogoHomePage(
-                      imagePath: 'img/img3.svg',
+                      imagePath: 'assets/img/img3.svg',
                       decoration: BoxDecoration(
                         border: Border.all(color: AppColors.border),
                         borderRadius: BorderRadius.circular(20),
@@ -64,7 +61,7 @@ class _StoresState extends State<Stores> {
                     ),
                     SizedBox(width: 20),
                     LogoHomePage(
-                      imagePath: 'img/img2.svg',
+                      imagePath: 'assets/img/img2.svg',
                       decoration: BoxDecoration(
                         border: Border.all(color: AppColors.border),
                         borderRadius: BorderRadius.circular(20),
@@ -72,7 +69,7 @@ class _StoresState extends State<Stores> {
                     ),
                     SizedBox(width: 20),
                     LogoHomePage(
-                      imagePath: 'img/img1.svg',
+                      imagePath: 'assets/img/img1.svg',
                       decoration: BoxDecoration(
                         border: Border.all(color: AppColors.border),
                         borderRadius: BorderRadius.circular(20),
@@ -87,8 +84,7 @@ class _StoresState extends State<Stores> {
                   alignment: Alignment.centerRight,
                   child: Text(
                     "جميع المتاجر",
-                    style: GoogleFonts.cairo(
-                        fontSize: 18, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                 ),
               ),

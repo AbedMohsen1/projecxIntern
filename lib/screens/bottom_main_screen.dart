@@ -5,7 +5,6 @@ import 'package:ahd/screens/homepage/home_page.dart';
 import 'package:ahd/screens/profile/profile.dart';
 import 'package:ahd/screens/stores/stores.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class BottomBarScreen extends StatefulWidget {
   static const String routeName = 'bottom_bar_screen';
@@ -81,7 +80,7 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
                 const SizedBox(height: 2),
                 Text(
                   _labels[index],
-                  style: GoogleFonts.cairo(
+                  style: TextStyle(
                     fontSize: 12,
                     fontWeight: isActive ? FontWeight.bold : FontWeight.normal,
                     color: isActive ? AppColors.blu : AppColors.black,

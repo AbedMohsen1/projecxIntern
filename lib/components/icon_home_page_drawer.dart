@@ -1,6 +1,5 @@
 import 'package:ahd/Theme/color_managment.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class IconHomePageDrawer extends StatelessWidget {
   final IconData icon;
@@ -26,7 +25,7 @@ class IconHomePageDrawer extends StatelessWidget {
               const SizedBox(width: 10),
               Text(
                 text!,
-                style: GoogleFonts.cairo(
+                style: TextStyle(
                   color: AppColors.black,
                   fontSize: 14,
                   fontWeight: FontWeight.w600,

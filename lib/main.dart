@@ -19,7 +19,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     final Routers routers = Routers();
     return MaterialApp(
-      theme: ThemeData(fontFamily: 'Zain'),
+      theme: ThemeData(fontFamily: 'Cairo'),
       home: const BottomBarScreen(),
       locale: Locale('ar'),
       supportedLocales: [Locale('ar')],

@@ -1,7 +1,6 @@
 import 'package:ahd/models/data_model.dart';
 import 'package:ahd/theme/color_managment.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class SubscriptionRecord extends StatelessWidget {
   const SubscriptionRecord({super.key});
@@ -14,7 +13,7 @@ class SubscriptionRecord extends StatelessWidget {
         leading: Icon(Icons.arrow_forward),
         title: Text(
           'سجل الاشتراكات',
-          style: GoogleFonts.cairo(color: AppColors.white),
+          style: TextStyle(color: AppColors.white),
         ),
         centerTitle: true,
       ),
@@ -27,7 +26,7 @@ class SubscriptionRecord extends StatelessWidget {
               padding: const EdgeInsets.all(20),
               child: Text(
                 "سجل جميع الاشتراكات",
-                style: GoogleFonts.cairo(
+                style: TextStyle(
                     fontSize: 14,
                     color: AppColors.black,
                     fontWeight: FontWeight.w600),
@@ -47,7 +46,7 @@ class SubscriptionRecord extends StatelessWidget {
                       child: Center(
                         child: Text(
                           "العضوية",
-                          style: GoogleFonts.cairo(
+                          style: TextStyle(
                               color: AppColors.white,
                               fontWeight: FontWeight.w600),
                         ),
@@ -57,7 +56,7 @@ class SubscriptionRecord extends StatelessWidget {
                       child: Center(
                         child: Text(
                           "تاريخ الاشتراك",
-                          style: GoogleFonts.cairo(
+                          style: TextStyle(
                               color: AppColors.white,
                               fontWeight: FontWeight.w600),
                         ),
@@ -87,7 +86,7 @@ class SubscriptionRecord extends StatelessWidget {
                             child: Center(
                               child: Text(
                                 item['name']!,
-                                style: GoogleFonts.cairo(
+                                style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -97,7 +96,7 @@ class SubscriptionRecord extends StatelessWidget {
                             child: Center(
                               child: Text(
                                 item['date']!,
-                                style: GoogleFonts.cairo(
+                                style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),

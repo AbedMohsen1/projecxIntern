@@ -1,7 +1,6 @@
 import 'package:ahd/Theme/color_managment.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class CategoriesHomePage extends StatelessWidget {
   const CategoriesHomePage({super.key});
@@ -22,10 +21,10 @@ class CategoriesHomePage extends StatelessWidget {
               padding: const EdgeInsets.all(0),
               child: Row(
                 children: [
-                  SvgPicture.asset('img/img10.svg'),
+                  SvgPicture.asset('assets/img/img10.svg'),
                   Text(
                     "الصحة والجمال",
-                    style: GoogleFonts.cairo(
+                    style: TextStyle(
                         color: AppColors.black,
                         fontWeight: FontWeight.w600,
                         fontSize: 12),
@@ -45,11 +44,11 @@ class CategoriesHomePage extends StatelessWidget {
               padding: const EdgeInsets.all(0),
               child: Row(
                 children: [
-                  SvgPicture.asset('img/img10.svg'),
+                  SvgPicture.asset('assets/img/img10.svg'),
                   SizedBox(width: 5),
                   Text(
                     "الصحة والجمال",
-                    style: GoogleFonts.cairo(
+                    style: TextStyle(
                         color: AppColors.black,
                         fontWeight: FontWeight.w600,
                         fontSize: 12),

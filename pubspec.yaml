@@ -89,10 +89,10 @@ flutter:
   #       - asset: assets/fonts/Cairo-Regular.ttf
   # 
   fonts:
-    - family: Zain
+    - family: Cairo
       fonts:
-        - asset: assets/fonts/zain-black.ttf
-        - asset: assets/fonts/zain-bold.ttf
+        - asset: assets/fonts/cairo-black.ttf
+        - asset: assets/fonts/cairo-bold.ttf
       
 
   # For details regarding fonts from package dependencies,

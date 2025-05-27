@@ -9,7 +9,6 @@ import 'package:ahd/screens/profile/terms_of_use.dart';
 import 'package:ahd/screens/profile/text_button.dart';
 import 'package:ahd/theme/color_managment.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -27,7 +26,7 @@ class _ProfileState extends State<Profile> {
         centerTitle: true,
         title: Text(
           "البروفايل",
-          style: GoogleFonts.cairo(color: AppColors.white),
+          style: TextStyle(color: AppColors.white),
         ),
       ),
       backgroundColor: AppColors.white,
@@ -41,11 +40,11 @@ class _ProfileState extends State<Profile> {
                   children: [
                     CircleAvatar(),
 
-                    // SvgPicture.asset('img/Group13641'),
-                    // Image.asset('img/Group13641.png'),
+                    // SvgPicture.asset('assets/img/Group13641'),
+                    // Image.asset('assets/img/Group13641.png'),
                     Text(
                       "محمد عبدالله",
-                      style: GoogleFonts.cairo(
+                      style: TextStyle(
                         color: AppColors.black,
                         fontSize: 20,
                         fontWeight: FontWeight.bold,

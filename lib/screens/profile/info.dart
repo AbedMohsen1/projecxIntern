@@ -1,7 +1,6 @@
 import 'package:ahd/components/gender_selector.dart';
 import 'package:ahd/theme/color_managment.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 // import 'package:flutter_svg/svg.dart';
 
 class Info extends StatefulWidget {
@@ -51,7 +50,7 @@ class _InfoState extends State<Info> {
         centerTitle: true,
         title: Text(
           "البيانات الشخصية",
-          style: GoogleFonts.cairo(color: AppColors.white),
+          style: TextStyle(color: AppColors.white),
         ),
       ),
       body: Center(
@@ -63,12 +62,11 @@ class _InfoState extends State<Info> {
                 alignment: Alignment.centerRight,
                 child: Text(
                   "البيانات الشخصية",
-                  style: GoogleFonts.cairo(
-                      fontSize: 20, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
               ),
             ),
-            // SvgPicture.asset('img/Group13641'),
+            // SvgPicture.asset('assets/img/Group13641'),
             CircleAvatar(),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -199,7 +197,7 @@ class _InfoState extends State<Info> {
                 ),
                 child: Text(
                   'تحديث',
-                  style: GoogleFonts.cairo(color: AppColors.white),
+                  style: TextStyle(color: AppColors.white),
                 ),
               ),
             ),

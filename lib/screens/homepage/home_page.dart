@@ -10,7 +10,6 @@ import 'package:ahd/theme/color_managment.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -34,7 +33,7 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(0),
-                    child: SvgPicture.asset('img/Group8.svg'),
+                    child: SvgPicture.asset('assets/img/Group8.svg'),
                   ),
                   SizedBox(width: 20),
                   Text(
@@ -64,8 +63,8 @@ class _HomePageState extends State<HomePage> {
                         ),
                         Text(
                           "وقت السفر",
-                          style: GoogleFonts.cairo(
-                              fontSize: 24, color: AppColors.white),
+                          style:
+                              TextStyle(fontSize: 24, color: AppColors.white),
                         ),
                       ],
                     ),
@@ -110,8 +109,8 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     Text(
                       "نسعد بمتابعتكم لنا عبر ",
-                      style: GoogleFonts.cairo(
-                          fontSize: 14, fontWeight: FontWeight.w500),
+                      style:
+                          TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
                     ),
                     SizedBox(
                       height: 10,
@@ -144,7 +143,7 @@ class _HomePageState extends State<HomePage> {
           actions: [
             Padding(
               padding: const EdgeInsets.only(left: 20),
-              child: Image.asset('img/img15.jpg'),
+              child: Image.asset('assets/img/img15.jpg'),
             )
           ],
           centerTitle: true,
@@ -161,7 +160,7 @@ class _HomePageState extends State<HomePage> {
               ),
               Text(
                 "حصيلة",
-                style: GoogleFonts.cairo(
+                style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
                   letterSpacing: 1.5,
@@ -207,7 +206,7 @@ class _HomePageState extends State<HomePage> {
                             "جميع الحقوق محفوظة لصالح شركة حصيلة\n"
                             "جميع الحقوق محفوظة لصالح شركة حصيلة",
                             textAlign: TextAlign.center,
-                            style: GoogleFonts.cairo(
+                            style: TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.w600,
                             ),
@@ -230,8 +229,8 @@ class _HomePageState extends State<HomePage> {
                           child: Text(
                             "نص وهمي",
                             textAlign: TextAlign.center,
-                            style: GoogleFonts.cairo(
-                                color: AppColors.white, fontSize: 14),
+                            style:
+                                TextStyle(color: AppColors.white, fontSize: 14),
                           ),
                         ),
                       ),
@@ -246,8 +245,7 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(width: 20),
                 Text(
                   "المتاجر الأكثر شهرة",
-                  style: GoogleFonts.cairo(
-                      fontWeight: FontWeight.bold, fontSize: 14),
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
                 ),
                 Spacer(),
                 Padding(
@@ -255,8 +253,7 @@ class _HomePageState extends State<HomePage> {
                   child: Row(
                     children: [
                       Text("المزيد",
-                          style: GoogleFonts.cairo(
-                              color: Colors.blue, fontSize: 14)),
+                          style: TextStyle(color: Colors.blue, fontSize: 14)),
                       SizedBox(width: 5),
                       Icon(Icons.arrow_forward, color: Colors.blue),
                       SizedBox(width: 5),
@@ -272,7 +269,7 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   SizedBox(width: 20),
                   LogoHomePage(
-                    imagePath: 'img/img1.svg',
+                    imagePath: 'assets/img/img1.svg',
                     decoration: BoxDecoration(
                       border: Border.all(color: AppColors.border),
                       borderRadius: BorderRadius.circular(20),
@@ -280,7 +277,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   SizedBox(width: 15),
                   LogoHomePage(
-                    imagePath: 'img/img2.svg',
+                    imagePath: 'assets/img/img2.svg',
                     decoration: BoxDecoration(
                       border: Border.all(color: AppColors.border),
                       borderRadius: BorderRadius.circular(20),
@@ -288,7 +285,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   SizedBox(width: 15),
                   LogoHomePage(
-                    imagePath: 'img/img3.svg',
+                    imagePath: 'assets/img/img3.svg',
                     decoration: BoxDecoration(
                       border: Border.all(color: AppColors.border),
                       borderRadius: BorderRadius.circular(20),
@@ -296,7 +293,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   SizedBox(width: 15),
                   LogoHomePage(
-                    imagePath: 'img/img4.svg',
+                    imagePath: 'assets/img/img4.svg',
                     decoration: BoxDecoration(
                       border: Border.all(color: AppColors.border),
                       borderRadius: BorderRadius.circular(20),
@@ -311,16 +308,14 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(width: 20),
                 Text(
                   "الكوبونات الحصرية",
-                  style: GoogleFonts.cairo(
-                      fontWeight: FontWeight.bold, fontSize: 18),
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                 ),
                 Spacer(),
                 Padding(
                   padding: const EdgeInsets.only(left: 10),
                   child: Row(
                     children: [
-                      Text("المزيد",
-                          style: GoogleFonts.cairo(color: Colors.blue)),
+                      Text("المزيد", style: TextStyle(color: Colors.blue)),
                       SizedBox(width: 5),
                       Icon(Icons.arrow_forward, color: Colors.blue),
                       SizedBox(width: 5),
@@ -340,15 +335,14 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(width: 20),
                 Text(
                   "أشهر التصنيفات",
-                  style: GoogleFonts.cairo(fontWeight: FontWeight.bold),
+                  style: TextStyle(fontWeight: FontWeight.bold),
                 ),
                 Spacer(),
                 Padding(
                   padding: const EdgeInsets.only(left: 10),
                   child: Row(
                     children: [
-                      Text("المزيد",
-                          style: GoogleFonts.cairo(color: Colors.blue)),
+                      Text("المزيد", style: TextStyle(color: Colors.blue)),
                       SizedBox(width: 5),
                       Icon(Icons.arrow_forward, color: Colors.blue),
                       SizedBox(width: 5),
@@ -365,16 +359,14 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(width: 20),
                 Text(
                   "أشهر العروض",
-                  style: GoogleFonts.cairo(
-                      fontWeight: FontWeight.bold, fontSize: 16),
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                 ),
                 Spacer(),
                 Padding(
                   padding: const EdgeInsets.only(left: 10),
                   child: Row(
                     children: [
-                      Text("المزيد",
-                          style: GoogleFonts.cairo(color: Colors.blue)),
+                      Text("المزيد", style: TextStyle(color: Colors.blue)),
                       SizedBox(width: 5),
                       Icon(Icons.arrow_forward, color: Colors.blue),
                       SizedBox(width: 5),
@@ -399,16 +391,14 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(width: 20),
                 Text(
                   "أفضل الكوبونات",
-                  style: GoogleFonts.cairo(
-                      fontWeight: FontWeight.bold, fontSize: 16),
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                 ),
                 Spacer(),
                 Padding(
                   padding: const EdgeInsets.only(left: 10),
                   child: Row(
                     children: [
-                      Text("المزيد",
-                          style: GoogleFonts.cairo(color: Colors.blue)),
+                      Text("المزيد", style: TextStyle(color: Colors.blue)),
                       SizedBox(width: 5),
                       Icon(Icons.arrow_forward, color: Colors.blue),
                       SizedBox(width: 5),
@@ -433,16 +423,14 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(width: 20),
                 Text(
                   "أفضل المنتجات",
-                  style: GoogleFonts.cairo(
-                      fontWeight: FontWeight.bold, fontSize: 18),
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                 ),
                 Spacer(),
                 Padding(
                   padding: const EdgeInsets.only(left: 10),
                   child: Row(
                     children: [
-                      Text("المزيد",
-                          style: GoogleFonts.cairo(color: Colors.blue)),
+                      Text("المزيد", style: TextStyle(color: Colors.blue)),
                       SizedBox(width: 5),
                       Icon(Icons.arrow_forward, color: Colors.blue),
                       SizedBox(width: 5),

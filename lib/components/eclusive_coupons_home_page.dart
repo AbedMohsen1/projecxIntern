@@ -3,7 +3,6 @@ import 'package:ahd/components/logo_home_page.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class ExclusiveCouponsHomePage extends StatelessWidget {
   const ExclusiveCouponsHomePage({super.key});
@@ -34,7 +33,7 @@ class ExclusiveCouponsHomePage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     LogoHomePage(
-                      imagePath: 'img/img3.svg',
+                      imagePath: 'assets/img/img3.svg',
                     ),
                     Container(
                       color: AppColors.dottedborder,
@@ -43,7 +42,7 @@ class ExclusiveCouponsHomePage extends StatelessWidget {
                           padding: const EdgeInsets.all(10),
                           child: Text(
                             "NAMSHI12A",
-                            style: GoogleFonts.cairo(
+                            style: TextStyle(
                               fontSize: 12,
                               color: AppColors.black,
                             ),
@@ -55,7 +54,7 @@ class ExclusiveCouponsHomePage extends StatelessWidget {
                       padding: EdgeInsets.all(15),
                       child: Text(
                         "ريال سعودي 35 خصم",
-                        style: GoogleFonts.cairo(),
+                        style: TextStyle(),
                       ),
                     ),
                   ],
@@ -90,7 +89,7 @@ class ExclusiveCouponsHomePage extends StatelessWidget {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
                       ),
-                      child: SvgPicture.asset('img/img2.svg'),
+                      child: SvgPicture.asset('assets//img2.svg'),
                     ),
                     Container(
                       color: AppColors.dottedborder,
@@ -99,7 +98,7 @@ class ExclusiveCouponsHomePage extends StatelessWidget {
                           padding: const EdgeInsets.all(10),
                           child: Text(
                             "NAMSHI12A",
-                            style: GoogleFonts.cairo(
+                            style: TextStyle(
                               fontSize: 12,
                               color: AppColors.black,
                             ),
@@ -111,7 +110,7 @@ class ExclusiveCouponsHomePage extends StatelessWidget {
                       padding: EdgeInsets.all(15),
                       child: Text(
                         "ريال سعودي 35 خصم",
-                        style: GoogleFonts.cairo(),
+                        style: TextStyle(),
                       ),
                     ),
                   ],
@@ -142,14 +141,14 @@ class ExclusiveCouponsHomePage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     LogoHomePage(
-                      imagePath: 'img/img4.svg',
+                      imagePath: 'assets/img/img4.svg',
                     ),
                     DottedBorder(
                       child: Padding(
                         padding: const EdgeInsets.all(10),
                         child: Text(
                           "NAMSHI12A",
-                          style: GoogleFonts.cairo(
+                          style: TextStyle(
                             fontSize: 12,
                             color: AppColors.black,
                           ),
@@ -160,7 +159,7 @@ class ExclusiveCouponsHomePage extends StatelessWidget {
                       padding: EdgeInsets.all(15),
                       child: Text(
                         "ريال سعودي 35 خصم",
-                        style: GoogleFonts.cairo(),
+                        style: TextStyle(),
                       ),
                     ),
                   ],

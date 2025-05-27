@@ -3,7 +3,6 @@ import 'package:ahd/components/coupons_favorites.dart';
 import 'package:ahd/components/offers_favorites.dart';
 import 'package:ahd/components/products_favorites.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class Favorites extends StatefulWidget {
   const Favorites({super.key});
@@ -30,7 +29,7 @@ class _FavoritesState extends State<Favorites> {
           centerTitle: true,
           title: Text(
             "المفضلة",
-            style: GoogleFonts.cairo(
+            style: TextStyle(
               color: AppColors.white,
             ),
           ),
