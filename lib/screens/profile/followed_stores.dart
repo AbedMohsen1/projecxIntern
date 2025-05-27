@@ -2,6 +2,7 @@ import 'package:ahd/Theme/color_managment.dart';
 import 'package:ahd/models/data_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class FollowedStores extends StatelessWidget {
   const FollowedStores({super.key});
@@ -15,7 +16,7 @@ class FollowedStores extends StatelessWidget {
         backgroundColor: AppColors.blu,
         title: Text(
           "المتاجر المتابعة",
-          style: TextStyle(color: AppColors.white),
+          style: GoogleFonts.cairo(color: AppColors.white),
         ),
       ),
       body: Column(
@@ -26,7 +27,8 @@ class FollowedStores extends StatelessWidget {
               alignment: Alignment.centerRight,
               child: Text(
                 "المتاجر المتابعة",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                style: GoogleFonts.cairo(
+                    fontSize: 18, fontWeight: FontWeight.bold),
               ),
             ),
           ),
@@ -63,7 +65,8 @@ class FollowedStores extends StatelessWidget {
               alignment: Alignment.centerRight,
               child: Text(
                 "متاجر مستحسنة لك",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                style: GoogleFonts.cairo(
+                    fontSize: 18, fontWeight: FontWeight.bold),
               ),
             ),
           ),

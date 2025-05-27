@@ -1,6 +1,7 @@
 import 'package:ahd/Theme/color_managment.dart';
 import 'package:ahd/components/logo_home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class OffersHomePage extends StatelessWidget {
   const OffersHomePage({super.key});
@@ -47,7 +48,7 @@ class OffersHomePage extends StatelessWidget {
                           ),
                           child: Text(
                             'حصرياً',
-                            style: TextStyle(
+                            style: GoogleFonts.cairo(
                               fontSize: 12,
                               color: AppColors.blu,
                               fontWeight: FontWeight.bold,
@@ -69,7 +70,7 @@ class OffersHomePage extends StatelessWidget {
                   children: [
                     Text(
                       "متجر امازون",
-                      style: const TextStyle(fontSize: 12),
+                      style: GoogleFonts.cairo(fontSize: 12),
                     ),
                     Spacer(),
                     Container(
@@ -81,7 +82,7 @@ class OffersHomePage extends StatelessWidget {
                         padding: const EdgeInsets.all(10),
                         child: Text(
                           "خصم 80%",
-                          style: TextStyle(
+                          style: GoogleFonts.cairo(
                             fontSize: 12,
                             color: AppColors.white,
                           ),
@@ -93,7 +94,7 @@ class OffersHomePage extends StatelessWidget {
                 SizedBox(height: 20),
                 Text(
                   "كاميرا رياضية تعمل تحت الماء بجودة عالية وإضاءة مع شاشة",
-                  style: const TextStyle(fontSize: 14),
+                  style: GoogleFonts.cairo(fontSize: 14),
                 ),
                 SizedBox(height: 20),
                 ElevatedButton(
@@ -107,7 +108,7 @@ class OffersHomePage extends StatelessWidget {
                   ),
                   child: Text(
                     'تفعيل العرض',
-                    style: TextStyle(color: AppColors.white),
+                    style: GoogleFonts.cairo(color: AppColors.white),
                   ),
                 ),
               ],

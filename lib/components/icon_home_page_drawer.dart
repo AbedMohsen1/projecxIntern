@@ -1,5 +1,6 @@
 import 'package:ahd/Theme/color_managment.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class IconHomePageDrawer extends StatelessWidget {
   final IconData icon;
@@ -12,28 +13,33 @@ class IconHomePageDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(20),
-      child: Center(
-        child: Row(children: [
-          Icon(icon),
-          SizedBox(
-            width: 10,
-          ),
-          if (text != null) ...[
-            const SizedBox(width: 10),
-            Text(
-              text!,
-              style: TextStyle(
-                color: AppColors.black,
-                fontSize: 14,
-                fontWeight: FontWeight.w600,
-              ),
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(10),
+          child: Row(children: [
+            Icon(icon),
+            SizedBox(
+              width: 10,
             ),
-          ],
-          Divider()
-        ]),
-      ),
+            if (text != null) ...[
+              const SizedBox(width: 10),
+              Text(
+                text!,
+                style: GoogleFonts.cairo(
+                  color: AppColors.black,
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ],
+          ]),
+        ),
+        Divider(
+          color: AppColors.border,
+          thickness: 1,
+        ),
+      ],
     );
   }
 }

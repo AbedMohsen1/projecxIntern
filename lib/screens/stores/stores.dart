@@ -5,6 +5,7 @@ import 'package:ahd/components/logo_home_page.dart';
 import 'package:ahd/models/data_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Stores extends StatefulWidget {
   const Stores({super.key});
@@ -23,7 +24,7 @@ class _StoresState extends State<Stores> {
           centerTitle: true,
           title: Text(
             "المتاجر",
-            style: TextStyle(color: AppColors.white),
+            style: GoogleFonts.cairo(color: AppColors.white),
           ),
         ),
         body: SingleChildScrollView(
@@ -35,8 +36,8 @@ class _StoresState extends State<Stores> {
                     padding: const EdgeInsets.all(20),
                     child: Text(
                       "المتاجر الأكثر شهرة",
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                      style: GoogleFonts.cairo(
+                          fontWeight: FontWeight.bold, fontSize: 18),
                     ),
                   ),
                 ],
@@ -86,26 +87,27 @@ class _StoresState extends State<Stores> {
                   alignment: Alignment.centerRight,
                   child: Text(
                     "جميع المتاجر",
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    style: GoogleFonts.cairo(
+                        fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(12.0),
+                padding: const EdgeInsets.all(20),
                 child: GridView.count(
                   crossAxisCount: 3,
-                  crossAxisSpacing: 10,
-                  mainAxisSpacing: 10,
+                  crossAxisSpacing: 20,
+                  mainAxisSpacing: 20,
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
                   children: shopLogos.map((logoPath) {
                     return Container(
                       decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(18),
-                        border: Border.all(color: Colors.grey.shade300),
+                        color: AppColors.white,
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(color: AppColors.border),
                       ),
-                      padding: EdgeInsets.all(12),
+                      padding: EdgeInsets.all(8),
                       child: SvgPicture.asset(
                         logoPath,
                         fit: BoxFit.contain,

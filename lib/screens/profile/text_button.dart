@@ -1,13 +1,19 @@
 import 'package:ahd/Theme/color_managment.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class TextButtonProfile extends StatelessWidget {
   final void Function() onPressed;
   final String title;
   final Icon? icons;
+  final Color? textColor;
 
   const TextButtonProfile(
-      {super.key, required this.onPressed, required this.title, this.icons});
+      {super.key,
+      required this.onPressed,
+      required this.title,
+      this.icons,
+      this.textColor});
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +28,8 @@ class TextButtonProfile extends StatelessWidget {
                 onPressed: onPressed,
                 child: Text(
                   title,
-                  style: TextStyle(
-                      color: AppColors.black,
+                  style: GoogleFonts.cairo(
+                      color: textColor ?? AppColors.black,
                       fontWeight: FontWeight.w600,
                       fontSize: 15),
                 )),

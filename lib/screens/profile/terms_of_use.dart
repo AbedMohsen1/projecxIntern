@@ -1,5 +1,6 @@
 import 'package:ahd/Theme/color_managment.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class TermsOfUse extends StatelessWidget {
   const TermsOfUse({super.key});
@@ -13,7 +14,7 @@ class TermsOfUse extends StatelessWidget {
         centerTitle: true,
         title: Text(
           "سياسة الاستخدام",
-          style: TextStyle(color: AppColors.white),
+          style: GoogleFonts.cairo(color: AppColors.white),
         ),
       ),
       body: SingleChildScrollView(
@@ -23,7 +24,7 @@ class TermsOfUse extends StatelessWidget {
               padding: const EdgeInsets.all(25),
               child: Text(
                 "تعميم نص يسمى الترام الأصفر أو90في بعض الوكالات في  المترو الأصفر معقولة استبدال أبجد هوز لإعطاء نظرة أكثر حداثة المحتوى. ولكن الكثير من الناس كانوا يبحثون لقراءة النص عندما كان في الفرنسية أو الإنجليزية، لم يتحقق التأثير المطلوب. العمل مع نص مقروء، التي تحتوي على الاتجاهات يمكن أن يسبب التشتت وهذا يمكن أن يساعد على التركيز علىالتخطيط. الاستفادة من أصل لاتيني والمحتوى هراء أبجد هوز يمنع القارئ من الهاء مضمون النص، وبالتالي يمكن أن تركز اهتمامها على تصميم الرسوم البيانية. والواقع أن النص أبجد هوز لديه ميزة في المقابل إلى نص عام باستخدام متغير طول كلمة لمحاكاة الإشغال الطبيعي للنموذج بحيث يطابق المنتج النهائيوضمان نشر دون تغيير في المستقبل.",
-                style: TextStyle(color: AppColors.text, fontSize: 14),
+                style: GoogleFonts.cairo(color: AppColors.text, fontSize: 14),
               ),
             ),
             Padding(
@@ -32,7 +33,7 @@ class TermsOfUse extends StatelessWidget {
                 alignment: Alignment.centerRight,
                 child: Text(
                   "ملفات الدخول",
-                  style: TextStyle(
+                  style: GoogleFonts.cairo(
                       fontSize: 18,
                       color: AppColors.black,
                       fontWeight: FontWeight.bold),
@@ -43,7 +44,7 @@ class TermsOfUse extends StatelessWidget {
               padding: const EdgeInsets.all(25),
               child: Text(
                 "تعميم نص يسمىالترام الأصفر أو90في بعض الوكالات في  المترو الأصفر معقولة استبدال أبجد هوز لإعطاء نظرة أكثر حداثة المحتوى. ولكن الكثير من الناس كانوا يبحثون لقراءة النص عندما كان في الفرنسية أو الإنجليزية، لم يتحقق التأثير المطلوب. العمل مع نص مقروء، التي تحتوي على الاتجاهات يمكن أن يسبب التشتت وهذا يمكن أن يساعد على التركيز علىالتخطيط. الاستفادة من أصل لاتيني والمحتوى هراء أبجد هوز يمنع القارئ من الهاء مضمون النص، وبالتالي يمكن أن تركز اهتمامها على تصميم الرسوم البيانية. والواقع أن النص أبجد هوز لديه ميزة في المقابل إلى نص عام باستخدام متغير طول كلمة لمحاكاة الإشغال الطبيعي للنموذج بحيث يطابق المنتج النهائيوضمان نشر دون تغيير في المستقبل.",
-                style: TextStyle(color: AppColors.text, fontSize: 14),
+                style: GoogleFonts.cairo(color: AppColors.text, fontSize: 14),
               ),
             ),
             Padding(
@@ -52,7 +53,7 @@ class TermsOfUse extends StatelessWidget {
                 alignment: Alignment.centerRight,
                 child: Text(
                   "ملفات تعريف الارتباط وإشارات الويب",
-                  style: TextStyle(
+                  style: GoogleFonts.cairo(
                       fontSize: 18,
                       color: AppColors.black,
                       fontWeight: FontWeight.bold),
@@ -63,7 +64,7 @@ class TermsOfUse extends StatelessWidget {
               padding: const EdgeInsets.all(25),
               child: Text(
                 "تعميم نص يسمىالترام الأصفر أو90في بعض الوكالات في  المترو الأصفر معقولة استبدال أبجد هوز لإعطاء نظرة أكثر حداثة المحتوى. ولكن الكثير من الناس كانوا يبحثون لقراءة النص عندما كان في الفرنسية أو الإنجليزية، لم يتحقق التأثير المطلوب. العمل مع نص مقروء، التي تحتوي على الاتجاهات يمكن أن يسبب التشتت وهذا يمكن أن يساعد على التركيز علىالتخطيط. الاستفادة من أصل لاتيني والمحتوى هراء أبجد هوز يمنع القارئ من الهاء مضمون النص، وبالتالي يمكن أن تركز اهتمامها على تصميم الرسوم البيانية. والواقع أن النص أبجد هوز لديه ميزة في المقابل إلى نص عام باستخدام متغير طول كلمة لمحاكاة الإشغال الطبيعي للنموذج بحيث يطابق المنتج النهائيوضمان نشر دون تغيير في المستقبل.",
-                style: TextStyle(color: AppColors.text, fontSize: 14),
+                style: GoogleFonts.cairo(color: AppColors.text, fontSize: 14),
               ),
             ),
             SizedBox(
@@ -73,7 +74,7 @@ class TermsOfUse extends StatelessWidget {
               padding: const EdgeInsets.all(25),
               child: Text(
                 "تعميم نص يسمىالترام الأصفر أو90في بعض الوكالات في  المترو الأصفر معقولة استبدال أبجد هوز لإعطاء نظرة أكثر حداثة المحتوى. ولكن الكثير من الناس كانوا يبحثون لقراءة النص عندما كان في الفرنسية أو الإنجليزية، لم يتحقق التأثير المطلوب. العمل مع نص مقروء، التي تحتوي على الاتجاهات يمكن أن يسبب التشتت وهذا يمكن أن يساعد على التركيز علىالتخطيط. الاستفادة من أصل لاتيني والمحتوى هراء أبجد هوز يمنع القارئ من الهاء مضمون النص، وبالتالي يمكن أن تركز اهتمامها على تصميم الرسوم البيانية. والواقع أن النص أبجد هوز لديه ميزة في المقابل إلى نص عام باستخدام متغير طول كلمة لمحاكاة الإشغال الطبيعي للنموذج بحيث يطابق المنتج النهائيوضمان نشر دون تغيير في المستقبل.",
-                style: TextStyle(color: AppColors.text, fontSize: 14),
+                style: GoogleFonts.cairo(color: AppColors.text, fontSize: 14),
               ),
             ),
           ],

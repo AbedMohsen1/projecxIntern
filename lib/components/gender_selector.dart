@@ -1,5 +1,6 @@
 import 'package:ahd/theme/color_managment.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 enum Gender { male, female }
 
@@ -44,7 +45,7 @@ class GenderSelectorState extends State<GenderSelector> {
                     SizedBox(width: 8),
                     Text(
                       "ذكر",
-                      style: TextStyle(
+                      style: GoogleFonts.cairo(
                         color: selectedGender == Gender.male
                             ? AppColors.white
                             : AppColors.blu,
@@ -84,7 +85,7 @@ class GenderSelectorState extends State<GenderSelector> {
                     SizedBox(width: 8),
                     Text(
                       "أنثى",
-                      style: TextStyle(
+                      style: GoogleFonts.cairo(
                         color: selectedGender == Gender.female
                             ? AppColors.white
                             : AppColors.blu,

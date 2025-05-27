@@ -3,7 +3,7 @@ import 'package:ahd/theme/color_managment.dart';
 import 'package:ahd/screens/auth/login.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:hexcolor/hexcolor.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
@@ -56,7 +56,7 @@ class _SignUpState extends State<SignUp> {
                 SizedBox(width: 20),
                 Text(
                   "حصيلة",
-                  style: TextStyle(
+                  style: GoogleFonts.cairo(
                     fontSize: 30,
                     letterSpacing: 0.8,
                     fontWeight: FontWeight.w600,
@@ -69,7 +69,8 @@ class _SignUpState extends State<SignUp> {
               padding: EdgeInsets.all(0),
               child: Text(
                 "إنشاء حساب جديد",
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+                style: GoogleFonts.cairo(
+                    fontSize: 24, fontWeight: FontWeight.w600),
               ),
             ),
             Container(height: 50),
@@ -166,7 +167,7 @@ class _SignUpState extends State<SignUp> {
                   ),
                   child: Text(
                     "نسيت كلمة المرور",
-                    style: TextStyle(color: AppColors.black),
+                    style: GoogleFonts.cairo(color: AppColors.black),
                   ),
                 ),
               ),
@@ -178,7 +179,7 @@ class _SignUpState extends State<SignUp> {
                   _checkData();
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: AppColors.black,
+                  backgroundColor: AppColors.blu,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),
@@ -186,7 +187,7 @@ class _SignUpState extends State<SignUp> {
                 ),
                 child: Text(
                   'انشاء حساب',
-                  style: TextStyle(color: HexColor("#FFFFFF")),
+                  style: GoogleFonts.cairo(color: AppColors.white),
                 ),
               ),
             ),
@@ -194,7 +195,8 @@ class _SignUpState extends State<SignUp> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('تسجيل الدخول', style: TextStyle(color: AppColors.blu)),
+                Text('تسجيل الدخول',
+                    style: GoogleFonts.cairo(color: AppColors.blu)),
                 TextButton(
                   onPressed: () {
                     Navigator.push(
@@ -210,7 +212,7 @@ class _SignUpState extends State<SignUp> {
                   ),
                   child: Text(
                     'هل لديك حساب بالفعل ؟',
-                    style: TextStyle(color: AppColors.black),
+                    style: GoogleFonts.cairo(color: AppColors.black),
                   ),
                 ),
               ],

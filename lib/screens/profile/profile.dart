@@ -9,6 +9,7 @@ import 'package:ahd/screens/profile/terms_of_use.dart';
 import 'package:ahd/screens/profile/text_button.dart';
 import 'package:ahd/theme/color_managment.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -26,7 +27,7 @@ class _ProfileState extends State<Profile> {
         centerTitle: true,
         title: Text(
           "البروفايل",
-          style: TextStyle(color: AppColors.white),
+          style: GoogleFonts.cairo(color: AppColors.white),
         ),
       ),
       backgroundColor: AppColors.white,
@@ -44,10 +45,11 @@ class _ProfileState extends State<Profile> {
                     // Image.asset('img/Group13641.png'),
                     Text(
                       "محمد عبدالله",
-                      style: TextStyle(
-                          color: AppColors.black,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold),
+                      style: GoogleFonts.cairo(
+                        color: AppColors.black,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     TextButtonProfile(
                         onPressed: () {},
@@ -112,6 +114,9 @@ class _ProfileState extends State<Profile> {
                         onPressed: () {},
                         title: 'الاعدادات',
                         icons: Icon(Icons.settings)),
+                    SizedBox(
+                      height: 50,
+                    ),
                     TextButtonProfile(
                         onPressed: () {
                           Navigator.push(
@@ -156,10 +161,17 @@ class _ProfileState extends State<Profile> {
                         onPressed: () {},
                         title: 'الأسئلة الشائعة',
                         icons: Icon(Icons.help_outline)),
+                    SizedBox(
+                      height: 50,
+                    ),
                     TextButtonProfile(
+                        textColor: Colors.red,
                         onPressed: () {},
                         title: 'تسجيل الخروج',
-                        icons: Icon(Icons.logout)),
+                        icons: Icon(
+                          Icons.logout,
+                          color: Colors.red,
+                        )),
                   ],
                 ),
               )

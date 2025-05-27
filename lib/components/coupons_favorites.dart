@@ -1,5 +1,6 @@
 import 'package:ahd/models/data_model.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 // import 'package:flutter_svg/svg.dart';
 
 class Coupons extends StatelessWidget {
@@ -47,7 +48,7 @@ class Coupons extends StatelessWidget {
                                   // SvgPicture.asset('img/Tag.svg'),
                                   Text(
                                 offer.discountLabel,
-                                style: TextStyle(
+                                style: GoogleFonts.cairo(
                                     fontSize: 12, color: Colors.white),
                               ),
                             ),
@@ -63,7 +64,7 @@ class Coupons extends StatelessWidget {
                             ),
                             child: Text(
                               "حصريًا",
-                              style: TextStyle(
+                              style: GoogleFonts.cairo(
                                   fontSize: 12, color: Colors.blue.shade800),
                             ),
                           ),
@@ -83,7 +84,7 @@ class Coupons extends StatelessWidget {
                       SizedBox(height: 20),
                       Text(
                         offer.title,
-                        style: TextStyle(fontSize: 12, height: 1.6),
+                        style: GoogleFonts.cairo(fontSize: 12, height: 1.6),
                       ),
                       SizedBox(height: 20),
                     ],

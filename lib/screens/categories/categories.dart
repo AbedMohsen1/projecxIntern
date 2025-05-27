@@ -5,6 +5,7 @@ import 'package:ahd/models/data_model.dart';
 import 'package:ahd/screens/categories/categories_home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Categories extends StatefulWidget {
   const Categories({super.key});
@@ -22,8 +23,8 @@ class _CategoriesState extends State<Categories> {
           backgroundColor: AppColors.blu,
           centerTitle: true,
           title: Text(
-            "المتاجر",
-            style: TextStyle(color: AppColors.white),
+            "التصنيفات",
+            style: GoogleFonts.cairo(color: AppColors.white),
           ),
         ),
         body: SingleChildScrollView(
@@ -35,8 +36,8 @@ class _CategoriesState extends State<Categories> {
                     padding: const EdgeInsets.all(20),
                     child: Text(
                       "المتاجر الأكثر شهرة",
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                      style: GoogleFonts.cairo(
+                          fontWeight: FontWeight.bold, fontSize: 18),
                     ),
                   ),
                 ],
@@ -46,6 +47,9 @@ class _CategoriesState extends State<Categories> {
                 child: Row(
                   children: [
                     CategoriesHomePage(),
+                    SizedBox(
+                      width: 20,
+                    ),
                     CategoriesHomePage(),
                   ],
                 ),
@@ -56,28 +60,28 @@ class _CategoriesState extends State<Categories> {
                   alignment: Alignment.centerRight,
                   child: Text(
                     "جميع المتاجر",
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    style: GoogleFonts.cairo(
+                        fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(15),
+                padding: const EdgeInsets.all(20),
                 child: GridView.count(
                   crossAxisCount: 2,
-                  crossAxisSpacing: 10,
-                  mainAxisSpacing: 10,
+                  crossAxisSpacing: 20,
+                  mainAxisSpacing: 20,
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
-                  childAspectRatio: 3.5, // يجعل العنصر أفقي مثل ما بالصورة
+                  childAspectRatio: 3.0,
                   children: categories.map((item) {
                     return Container(
                       decoration: BoxDecoration(
                         border: Border.all(color: AppColors.border),
-                        borderRadius: BorderRadius.circular(25),
-                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20),
+                        color: AppColors.white,
                       ),
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+                      padding: EdgeInsets.symmetric(horizontal: 30),
                       child: Row(
                         children: [
                           SvgPicture.asset(
@@ -85,11 +89,12 @@ class _CategoriesState extends State<Categories> {
                             height: 24,
                             width: 24,
                           ),
-                          SizedBox(width: 8),
+                          SizedBox(width: 5),
                           Expanded(
                             child: Text(
                               item["name"]!,
-                              style: TextStyle(color: AppColors.black),
+                              style: GoogleFonts.cairo(
+                                  color: AppColors.black, fontSize: 12),
                               overflow: TextOverflow.ellipsis,
                             ),
                           ),

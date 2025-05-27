@@ -1,6 +1,7 @@
 import 'package:ahd/Theme/color_managment.dart';
 import 'package:ahd/components/logo_home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CouponsPageHome extends StatelessWidget {
   const CouponsPageHome({super.key});
@@ -46,7 +47,7 @@ class CouponsPageHome extends StatelessWidget {
                           ),
                           child: Text(
                             'حصرياً',
-                            style: TextStyle(
+                            style: GoogleFonts.cairo(
                               fontSize: 12,
                               color: AppColors.blu,
                               fontWeight: FontWeight.bold,
@@ -68,7 +69,7 @@ class CouponsPageHome extends StatelessWidget {
                   children: [
                     Text(
                       "متجر امازون",
-                      style: const TextStyle(fontSize: 12),
+                      style: GoogleFonts.cairo(fontSize: 12),
                     ),
                     Spacer(),
                     Container(
@@ -80,7 +81,7 @@ class CouponsPageHome extends StatelessWidget {
                         padding: const EdgeInsets.all(10),
                         child: Text(
                           "خصم 80%",
-                          style: TextStyle(
+                          style: GoogleFonts.cairo(
                             fontSize: 12,
                             color: AppColors.white,
                           ),
@@ -92,7 +93,7 @@ class CouponsPageHome extends StatelessWidget {
                 SizedBox(height: 20),
                 Text(
                   "كاميرا رياضية تعمل تحت الماء بجودة عالية وإضاءة مع شاشة",
-                  style: const TextStyle(fontSize: 14),
+                  style: GoogleFonts.cairo(fontSize: 14),
                 ),
                 SizedBox(height: 20),
                 ElevatedButton(
@@ -106,7 +107,7 @@ class CouponsPageHome extends StatelessWidget {
                   ),
                   child: Text(
                     'إظهار القسيمة',
-                    style: TextStyle(color: AppColors.white),
+                    style: GoogleFonts.cairo(color: AppColors.white),
                   ),
                 ),
               ],
