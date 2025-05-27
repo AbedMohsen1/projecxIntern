@@ -39,10 +39,10 @@ class _HomePageState extends State<HomePage> {
                   SizedBox(width: 20),
                   Text(
                     "حصيلة",
-                    style: GoogleFonts.cairo(
+                    style: TextStyle(
                       fontSize: 30,
-                      letterSpacing: 0.8,
-                      fontWeight: FontWeight.w600,
+                      fontWeight: FontWeight.w500,
+                      color: AppColors.black,
                     ),
                   ),
                 ],

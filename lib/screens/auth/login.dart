@@ -1,6 +1,6 @@
 import 'package:ahd/theme/color_managment.dart';
 import 'package:ahd/screens/auth/sign_up.dart';
-import 'package:ahd/screens/homepage/bottom_main_screen.dart';
+import 'package:ahd/screens/bottom_main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -53,10 +53,10 @@ class _LoginState extends State<Login> {
                 SizedBox(width: 20),
                 Text(
                   "حصيلة",
-                  style: GoogleFonts.cairo(
+                  style: TextStyle(
                     fontSize: 30,
-                    letterSpacing: 0.8,
-                    fontWeight: FontWeight.w600,
+                    fontWeight: FontWeight.w500,
+                    color: AppColors.black,
                   ),
                 ),
               ],

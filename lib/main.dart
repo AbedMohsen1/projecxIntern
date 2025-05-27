@@ -1,5 +1,5 @@
 import 'package:ahd/router/routers.dart';
-import 'package:ahd/screens/homepage/bottom_main_screen.dart';
+import 'package:ahd/screens/bottom_main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -19,6 +19,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     final Routers routers = Routers();
     return MaterialApp(
+      theme: ThemeData(fontFamily: 'Zain'),
       home: const BottomBarScreen(),
       locale: Locale('ar'),
       supportedLocales: [Locale('ar')],
