@@ -12,10 +12,12 @@ class IconHomePageDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return Column(
       children: [
         Padding(
-          padding: EdgeInsets.all(10),
+          padding: EdgeInsets.all(screenWidth * 0.02),
           child: Row(children: [
             Icon(icon),
             SizedBox(

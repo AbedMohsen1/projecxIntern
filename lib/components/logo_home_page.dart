@@ -13,9 +13,11 @@ class LogoHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return Center(
       child: Container(
-        padding: EdgeInsets.all(20),
+        padding: EdgeInsets.all(screenWidth * 0.07),
         decoration: decoration,
         child: SvgPicture.asset(imagePath),
       ),

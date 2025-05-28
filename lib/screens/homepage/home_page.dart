@@ -28,10 +28,10 @@ class _HomePageState extends State<HomePage> {
       drawer: Drawer(
         backgroundColor: AppColors.white,
         child: ListView(
-          padding: EdgeInsets.symmetric(vertical: screenWidth * 001),
+          padding: EdgeInsets.symmetric(),
           children: [
             Padding(
-              padding: EdgeInsets.all(0),
+              padding: EdgeInsets.all(screenWidth * 0.1),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

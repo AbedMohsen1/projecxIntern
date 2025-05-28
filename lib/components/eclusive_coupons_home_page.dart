@@ -9,10 +9,12 @@ class ExclusiveCouponsHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return Row(
       children: [
         Padding(
-          padding: const EdgeInsets.all(20),
+          padding: EdgeInsets.all(screenWidth * 0.03),
           child: Row(
             children: [
               Container(
@@ -64,7 +66,7 @@ class ExclusiveCouponsHomePage extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(20),
+          padding: EdgeInsets.all(screenWidth * 0.03),
           child: Row(
             children: [
               Container(
@@ -116,7 +118,7 @@ class ExclusiveCouponsHomePage extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(20),
+          padding: EdgeInsets.all(screenWidth * 0.03),
           child: Row(
             children: [
               Container(

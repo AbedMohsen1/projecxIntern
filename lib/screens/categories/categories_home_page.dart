@@ -7,54 +7,50 @@ class CategoriesHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
         children: [
           Container(
-            padding: EdgeInsets.all(15),
+            padding: EdgeInsets.all(screenWidth * 0.04),
             decoration: BoxDecoration(
               border: Border.all(color: AppColors.border),
               borderRadius: BorderRadius.circular(20),
             ),
-            child: Padding(
-              padding: const EdgeInsets.all(0),
-              child: Row(
-                children: [
-                  SvgPicture.asset('assets/img/img10.svg'),
-                  Text(
-                    "الصحة والجمال",
-                    style: TextStyle(
-                        color: AppColors.black,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 12),
-                  ),
-                ],
-              ),
+            child: Row(
+              children: [
+                SvgPicture.asset('assets/img/img10.svg'),
+                Text(
+                  "الصحة والجمال",
+                  style: TextStyle(
+                      color: AppColors.black,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 12),
+                ),
+              ],
             ),
           ),
           SizedBox(width: 20),
           Container(
-            padding: EdgeInsets.all(15),
+            padding: EdgeInsets.all(screenWidth * 0.04),
             decoration: BoxDecoration(
               border: Border.all(color: AppColors.border),
               borderRadius: BorderRadius.circular(20),
             ),
-            child: Padding(
-              padding: const EdgeInsets.all(0),
-              child: Row(
-                children: [
-                  SvgPicture.asset('assets/img/img10.svg'),
-                  SizedBox(width: 5),
-                  Text(
-                    "الصحة والجمال",
-                    style: TextStyle(
-                        color: AppColors.black,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 12),
-                  ),
-                ],
-              ),
+            child: Row(
+              children: [
+                SvgPicture.asset('assets/img/img10.svg'),
+                SizedBox(width: 5),
+                Text(
+                  "الصحة والجمال",
+                  style: TextStyle(
+                      color: AppColors.black,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 12),
+                ),
+              ],
             ),
           ),
         ],
