@@ -6,8 +6,10 @@ class Products extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return Padding(
-      padding: const EdgeInsets.all(12.0),
+      padding: EdgeInsets.all(screenWidth * 0.05),
       child: ListView.builder(
         itemCount: products.length,
         itemBuilder: (context, index) {

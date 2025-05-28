@@ -6,13 +6,15 @@ class ProductsHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return Padding(
-      padding: const EdgeInsets.all(20),
+      padding: EdgeInsets.all(screenWidth * 0.05),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Container(
-            width: 200,
+            width: screenWidth / 1.7,
             margin: const EdgeInsets.symmetric(vertical: 12),
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(

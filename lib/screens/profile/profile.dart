@@ -20,6 +20,8 @@ class Profile extends StatefulWidget {
 class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppColors.blu,
@@ -35,7 +37,7 @@ class _ProfileState extends State<Profile> {
           child: Column(
             children: [
               Padding(
-                padding: EdgeInsets.all(30),
+                padding: EdgeInsets.all(screenWidth * 0.07),
                 child: Column(
                   children: [
                     CircleAvatar(),

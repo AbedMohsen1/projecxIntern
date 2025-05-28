@@ -17,7 +17,7 @@ class IconHomePageDrawer extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: EdgeInsets.all(screenWidth * 0.02),
+          padding: EdgeInsets.all(screenWidth * 0.03),
           child: Row(children: [
             Icon(icon),
             SizedBox(

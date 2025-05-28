@@ -2,7 +2,7 @@ import 'package:ahd/Theme/color_managment.dart';
 import 'package:ahd/components/logo_home_page.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+// import 'package:flutter_svg/svg.dart';
 
 class ExclusiveCouponsHomePage extends StatelessWidget {
   const ExclusiveCouponsHomePage({super.key});
@@ -18,7 +18,7 @@ class ExclusiveCouponsHomePage extends StatelessWidget {
           child: Row(
             children: [
               Container(
-                width: 200,
+                width: screenWidth / 2,
                 margin: const EdgeInsets.symmetric(vertical: 12),
                 padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
@@ -70,7 +70,7 @@ class ExclusiveCouponsHomePage extends StatelessWidget {
           child: Row(
             children: [
               Container(
-                width: 200,
+                width: screenWidth / 2,
                 margin: const EdgeInsets.symmetric(vertical: 12),
                 padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
@@ -122,7 +122,7 @@ class ExclusiveCouponsHomePage extends StatelessWidget {
           child: Row(
             children: [
               Container(
-                width: 200,
+                width: screenWidth / 2,
                 margin: const EdgeInsets.symmetric(vertical: 12),
                 padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(

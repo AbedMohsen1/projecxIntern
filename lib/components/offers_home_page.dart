@@ -14,7 +14,7 @@ class OffersHomePage extends StatelessWidget {
       child: Row(
         children: [
           Container(
-            width: 200,
+            width: screenWidth / 1.7,
             margin: const EdgeInsets.symmetric(vertical: 12),
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(

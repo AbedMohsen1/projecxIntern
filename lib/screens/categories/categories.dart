@@ -14,6 +14,8 @@ class Categories extends StatefulWidget {
 class _CategoriesState extends State<Categories> {
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
         backgroundColor: AppColors.white,
         appBar: AppBar(
@@ -30,7 +32,7 @@ class _CategoriesState extends State<Categories> {
               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.all(20),
+                    padding: EdgeInsets.all(screenWidth * 0.05),
                     child: Text(
                       "المتاجر الأكثر شهرة",
                       style:
@@ -52,7 +54,7 @@ class _CategoriesState extends State<Categories> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(20),
+                padding: EdgeInsets.all(screenWidth * 0.05),
                 child: Align(
                   alignment: Alignment.centerRight,
                   child: Text(
@@ -62,7 +64,7 @@ class _CategoriesState extends State<Categories> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(20),
+                padding: EdgeInsets.all(screenWidth * 0.035),
                 child: GridView.count(
                   crossAxisCount: 2,
                   crossAxisSpacing: 20,

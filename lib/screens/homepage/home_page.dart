@@ -22,7 +22,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
-    double screenheight = MediaQuery.of(context).size.height;
 
     return Scaffold(
       drawer: Drawer(
@@ -144,7 +143,7 @@ class _HomePageState extends State<HomePage> {
           backgroundColor: AppColors.white,
           actions: [
             Padding(
-              padding: EdgeInsets.only(left: screenWidth * 0.1),
+              padding: EdgeInsets.only(left: screenWidth * 0.03),
               child: Image.asset(
                 'assets/img/img15.jpg',
               ),
@@ -175,10 +174,10 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: AppColors.white,
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.02),
+          padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.03),
           child: Column(
             children: [
-              Container(height: 30),
+              SizedBox(height: 20),
               TextField(
                 decoration: InputDecoration(
                   hintText: 'ابحث عن المتاجر-العلامات التجارية-التصنيفات',
@@ -243,7 +242,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-              SizedBox(height: 50),
+              SizedBox(height: 20),
               Row(
                 children: [
                   SizedBox(width: 20),
@@ -266,7 +265,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ],
               ),
-              SizedBox(height: 30),
+              SizedBox(height: 20),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
@@ -306,7 +305,7 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
-              SizedBox(height: 30),
+              SizedBox(height: 20),
               Row(
                 children: [
                   SizedBox(width: 20),
@@ -328,12 +327,12 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ],
               ),
-              SizedBox(height: 30),
+              SizedBox(height: 20),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: ExclusiveCouponsHomePage(),
               ),
-              SizedBox(height: 30),
+              SizedBox(height: 20),
               Row(
                 children: [
                   SizedBox(width: 20),
@@ -355,9 +354,9 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ],
               ),
-              SizedBox(height: 30),
+              SizedBox(height: 20),
               CategoriesHomePage(),
-              SizedBox(height: 30),
+              SizedBox(height: 20),
               Row(
                 children: [
                   SizedBox(width: 20),
@@ -384,12 +383,11 @@ class _HomePageState extends State<HomePage> {
                 child: Row(
                   children: [
                     OffersHomePage(),
-                    SizedBox(width: 20),
                     OffersHomePage(),
                   ],
                 ),
               ),
-              SizedBox(height: 30),
+              SizedBox(height: 20),
               Row(
                 children: [
                   SizedBox(width: 20),
@@ -416,12 +414,11 @@ class _HomePageState extends State<HomePage> {
                 child: Row(
                   children: [
                     CouponsPageHome(),
-                    SizedBox(width: 20),
                     CouponsPageHome(),
                   ],
                 ),
               ),
-              SizedBox(height: 30),
+              SizedBox(height: 20),
               Row(
                 children: [
                   SizedBox(width: 20),
@@ -448,7 +445,6 @@ class _HomePageState extends State<HomePage> {
                 child: Row(
                   children: [
                     ProductsHomePage(),
-                    SizedBox(width: 20),
                     ProductsHomePage(),
                   ],
                 ),
