@@ -84,12 +84,8 @@ class ExclusiveCouponsHomePage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Container(
-                      padding: EdgeInsets.all(19),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: SvgPicture.asset('assets/img2.svg'),
+                    LogoHomePage(
+                      imagePath: 'assets/img/img2.svg',
                     ),
                     Container(
                       color: AppColors.dottedborder,
@@ -143,14 +139,17 @@ class ExclusiveCouponsHomePage extends StatelessWidget {
                     LogoHomePage(
                       imagePath: 'assets/img/img4.svg',
                     ),
-                    DottedBorder(
-                      child: Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: Text(
-                          "NAMSHI12A",
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: AppColors.black,
+                    Container(
+                      color: AppColors.dottedborder,
+                      child: DottedBorder(
+                        child: Padding(
+                          padding: const EdgeInsets.all(10),
+                          child: Text(
+                            "NAMSHI12A",
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: AppColors.black,
+                            ),
                           ),
                         ),
                       ),
