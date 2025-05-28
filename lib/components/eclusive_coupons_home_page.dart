@@ -89,7 +89,7 @@ class ExclusiveCouponsHomePage extends StatelessWidget {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
                       ),
-                      child: SvgPicture.asset('assets//img2.svg'),
+                      child: SvgPicture.asset('assets/img2.svg'),
                     ),
                     Container(
                       color: AppColors.dottedborder,

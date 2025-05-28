@@ -60,7 +60,9 @@ class ProductsHomePage extends StatelessWidget {
                     ),
                   ),
                 SizedBox(height: 20),
-                Image.asset('assets//img14.jpg'),
+                Image.asset(
+                  'assets/img/img14.jpg',
+                ),
                 SizedBox(height: 30),
                 Row(
                   children: [
