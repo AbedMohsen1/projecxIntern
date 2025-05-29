@@ -2,6 +2,8 @@
 
 import 'package:ahd/components/gender_selector.dart';
 import 'package:ahd/theme/color_managment.dart';
+import 'package:ahd/translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter_svg/svg.dart';
 
@@ -44,29 +46,32 @@ class _InfoState extends State<Info> {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       backgroundColor: AppColors.white,
       appBar: AppBar(
         backgroundColor: AppColors.blu,
-        automaticallyImplyLeading: false,
+        automaticallyImplyLeading: true,
         centerTitle: true,
         title: Text(
-          "البيانات الشخصية",
+          LocaleKeys.personal_data.tr(),
           style: TextStyle(color: AppColors.white),
         ),
       ),
       body: Center(
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.all(20),
-              child: Align(
-                alignment: Alignment.centerRight,
-                child: Text(
-                  "البيانات الشخصية",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            Row(
+              children: [
+                Padding(
+                  padding: EdgeInsets.all(screenWidth * 0.05),
+                  child: Text(
+                    LocaleKeys.personal_data.tr(),
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                  ),
                 ),
-              ),
+              ],
             ),
             // SvgPicture.asset('assets/img/Group13641'),
             CircleAvatar(),
@@ -74,10 +79,14 @@ class _InfoState extends State<Info> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Icon(Icons.edit),
-                Text("تحديث الصورة"),
+                Text(
+                  LocaleKeys.update_image.tr(),
+                ),
               ],
             ),
-            Text("محمد عبدالله"),
+            Text(
+              LocaleKeys.mohammed_abdullah.tr(),
+            ),
             Padding(
               padding: const EdgeInsets.all(20),
               child: TextField(
@@ -85,7 +94,7 @@ class _InfoState extends State<Info> {
                 keyboardType: TextInputType.emailAddress,
                 showCursor: true,
                 decoration: InputDecoration(
-                  hintText: 'اسم المستخدم',
+                  hintText: LocaleKeys.user_name.tr(),
                   helperStyle: const TextStyle(
                     color: Colors.black45,
                     fontWeight: FontWeight.w300,
@@ -111,7 +120,7 @@ class _InfoState extends State<Info> {
                 keyboardType: TextInputType.emailAddress,
                 showCursor: true,
                 decoration: InputDecoration(
-                  hintText: 'الايميل',
+                  hintText: LocaleKeys.Email.tr(),
                   helperStyle: const TextStyle(
                     color: Colors.black45,
                     fontWeight: FontWeight.w300,
@@ -137,7 +146,7 @@ class _InfoState extends State<Info> {
                 keyboardType: TextInputType.emailAddress,
                 showCursor: true,
                 decoration: InputDecoration(
-                  hintText: 'رقم الجوال',
+                  hintText: LocaleKeys.mobile_number.tr(),
                   helperStyle: const TextStyle(
                     color: Colors.black45,
                     fontWeight: FontWeight.w300,
@@ -163,7 +172,7 @@ class _InfoState extends State<Info> {
                 keyboardType: TextInputType.emailAddress,
                 showCursor: true,
                 decoration: InputDecoration(
-                  hintText: 'تاريخ الميلاد',
+                  hintText: LocaleKeys.date_of_birth.tr(),
                   helperStyle: const TextStyle(
                     color: Colors.black45,
                     fontWeight: FontWeight.w300,
@@ -198,7 +207,7 @@ class _InfoState extends State<Info> {
                   minimumSize: const Size(double.infinity, 48),
                 ),
                 child: Text(
-                  'تحديث',
+                  LocaleKeys.to_update.tr(),
                   style: TextStyle(color: AppColors.white),
                 ),
               ),

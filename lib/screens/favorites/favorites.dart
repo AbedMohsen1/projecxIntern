@@ -2,6 +2,8 @@ import 'package:ahd/Theme/color_managment.dart';
 import 'package:ahd/components/coupons_favorites.dart';
 import 'package:ahd/components/offers_favorites.dart';
 import 'package:ahd/components/products_favorites.dart';
+import 'package:ahd/translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class Favorites extends StatefulWidget {
@@ -20,15 +22,9 @@ class _FavoritesState extends State<Favorites> {
         backgroundColor: AppColors.white,
         appBar: AppBar(
           backgroundColor: AppColors.blu,
-          leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: Icon(Icons.arrow_forward_ios),
-          ),
           centerTitle: true,
           title: Text(
-            "المفضلة",
+            LocaleKeys.favorites.tr(),
             style: TextStyle(
               color: AppColors.white,
             ),
@@ -36,9 +32,15 @@ class _FavoritesState extends State<Favorites> {
           bottom: TabBar(
             indicatorColor: Colors.white,
             tabs: [
-              Tab(text: "العروض"),
-              Tab(text: "الكوبونات"),
-              Tab(text: "المنتجات"),
+              Tab(
+                text: LocaleKeys.offers.tr(),
+              ),
+              Tab(
+                text: LocaleKeys.coupons.tr(),
+              ),
+              Tab(
+                text: LocaleKeys.products.tr(),
+              ),
             ],
           ),
         ),

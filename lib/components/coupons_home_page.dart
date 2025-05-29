@@ -1,5 +1,7 @@
 import 'package:ahd/Theme/color_managment.dart';
 import 'package:ahd/components/logo_home_page.dart';
+import 'package:ahd/translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class CouponsPageHome extends StatelessWidget {
@@ -47,7 +49,7 @@ class CouponsPageHome extends StatelessWidget {
                             ),
                           ),
                           child: Text(
-                            'حصرياً',
+                            LocaleKeys.exclusively.tr(),
                             style: TextStyle(
                               fontSize: 12,
                               color: AppColors.blu,
@@ -69,7 +71,7 @@ class CouponsPageHome extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      "متجر امازون",
+                      LocaleKeys.amazon_store.tr(),
                       style: TextStyle(fontSize: 12),
                     ),
                     Spacer(),
@@ -81,7 +83,7 @@ class CouponsPageHome extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.all(10),
                         child: Text(
-                          "خصم 80%",
+                          LocaleKeys.discount.tr(),
                           style: TextStyle(
                             fontSize: 12,
                             color: AppColors.white,
@@ -93,7 +95,7 @@ class CouponsPageHome extends StatelessWidget {
                 ),
                 SizedBox(height: 20),
                 Text(
-                  "كاميرا رياضية تعمل تحت الماء بجودة عالية وإضاءة مع شاشة",
+                  LocaleKeys.high_quality.tr(),
                   style: TextStyle(fontSize: 14),
                 ),
                 SizedBox(height: 20),
@@ -107,7 +109,7 @@ class CouponsPageHome extends StatelessWidget {
                     backgroundColor: AppColors.blu2,
                   ),
                   child: Text(
-                    'إظهار القسيمة',
+                    LocaleKeys.show_coupon.tr(),
                     style: TextStyle(color: AppColors.white),
                   ),
                 ),

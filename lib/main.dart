@@ -13,7 +13,7 @@ void main() async {
       supportedLocales: [Locale('en'), Locale('ar')],
       path: 'assets/translations',
       fallbackLocale: Locale('ar'),
-      child: MyApp(),
+      child: const MyApp(),
     ),
   );
 }
@@ -31,7 +31,7 @@ class _MyAppState extends State<MyApp> {
     final Routers routers = Routers();
     return MaterialApp(
       theme: ThemeData(fontFamily: 'Cairo'),
-      home: const BottomBarScreen(),
+      home: BottomBarScreen(),
       locale: context.locale,
       supportedLocales: context.supportedLocales,
       localizationsDelegates: context.localizationDelegates,

@@ -1,6 +1,8 @@
 import 'package:ahd/Theme/color_managment.dart';
 import 'package:ahd/components/logo_home_page.dart';
 import 'package:ahd/models/data_model.dart';
+import 'package:ahd/translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -22,7 +24,7 @@ class _StoresState extends State<Stores> {
           backgroundColor: AppColors.blu,
           centerTitle: true,
           title: Text(
-            "المتاجر",
+            LocaleKeys.stores.tr(),
             style: TextStyle(color: AppColors.white),
           ),
         ),
@@ -34,7 +36,7 @@ class _StoresState extends State<Stores> {
                   Padding(
                     padding: EdgeInsets.all(screenWidth * 0.05),
                     child: Text(
-                      "المتاجر الأكثر شهرة",
+                      LocaleKeys.most_popular_stores.tr(),
                       style:
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                     ),
@@ -80,15 +82,17 @@ class _StoresState extends State<Stores> {
                   ],
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.all(screenWidth * 0.05),
-                child: Align(
-                  alignment: Alignment.centerRight,
-                  child: Text(
-                    "جميع المتاجر",
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              Row(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.all(screenWidth * 0.05),
+                    child: Text(
+                      LocaleKeys.all_stores.tr(),
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                    ),
                   ),
-                ),
+                ],
               ),
               Padding(
                 padding: EdgeInsets.all(screenWidth * 0.05),

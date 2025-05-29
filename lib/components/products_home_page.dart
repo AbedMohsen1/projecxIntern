@@ -1,4 +1,6 @@
 import 'package:ahd/Theme/color_managment.dart';
+import 'package:ahd/translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class ProductsHomePage extends StatelessWidget {
@@ -47,7 +49,7 @@ class ProductsHomePage extends StatelessWidget {
                             ),
                           ),
                           child: Text(
-                            'حصرياً',
+                            LocaleKeys.exclusively.tr(),
                             style: TextStyle(
                               fontSize: 12,
                               color: AppColors.blu,
@@ -69,7 +71,7 @@ class ProductsHomePage extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      "متجر امازون",
+                      LocaleKeys.amazon_store.tr(),
                       style: TextStyle(fontSize: 12),
                     ),
                     Spacer(),
@@ -81,7 +83,7 @@ class ProductsHomePage extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.all(10),
                         child: Text(
-                          "خصم 80%",
+                          LocaleKeys.discount.tr(),
                           style: TextStyle(
                             fontSize: 12,
                             color: AppColors.white,
@@ -93,12 +95,12 @@ class ProductsHomePage extends StatelessWidget {
                 ),
                 SizedBox(height: 20),
                 Text(
-                  "كاميرا رياضية تعمل تحت الماء بجودة عالية وإضاءة مع شاشة",
+                  LocaleKeys.high_quality.tr(),
                   style: TextStyle(fontSize: 14),
                 ),
                 SizedBox(height: 20),
                 Text(
-                  'ريال 1500',
+                  LocaleKeys.riyal.tr(),
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
@@ -107,7 +109,7 @@ class ProductsHomePage extends StatelessWidget {
                 ),
                 SizedBox(height: 5),
                 Text(
-                  'ريال 2500',
+                  LocaleKeys.riyal_dis.tr(),
                   style: TextStyle(
                     fontSize: 14,
                     color: AppColors.dis,

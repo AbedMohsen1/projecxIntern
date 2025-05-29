@@ -1,5 +1,7 @@
 import 'package:ahd/models/data_model.dart';
 import 'package:ahd/theme/color_managment.dart';
+import 'package:ahd/translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class SubscriptionRecord extends StatelessWidget {
@@ -8,11 +10,12 @@ class SubscriptionRecord extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.white,
       appBar: AppBar(
+        automaticallyImplyLeading: true,
         backgroundColor: AppColors.blu,
-        leading: Icon(Icons.arrow_forward),
         title: Text(
-          'سجل الاشتراكات',
+          LocaleKeys.subscription_record.tr(),
           style: TextStyle(color: AppColors.white),
         ),
         centerTitle: true,
@@ -25,7 +28,7 @@ class SubscriptionRecord extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(20),
               child: Text(
-                "سجل جميع الاشتراكات",
+                LocaleKeys.record_all_subscriptions.tr(),
                 style: TextStyle(
                     fontSize: 14,
                     color: AppColors.black,
@@ -45,7 +48,7 @@ class SubscriptionRecord extends StatelessWidget {
                     Expanded(
                       child: Center(
                         child: Text(
-                          "العضوية",
+                          LocaleKeys.membership.tr(),
                           style: TextStyle(
                               color: AppColors.white,
                               fontWeight: FontWeight.w600),
@@ -55,7 +58,7 @@ class SubscriptionRecord extends StatelessWidget {
                     Expanded(
                       child: Center(
                         child: Text(
-                          "تاريخ الاشتراك",
+                          LocaleKeys.subscription_date.tr(),
                           style: TextStyle(
                               color: AppColors.white,
                               fontWeight: FontWeight.w600),

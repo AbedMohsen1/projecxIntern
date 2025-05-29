@@ -1,5 +1,7 @@
 import 'package:ahd/Theme/color_managment.dart';
 import 'package:ahd/models/data_model.dart';
+import 'package:ahd/translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -8,26 +10,25 @@ class FollowedStores extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       backgroundColor: AppColors.white,
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: AppColors.blu,
         title: Text(
-          "المتاجر المتابعة",
+          LocaleKeys.followed_stores.tr(),
           style: TextStyle(color: AppColors.white),
         ),
       ),
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.all(20),
-            child: Align(
-              alignment: Alignment.centerRight,
-              child: Text(
-                "المتاجر المتابعة",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-              ),
+            padding: EdgeInsets.all(screenWidth * 0.05),
+            child: Text(
+              LocaleKeys.followed_stores.tr(),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             ),
           ),
           Padding(
@@ -62,7 +63,7 @@ class FollowedStores extends StatelessWidget {
             child: Align(
               alignment: Alignment.centerRight,
               child: Text(
-                "متاجر مستحسنة لك",
+                LocaleKeys.record_all_subscriptions.tr(),
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
             ),

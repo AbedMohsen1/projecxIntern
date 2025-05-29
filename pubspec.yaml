@@ -70,7 +70,7 @@ flutter:
   assets:
    - assets/img/
    - assets/fonts/
-   - assets/translations
+   - assets/translations/
 
   #   - images/a_dot_ham.jpeg
 

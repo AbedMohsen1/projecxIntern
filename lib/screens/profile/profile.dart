@@ -29,7 +29,7 @@ class _ProfileState extends State<Profile> {
         backgroundColor: AppColors.blu,
         centerTitle: true,
         title: Text(
-          "البروفايل",
+          LocaleKeys.profile.tr(),
           style: TextStyle(color: AppColors.white),
         ),
       ),
@@ -47,7 +47,7 @@ class _ProfileState extends State<Profile> {
                     // SvgPicture.asset('assets/img/Group13641'),
                     // Image.asset('assets/img/Group13641.png'),
                     Text(
-                      "محمد عبدالله",
+                      LocaleKeys.mohammed_abdullah.tr(),
                       style: TextStyle(
                         color: AppColors.black,
                         fontSize: 20,
@@ -56,14 +56,14 @@ class _ProfileState extends State<Profile> {
                     ),
                     TextButtonProfile(
                         onPressed: () {},
-                        title: 'أضف اعلانك',
+                        title: LocaleKeys.add_your_store.tr(),
                         icons: Icon(Icons.add_circle_outline)),
                     TextButtonProfile(
                         onPressed: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) => Info()));
                         },
-                        title: 'البيانات الشخصية',
+                        title: LocaleKeys.personal_data.tr(),
                         icons: Icon(Icons.person_outline)),
                     TextButtonProfile(
                         onPressed: () {
@@ -72,7 +72,7 @@ class _ProfileState extends State<Profile> {
                               MaterialPageRoute(
                                   builder: (context) => Favorites()));
                         },
-                        title: 'المفضلة',
+                        title: LocaleKeys.favorites.tr(),
                         icons: Icon(Icons.favorite_border)),
                     TextButtonProfile(
                         onPressed: () {
@@ -81,31 +81,30 @@ class _ProfileState extends State<Profile> {
                               MaterialPageRoute(
                                   builder: (context) => FollowedStores()));
                         },
-                        title: 'المتاجر المتابعة',
+                        title: LocaleKeys.followed_stores.tr(),
                         icons: Icon(Icons.storefront_sharp)),
                     Row(
                       children: [
                         TextButtonProfile(
                             onPressed: () {},
-                            title: 'اللغة',
+                            title: LocaleKeys.language.tr(),
                             icons: Icon(Icons.language)),
                         Spacer(),
                         TextButtonProfile(
                             onPressed: () {
                               context.setLocale(Locale('ar'));
                             },
-                            title: LocaleKeys.language),
+                            title: "العربية"),
                         TextButtonProfile(
-                          onPressed: () {
-                            context.setLocale(Locale('en'));
-                          },
-                          title: 'English',
-                        ),
+                            onPressed: () {
+                              context.setLocale(Locale('en'));
+                            },
+                            title: "English"),
                       ],
                     ),
                     TextButtonProfile(
                         onPressed: () {},
-                        title: 'الدولة',
+                        title: LocaleKeys.the_state.tr(),
                         icons: Icon(Icons.location_on_outlined)),
                     TextButtonProfile(
                         onPressed: () {
@@ -114,11 +113,11 @@ class _ProfileState extends State<Profile> {
                               MaterialPageRoute(
                                   builder: (context) => SubscriptionRecord()));
                         },
-                        title: 'سجل الاشتراكات',
+                        title: LocaleKeys.subscription_record.tr(),
                         icons: Icon(Icons.access_time)),
                     TextButtonProfile(
                         onPressed: () {},
-                        title: 'الاعدادات',
+                        title: LocaleKeys.settings.tr(),
                         icons: Icon(Icons.settings)),
                     SizedBox(
                       height: 50,
@@ -130,11 +129,11 @@ class _ProfileState extends State<Profile> {
                               MaterialPageRoute(
                                   builder: (context) => AboutInApp()));
                         },
-                        title: 'عن حصيلة',
+                        title: LocaleKeys.about_the_outcome.tr(),
                         icons: Icon(Icons.info_outline)),
                     TextButtonProfile(
                         onPressed: () {},
-                        title: 'تواصل معنا',
+                        title: LocaleKeys.contact_us.tr(),
                         icons: Icon(Icons.mail_outline)),
                     TextButtonProfile(
                         onPressed: () {
@@ -143,7 +142,7 @@ class _ProfileState extends State<Profile> {
                               MaterialPageRoute(
                                   builder: (context) => PrivacyPolicy()));
                         },
-                        title: 'سياسة الخصوصية',
+                        title: LocaleKeys.privacy_policy.tr(),
                         icons: Icon(Icons.lock_outline)),
                     TextButtonProfile(
                         onPressed: () {
@@ -152,7 +151,7 @@ class _ProfileState extends State<Profile> {
                               MaterialPageRoute(
                                   builder: (context) => TermsOfUse()));
                         },
-                        title: 'سياسة الاستخدام',
+                        title: LocaleKeys.terms_of_Use.tr(),
                         icons: Icon(Icons.rule)),
                     TextButtonProfile(
                         onPressed: () {
@@ -161,11 +160,11 @@ class _ProfileState extends State<Profile> {
                               MaterialPageRoute(
                                   builder: (context) => TermsAndConditions()));
                         },
-                        title: 'الشروط والاحكام',
+                        title: LocaleKeys.terms_and_conditions.tr(),
                         icons: Icon(Icons.article_outlined)),
                     TextButtonProfile(
                         onPressed: () {},
-                        title: 'الأسئلة الشائعة',
+                        title: LocaleKeys.frequently_asked_questions.tr(),
                         icons: Icon(Icons.help_outline)),
                     SizedBox(
                       height: 50,
@@ -173,7 +172,7 @@ class _ProfileState extends State<Profile> {
                     TextButtonProfile(
                         textColor: Colors.red,
                         onPressed: () {},
-                        title: 'تسجيل الخروج',
+                        title: LocaleKeys.log_out.tr(),
                         icons: Icon(
                           Icons.logout,
                           color: Colors.red,

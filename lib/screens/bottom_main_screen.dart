@@ -4,6 +4,8 @@ import 'package:ahd/screens/favorites/favorites.dart';
 import 'package:ahd/screens/homepage/home_page.dart';
 import 'package:ahd/screens/profile/profile.dart';
 import 'package:ahd/screens/stores/stores.dart';
+import 'package:ahd/translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class BottomBarScreen extends StatefulWidget {
@@ -27,14 +29,6 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
     Icons.person_outlined,
   ];
 
-  final List<String> _labels = [
-    "الرئيسية",
-    "المتاجر",
-    "التصنيفات",
-    "المفضلة",
-    "البروفايل",
-  ];
-
   @override
   void initState() {
     super.initState();
@@ -55,6 +49,13 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final List<String> _labels = [
+      LocaleKeys.home_page.tr(),
+      LocaleKeys.stores.tr(),
+      LocaleKeys.categories.tr(),
+      LocaleKeys.favorites.tr(),
+      LocaleKeys.profile.tr(),
+    ];
     return Scaffold(
       body: _screens[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(

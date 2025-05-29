@@ -7,6 +7,8 @@ import 'package:ahd/components/products_home_page.dart';
 import 'package:ahd/screens/categories/categories_home_page.dart';
 import 'package:ahd/components/logo_home_page.dart';
 import 'package:ahd/theme/color_managment.dart';
+import 'package:ahd/translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -35,8 +37,11 @@ class _HomePageState extends State<HomePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SvgPicture.asset('assets/img/Group8.svg'),
+                  SizedBox(
+                    width: 10,
+                  ),
                   Text(
-                    "حصيلة",
+                    LocaleKeys.hasilh.tr(),
                     style: TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.w500,
@@ -63,7 +68,7 @@ class _HomePageState extends State<HomePage> {
                           width: 10,
                         ),
                         Text(
-                          "وقت السفر",
+                          LocaleKeys.travel_time.tr(),
                           style:
                               TextStyle(fontSize: 24, color: AppColors.white),
                         ),
@@ -73,35 +78,35 @@ class _HomePageState extends State<HomePage> {
                 ),
                 IconHomePageDrawer(
                   icon: Icons.insert_drive_file_outlined,
-                  text: 'الكوبونات',
+                  text: LocaleKeys.coupons.tr(),
                 ),
                 IconHomePageDrawer(
                   icon: Icons.insert_drive_file_outlined,
-                  text: 'العروض',
+                  text: LocaleKeys.offers.tr(),
                 ),
                 IconHomePageDrawer(
                   icon: Icons.insert_drive_file_outlined,
-                  text: 'المنتجات',
+                  text: LocaleKeys.products.tr(),
                 ),
                 IconHomePageDrawer(
                   icon: Icons.insert_drive_file_outlined,
-                  text: 'الكوبونات الحصرية',
+                  text: LocaleKeys.exclusive_coupons.tr(),
                 ),
                 IconHomePageDrawer(
                   icon: Icons.insert_drive_file_outlined,
-                  text: 'المدونة',
+                  text: LocaleKeys.blog.tr(),
                 ),
                 IconHomePageDrawer(
                   icon: Icons.info_outline,
-                  text: 'عن حصيلة',
+                  text: LocaleKeys.about_the_outcome.tr(),
                 ),
                 IconHomePageDrawer(
                   icon: Icons.mail_outline,
-                  text: 'تواصل معنا',
+                  text: LocaleKeys.contact_us.tr(),
                 ),
                 IconHomePageDrawer(
                   icon: Icons.add_circle_outline,
-                  text: 'أضف متجرك',
+                  text: LocaleKeys.add_your_store.tr(),
                 ),
                 SizedBox(
                   height: 20,
@@ -109,7 +114,7 @@ class _HomePageState extends State<HomePage> {
                 Column(
                   children: [
                     Text(
-                      "نسعد بمتابعتكم لنا عبر ",
+                      LocaleKeys.follow_us.tr(),
                       style:
                           TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
                     ),
@@ -162,7 +167,7 @@ class _HomePageState extends State<HomePage> {
                 width: 10,
               ),
               Text(
-                "حصيلة",
+                LocaleKeys.hasilh.tr(),
                 style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
@@ -180,7 +185,7 @@ class _HomePageState extends State<HomePage> {
               SizedBox(height: 20),
               TextField(
                 decoration: InputDecoration(
-                  hintText: 'ابحث عن المتاجر-العلامات التجارية-التصنيفات',
+                  hintText: LocaleKeys.research_stores.tr(),
                   hintStyle: TextStyle(fontSize: 14),
                   prefixIcon: Icon(Icons.search),
                   border: OutlineInputBorder(
@@ -205,8 +210,7 @@ class _HomePageState extends State<HomePage> {
                           Padding(
                             padding: const EdgeInsets.only(),
                             child: Text(
-                              "جميع الحقوق محفوظة لصالح شركة حصيلة\n"
-                              "جميع الحقوق محفوظة لصالح شركة حصيلة",
+                              LocaleKeys.hasila_company.tr(),
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 fontSize: 12,
@@ -230,7 +234,7 @@ class _HomePageState extends State<HomePage> {
                             width: 100,
                             padding: const EdgeInsets.all(10),
                             child: Text(
-                              "نص وهمي",
+                              LocaleKeys.dummy_text.tr(),
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   color: AppColors.white, fontSize: 14),
@@ -247,7 +251,7 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   SizedBox(width: 20),
                   Text(
-                    "المتاجر الأكثر شهرة",
+                    LocaleKeys.most_popular_stores.tr(),
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
                   ),
                   Spacer(),
@@ -255,7 +259,7 @@ class _HomePageState extends State<HomePage> {
                     padding: EdgeInsets.only(left: screenWidth * 0.01),
                     child: Row(
                       children: [
-                        Text("المزيد",
+                        Text(LocaleKeys.more.tr(),
                             style: TextStyle(color: Colors.blue, fontSize: 14)),
                         SizedBox(width: 5),
                         Icon(Icons.arrow_forward, color: Colors.blue),
@@ -310,7 +314,7 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   SizedBox(width: 20),
                   Text(
-                    "الكوبونات الحصرية",
+                    LocaleKeys.exclusive_coupons.tr(),
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                   ),
                   Spacer(),
@@ -318,7 +322,8 @@ class _HomePageState extends State<HomePage> {
                     padding: EdgeInsets.only(left: screenWidth * 0.01),
                     child: Row(
                       children: [
-                        Text("المزيد", style: TextStyle(color: Colors.blue)),
+                        Text(LocaleKeys.more.tr(),
+                            style: TextStyle(color: Colors.blue)),
                         SizedBox(width: 5),
                         Icon(Icons.arrow_forward, color: Colors.blue),
                         SizedBox(width: 5),
@@ -337,7 +342,7 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   SizedBox(width: 20),
                   Text(
-                    "أشهر التصنيفات",
+                    LocaleKeys.most_popular_categories.tr(),
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   Spacer(),
@@ -345,7 +350,8 @@ class _HomePageState extends State<HomePage> {
                     padding: EdgeInsets.only(left: screenWidth * 0.01),
                     child: Row(
                       children: [
-                        Text("المزيد", style: TextStyle(color: Colors.blue)),
+                        Text(LocaleKeys.more.tr(),
+                            style: TextStyle(color: Colors.blue)),
                         SizedBox(width: 5),
                         Icon(Icons.arrow_forward, color: Colors.blue),
                         SizedBox(width: 5),
@@ -361,7 +367,7 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   SizedBox(width: 20),
                   Text(
-                    "أشهر العروض",
+                    LocaleKeys.best_offers.tr(),
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                   ),
                   Spacer(),
@@ -369,7 +375,8 @@ class _HomePageState extends State<HomePage> {
                     padding: EdgeInsets.only(left: screenWidth * 0.01),
                     child: Row(
                       children: [
-                        Text("المزيد", style: TextStyle(color: Colors.blue)),
+                        Text(LocaleKeys.more.tr(),
+                            style: TextStyle(color: Colors.blue)),
                         SizedBox(width: 5),
                         Icon(Icons.arrow_forward, color: Colors.blue),
                         SizedBox(width: 5),
@@ -392,7 +399,7 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   SizedBox(width: 20),
                   Text(
-                    "أفضل الكوبونات",
+                    LocaleKeys.best_coupons.tr(),
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                   ),
                   Spacer(),
@@ -400,7 +407,8 @@ class _HomePageState extends State<HomePage> {
                     padding: EdgeInsets.only(left: screenWidth * 0.01),
                     child: Row(
                       children: [
-                        Text("المزيد", style: TextStyle(color: Colors.blue)),
+                        Text(LocaleKeys.more.tr(),
+                            style: TextStyle(color: Colors.blue)),
                         SizedBox(width: 5),
                         Icon(Icons.arrow_forward, color: Colors.blue),
                         SizedBox(width: 5),
@@ -423,7 +431,7 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   SizedBox(width: 20),
                   Text(
-                    "أفضل المنتجات",
+                    LocaleKeys.best_products.tr(),
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                   ),
                   Spacer(),
@@ -431,7 +439,8 @@ class _HomePageState extends State<HomePage> {
                     padding: EdgeInsets.only(left: screenWidth * 0.01),
                     child: Row(
                       children: [
-                        Text("المزيد", style: TextStyle(color: Colors.blue)),
+                        Text(LocaleKeys.more.tr(),
+                            style: TextStyle(color: Colors.blue)),
                         SizedBox(width: 5),
                         Icon(Icons.arrow_forward, color: Colors.blue),
                         SizedBox(width: 5),
