@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:ahd/components/gender_selector.dart';
 import 'package:ahd/theme/color_managment.dart';
 import 'package:flutter/material.dart';

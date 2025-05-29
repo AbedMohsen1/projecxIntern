@@ -8,6 +8,8 @@ import 'package:ahd/screens/profile/terms_and_conditions.dart';
 import 'package:ahd/screens/profile/terms_of_use.dart';
 import 'package:ahd/screens/profile/text_button.dart';
 import 'package:ahd/theme/color_managment.dart';
+import 'package:ahd/translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class Profile extends StatefulWidget {
@@ -89,11 +91,14 @@ class _ProfileState extends State<Profile> {
                             icons: Icon(Icons.language)),
                         Spacer(),
                         TextButtonProfile(
-                          onPressed: () {},
-                          title: 'العربية',
-                        ),
+                            onPressed: () {
+                              context.setLocale(Locale('ar'));
+                            },
+                            title: LocaleKeys.language),
                         TextButtonProfile(
-                          onPressed: () {},
+                          onPressed: () {
+                            context.setLocale(Locale('en'));
+                          },
                           title: 'English',
                         ),
                       ],
