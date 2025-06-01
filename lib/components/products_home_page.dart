@@ -1,4 +1,5 @@
 import 'package:ahd/Theme/color_managment.dart';
+import 'package:ahd/screens/favorites/like_unlike.dart';
 import 'package:ahd/translations/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -58,7 +59,7 @@ class ProductsHomePage extends StatelessWidget {
                           ),
                         ),
                         Spacer(),
-                        Icon(Icons.favorite_border, size: 20),
+                        LikeUnLike(),
                         Icon(Icons.share_outlined, size: 20),
                       ],
                     ),

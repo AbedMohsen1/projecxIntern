@@ -1,11 +1,9 @@
-import 'package:ahd/screens/favorites/favorites.dart';
+import 'package:ahd/screens/auth/login.dart';
 import 'package:ahd/screens/profile/about_in_app.dart';
-import 'package:ahd/screens/profile/followed_stores.dart';
-import 'package:ahd/screens/profile/info.dart';
+import 'package:ahd/screens/profile/bordercontainer.dart';
+import 'package:ahd/screens/profile/languagebutton.dart';
 import 'package:ahd/screens/profile/privacy_policy.dart';
-import 'package:ahd/screens/profile/subscription_record.dart';
 import 'package:ahd/screens/profile/terms_and_conditions.dart';
-import 'package:ahd/screens/profile/terms_of_use.dart';
 import 'package:ahd/screens/profile/text_button.dart';
 import 'package:ahd/theme/color_managment.dart';
 import 'package:ahd/translations/locale_keys.g.dart';
@@ -29,7 +27,7 @@ class _ProfileState extends State<Profile> {
         backgroundColor: AppColors.blu,
         centerTitle: true,
         title: Text(
-          LocaleKeys.profile.tr(),
+          LocaleKeys.account.tr(),
           style: TextStyle(color: AppColors.white),
         ),
       ),
@@ -39,144 +37,189 @@ class _ProfileState extends State<Profile> {
           child: Column(
             children: [
               Padding(
-                padding: EdgeInsets.all(screenWidth * 0.07),
+                padding: EdgeInsets.all(screenWidth * 0.05),
                 child: Column(
                   children: [
-                    CircleAvatar(),
-
-                    // SvgPicture.asset('assets/img/Group13641'),
-                    // Image.asset('assets/img/Group13641.png'),
-                    Text(
-                      LocaleKeys.mohammed_abdullah.tr(),
-                      style: TextStyle(
-                        color: AppColors.black,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    TextButtonProfile(
-                        onPressed: () {},
-                        title: LocaleKeys.add_your_store.tr(),
-                        icons: Icon(Icons.add_circle_outline)),
-                    TextButtonProfile(
-                        onPressed: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => Info()));
-                        },
-                        title: LocaleKeys.personal_data.tr(),
-                        icons: Icon(Icons.person_outline)),
-                    TextButtonProfile(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Favorites()));
-                        },
-                        title: LocaleKeys.favorites.tr(),
-                        icons: Icon(Icons.favorite_border)),
-                    TextButtonProfile(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => FollowedStores()));
-                        },
-                        title: LocaleKeys.followed_stores.tr(),
-                        icons: Icon(Icons.storefront_sharp)),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        TextButtonProfile(
-                            onPressed: () {},
-                            title: LocaleKeys.language.tr(),
-                            icons: Icon(Icons.language)),
-                        Spacer(),
-                        TextButtonProfile(
-                            onPressed: () {
-                              context.setLocale(Locale('ar'));
-                            },
-                            title: "العربية"),
-                        TextButtonProfile(
-                            onPressed: () {
-                              context.setLocale(Locale('en'));
-                            },
-                            title: "English"),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Login()),
+                            );
+                          },
+                          style: TextButton.styleFrom(
+                            visualDensity: const VisualDensity(
+                              vertical: VisualDensity.minimumDensity,
+                              horizontal: VisualDensity.minimumDensity,
+                            ),
+                          ),
+                          child: Text(
+                            LocaleKeys.already_have_an_account.tr(),
+                            style: TextStyle(color: AppColors.black),
+                          ),
+                        ),
+                        Text(LocaleKeys.log_in.tr(),
+                            style: TextStyle(color: AppColors.blu)),
                       ],
                     ),
-                    TextButtonProfile(
-                        onPressed: () {},
-                        title: LocaleKeys.the_state.tr(),
-                        icons: Icon(Icons.location_on_outlined)),
-                    TextButtonProfile(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => SubscriptionRecord()));
-                        },
-                        title: LocaleKeys.subscription_record.tr(),
-                        icons: Icon(Icons.access_time)),
-                    TextButtonProfile(
-                        onPressed: () {},
-                        title: LocaleKeys.settings.tr(),
-                        icons: Icon(Icons.settings)),
-                    SizedBox(
-                      height: 50,
+                    BorderContainer(
+                      child: Padding(
+                        padding: EdgeInsets.all(screenWidth * 0.02),
+                        child: Row(
+                          children: [
+                            TextButtonProfile(
+                                onPressed: () {},
+                                title: LocaleKeys.language.tr(),
+                                icons: Icon(Icons.language)),
+                            Spacer(),
+                            LanguageButton(
+                              text: 'English',
+                              isSelected: context.locale.languageCode == 'en',
+                              onPressed: () {
+                                setState(() {
+                                  context.setLocale(Locale('en'));
+                                });
+                              },
+                            ),
+                            LanguageButton(
+                              text: 'العربية',
+                              isSelected: context.locale.languageCode == 'ar',
+                              onPressed: () {
+                                setState(() {
+                                  context.setLocale(Locale('ar'));
+                                });
+                              },
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
-                    TextButtonProfile(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => AboutInApp()));
-                        },
-                        title: LocaleKeys.about_the_outcome.tr(),
-                        icons: Icon(Icons.info_outline)),
-                    TextButtonProfile(
-                        onPressed: () {},
-                        title: LocaleKeys.contact_us.tr(),
-                        icons: Icon(Icons.mail_outline)),
-                    TextButtonProfile(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => PrivacyPolicy()));
-                        },
-                        title: LocaleKeys.privacy_policy.tr(),
-                        icons: Icon(Icons.lock_outline)),
-                    TextButtonProfile(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => TermsOfUse()));
-                        },
-                        title: LocaleKeys.terms_of_Use.tr(),
-                        icons: Icon(Icons.rule)),
-                    TextButtonProfile(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => TermsAndConditions()));
-                        },
-                        title: LocaleKeys.terms_and_conditions.tr(),
-                        icons: Icon(Icons.article_outlined)),
-                    TextButtonProfile(
-                        onPressed: () {},
-                        title: LocaleKeys.frequently_asked_questions.tr(),
-                        icons: Icon(Icons.help_outline)),
-                    SizedBox(
-                      height: 50,
+                    BorderContainer(
+                      child: Padding(
+                        padding: EdgeInsets.all(screenWidth * 0.02),
+                        child: Row(
+                          children: [
+                            TextButtonProfile(
+                                onPressed: () {},
+                                title: LocaleKeys.the_state.tr(),
+                                icons: Icon(Icons.location_on_outlined)),
+                            Spacer(),
+                            Icon(Icons.star_rate)
+                          ],
+                        ),
+                      ),
                     ),
-                    TextButtonProfile(
-                        textColor: Colors.red,
-                        onPressed: () {},
-                        title: LocaleKeys.log_out.tr(),
-                        icons: Icon(
-                          Icons.logout,
-                          color: Colors.red,
-                        )),
+                    BorderContainer(
+                      child: Padding(
+                        padding: EdgeInsets.all(screenWidth * 0.02),
+                        child: Row(
+                          children: [
+                            TextButtonProfile(
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => AboutInApp()));
+                                },
+                                title: LocaleKeys.about_the_outcome.tr(),
+                                icons: Icon(Icons.info_outline)),
+                            Spacer(),
+                            Icon(Icons.arrow_forward_ios)
+                          ],
+                        ),
+                      ),
+                    ),
+                    BorderContainer(
+                      child: Padding(
+                        padding: EdgeInsets.all(screenWidth * 0.02),
+                        child: Row(
+                          children: [
+                            TextButtonProfile(
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              PrivacyPolicy()));
+                                },
+                                title: LocaleKeys.privacy_policy.tr(),
+                                icons: Icon(Icons.lock_outline)),
+                            Spacer(),
+                            Icon(Icons.arrow_forward_ios)
+                          ],
+                        ),
+                      ),
+                    ),
+                    BorderContainer(
+                      child: Padding(
+                        padding: EdgeInsets.all(screenWidth * 0.02),
+                        child: Row(
+                          children: [
+                            TextButtonProfile(
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              TermsAndConditions()));
+                                },
+                                title: LocaleKeys.terms_and_conditions.tr(),
+                                icons: Icon(Icons.article_outlined)),
+                            Spacer(),
+                            Icon(Icons.arrow_forward_ios)
+                          ],
+                        ),
+                      ),
+                    ),
+                    BorderContainer(
+                      child: Padding(
+                        padding: EdgeInsets.all(screenWidth * 0.02),
+                        child: Row(
+                          children: [
+                            TextButtonProfile(
+                                onPressed: () {},
+                                title:
+                                    LocaleKeys.frequently_asked_questions.tr(),
+                                icons: Icon(Icons.help_outline)),
+                            Spacer(),
+                            Icon(Icons.arrow_forward_ios)
+                          ],
+                        ),
+                      ),
+                    ),
+                    BorderContainer(
+                      child: Padding(
+                        padding: EdgeInsets.all(screenWidth * 0.02),
+                        child: Row(
+                          children: [
+                            TextButtonProfile(
+                                onPressed: () {},
+                                title: LocaleKeys.contact_us.tr(),
+                                icons: Icon(Icons.mail_outline)),
+                            Spacer(),
+                            Icon(Icons.arrow_forward_ios)
+                          ],
+                        ),
+                      ),
+                    ),
+                    BorderContainer(
+                      child: Padding(
+                        padding: EdgeInsets.all(screenWidth * 0.02),
+                        child: Row(
+                          children: [
+                            TextButtonProfile(
+                                onPressed: () {},
+                                title: LocaleKeys.add_your_store.tr(),
+                                icons: Icon(Icons.add_circle_outline)),
+                            Spacer(),
+                            Icon(Icons.arrow_forward_ios)
+                          ],
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               )

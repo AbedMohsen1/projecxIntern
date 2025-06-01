@@ -34,10 +34,6 @@ class TextButtonProfile extends StatelessWidget {
                 )),
           ],
         ),
-        Divider(
-          color: AppColors.border,
-          thickness: 1,
-        ),
       ],
     );
   }

@@ -2,12 +2,12 @@
 
 // ignore_for_file: constant_identifier_names
 
-abstract class  LocaleKeys {
+abstract class LocaleKeys {
   static const home_page = 'home_page';
   static const stores = 'stores';
   static const categories = 'categories';
   static const favorites = 'favorites';
-  static const profile = 'profile';
+  static const account = 'account';
   static const hasilh = 'hasilh';
   static const research_stores = 'research_stores';
   static const hasila_company = 'hasila_company';
@@ -73,8 +73,10 @@ abstract class  LocaleKeys {
   static const already_have_an_account = 'already_have_an_account';
   static const forgot_your_password = 'forgot_your_password';
   static const password = 'password';
+  static const please_enter_your_email_address =
+      'please_enter_your_email_address';
   static const please_enter_your_password = 'please_enter_your_password';
-  static const please_enter_your_email_address = 'please_enter_your_email_address';
   static const please_enter_your_username = 'please_enter_your_username';
-
+  static const added_to_favorites = 'added_to_favorites';
+  static const removed_from_favorites = 'removed_from_favorites';
 }

@@ -3,7 +3,7 @@
   "stores": "المتاجر",
   "categories": "التصنيفات",
   "favorites": "المفضلة",
-  "profile": "البروفايل",
+  "account": "الحساب",
   "hasilh": "حصيلة",
   "research_stores": "ابحث عن المتاجر، العلامات التجارية، التصنيفات",
   "hasila_company": "افضل العروض والكوبونات",
@@ -70,7 +70,9 @@
   "already_have_an_account": "هل لديك حساب بالفعل؟",
   "forgot_your_password": "نسيت كلمة المرور",
   "password": "كلمة المرور",
-  "please_enter_your_password": "الرجاء ادخال كلمة المرور",
   "please_enter_your_email_address": "الرجاء ادخال الايميل",
-  "please_enter_your_username": "الرجاء ادخال اسم المستخدم "
+  "please_enter_your_password": "الرجاء ادخال كلمة المرور",
+  "please_enter_your_username": "الرجاء ادخال اسم المستخدم",
+  "added_to_favorites": "تمت الإضافة إلى المفضلة",
+  "removed_from_favorites": "تمت الإزالة من المفضلة"
 }

@@ -54,7 +54,7 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
       LocaleKeys.stores.tr(),
       LocaleKeys.categories.tr(),
       LocaleKeys.favorites.tr(),
-      LocaleKeys.profile.tr(),
+      LocaleKeys.account.tr(),
     ];
     return Scaffold(
       body: _screens[_selectedIndex],

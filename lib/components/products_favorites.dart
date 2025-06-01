@@ -1,4 +1,5 @@
 import 'package:ahd/models/data_model.dart';
+import 'package:ahd/screens/favorites/like_unlike.dart';
 import 'package:ahd/translations/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -73,7 +74,7 @@ class Products extends StatelessWidget {
                               Icon(Icons.check_circle_outline_outlined,
                                   size: 20),
                               SizedBox(height: 8),
-                              Icon(Icons.favorite_border, size: 20),
+                              LikeUnLike(),
                               SizedBox(height: 8),
                               Icon(Icons.share_outlined, size: 20),
                             ],

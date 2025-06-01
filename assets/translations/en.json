@@ -3,7 +3,7 @@
   "stores": "Stores",
   "categories": "Categories",
   "favorites": "Favorites",
-  "profile": "Profile",
+  "account": "Account",
   "hasilh": "Hasilh",
   "research_stores": "Search for stores, brands, and categories.",
   "hasila_company": "Best offers and coupons",
@@ -72,5 +72,7 @@
   "password": "Password",
   "please_enter_your_password": "Please enter your password",
   "please_enter_your_email_address": "Please enter your email address",
-  "please_enter_your_username": "Please enter your username"
+  "please_enter_your_username": "Please enter your username",
+  "added_to_favorites": "Added to favorites",
+  "removed_from_favorites": "Removed from favorites"
 }

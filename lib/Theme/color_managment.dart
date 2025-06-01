@@ -12,4 +12,5 @@ class AppColors {
   static Color green = HexColor("#58C27D");
   static Color redcolor = HexColor("#E65A5A");
   static Color dottedborder = HexColor("#F6F7FB");
+  static Color red = HexColor("##E50019");
 }
