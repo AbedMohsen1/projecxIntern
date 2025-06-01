@@ -22,8 +22,9 @@ class CodegenLoader extends AssetLoader{
   "profile": "البروفايل",
   "hasilh": "حصيلة",
   "research_stores": "ابحث عن المتاجر، العلامات التجارية، التصنيفات",
-  "hasila_company": "جميع الحقوق محفوظة لصالح شركة حصيلة",
-  "dummy_text": "نص وهمي",
+  "hasila_company": "افضل العروض والكوبونات",
+  "hasila_company2": "متاجر عالمية ومحلية",
+  "watch_now": "شاهد الان",
   "most_popular_stores": "المتاجر الأكثر شعبية",
   "more": "المزيد",
   "exclusive_coupons": "الكوبونات الحصرية",
@@ -78,7 +79,16 @@ class CodegenLoader extends AssetLoader{
   "membership": "العضوية",
   "subscription_date": "تاريخ الاشتراك",
   "membership_name_here": "اسم العضوية هنا",
-  "sixmaile": "ذكر"
+  "sixmaile": "ذكر",
+  "create_new_account": "إنشاء حساب جديد",
+  "create_an_account": "إنشاء حساب",
+  "log_in": "تسجيل الدخول",
+  "already_have_an_account": "هل لديك حساب بالفعل؟",
+  "forgot_your_password": "نسيت كلمة المرور",
+  "password": "كلمة المرور",
+  "please_enter_your_password": "الرجاء ادخال كلمة المرور",
+  "please_enter_your_email_address": "الرجاء ادخال الايميل",
+  "please_enter_your_username": "الرجاء ادخال اسم المستخدم "
 };
 static const Map<String,dynamic> _en = {
   "home_page": "Home",
@@ -88,8 +98,9 @@ static const Map<String,dynamic> _en = {
   "profile": "Profile",
   "hasilh": "Hasilh",
   "research_stores": "Search for stores, brands, and categories.",
-  "hasila_company": "All rights reserved to Hasila Company",
-  "dummy_text": "dummy text",
+  "hasila_company": "Best offers and coupons",
+  "hasila_company2": "International and local stores",
+  "watch_now": "Watch now",
   "most_popular_stores": "Most popular stores",
   "more": "More",
   "exclusive_coupons": "Exclusive coupons",
@@ -144,7 +155,16 @@ static const Map<String,dynamic> _en = {
   "membership": "Membership",
   "subscription_date": "Subscription date",
   "membership_name_here": "Membership name here",
-  "sixmaile": "Male"
+  "sixmaile": "Male",
+  "create_new_account": "Create a new account",
+  "create_an_account": "Create an account",
+  "log_in": "Log in",
+  "already_have_an_account": "Already have an account?",
+  "forgot_your_password": "Forgot your password?",
+  "password": "Password",
+  "please_enter_your_password": "Please enter your password",
+  "please_enter_your_email_address": "Please enter your email address",
+  "please_enter_your_username": "Please enter your username"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": _ar, "en": _en};
 }

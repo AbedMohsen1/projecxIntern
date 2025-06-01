@@ -1,6 +1,8 @@
 import 'package:ahd/router/routers.dart';
 import 'package:ahd/theme/color_managment.dart';
 import 'package:ahd/screens/auth/login.dart';
+import 'package:ahd/translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -56,7 +58,7 @@ class _SignUpState extends State<SignUp> {
                 ),
                 SizedBox(width: 20),
                 Text(
-                  "حصيلة",
+                  LocaleKeys.hasilh.tr(),
                   style: TextStyle(
                     fontSize: 30,
                     letterSpacing: 0.8,
@@ -69,7 +71,7 @@ class _SignUpState extends State<SignUp> {
             Padding(
               padding: EdgeInsets.all(0),
               child: Text(
-                "إنشاء حساب جديد",
+                LocaleKeys.create_new_account.tr(),
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
               ),
             ),
@@ -80,7 +82,7 @@ class _SignUpState extends State<SignUp> {
                 controller: _usernameTextController,
                 showCursor: true,
                 decoration: InputDecoration(
-                  hintText: 'اسم المستخدم',
+                  hintText: LocaleKeys.user_name.tr(),
                   helperStyle: const TextStyle(
                     color: Colors.black45,
                     fontWeight: FontWeight.w300,
@@ -107,7 +109,7 @@ class _SignUpState extends State<SignUp> {
                 keyboardType: TextInputType.emailAddress,
                 showCursor: true,
                 decoration: InputDecoration(
-                  hintText: 'الايميل',
+                  hintText: LocaleKeys.Email.tr(),
                   helperStyle: const TextStyle(
                     color: Colors.black45,
                     fontWeight: FontWeight.w300,
@@ -135,7 +137,7 @@ class _SignUpState extends State<SignUp> {
                 maxLines: 1,
                 obscureText: _obscure,
                 decoration: InputDecoration(
-                  hintText: 'كلمة المرور',
+                  hintText: LocaleKeys.password.tr(),
                   suffixIcon: IconButton(
                     onPressed: () => setState(() => _obscure = !_obscure),
                     icon: Icon(
@@ -166,7 +168,7 @@ class _SignUpState extends State<SignUp> {
                     ),
                   ),
                   child: Text(
-                    "نسيت كلمة المرور",
+                    LocaleKeys.forgot_your_password.tr(),
                     style: TextStyle(color: AppColors.black),
                   ),
                 ),
@@ -189,7 +191,7 @@ class _SignUpState extends State<SignUp> {
                   minimumSize: const Size(double.infinity, 45),
                 ),
                 child: Text(
-                  'انشاء حساب',
+                  LocaleKeys.create_an_account.tr(),
                   style: TextStyle(color: AppColors.white),
                 ),
               ),
@@ -198,7 +200,8 @@ class _SignUpState extends State<SignUp> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('تسجيل الدخول', style: TextStyle(color: AppColors.blu)),
+                Text(LocaleKeys.log_in.tr(),
+                    style: TextStyle(color: AppColors.blu)),
                 TextButton(
                   onPressed: () {
                     Navigator.push(
@@ -213,7 +216,7 @@ class _SignUpState extends State<SignUp> {
                     ),
                   ),
                   child: Text(
-                    'هل لديك حساب بالفعل ؟',
+                    LocaleKeys.already_have_an_account.tr(),
                     style: TextStyle(color: AppColors.black),
                   ),
                 ),
@@ -228,13 +231,14 @@ class _SignUpState extends State<SignUp> {
   bool _checkData() {
     final Routers routers = Routers();
     setState(() {
-      _emailError =
-          _emailTextController.text.isEmpty ? "الرجاء ادخال الايميل" : null;
+      _emailError = _emailTextController.text.isEmpty
+          ? LocaleKeys.please_enter_your_email_address.tr()
+          : null;
       _passwordError = _passwordTextController.text.isEmpty
-          ? "الرجاء ادخال كلمة المرور"
+          ? LocaleKeys.please_enter_your_password.tr()
           : null;
       _usernameError = _usernameTextController.text.isEmpty
-          ? "الرجاء ادخال اسم المستخدم "
+          ? LocaleKeys.please_enter_your_username.tr()
           : null;
     });
     if (_emailTextController.text.isNotEmpty &&

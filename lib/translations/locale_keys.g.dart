@@ -11,7 +11,8 @@ abstract class  LocaleKeys {
   static const hasilh = 'hasilh';
   static const research_stores = 'research_stores';
   static const hasila_company = 'hasila_company';
-  static const dummy_text = 'dummy_text';
+  static const hasila_company2 = 'hasila_company2';
+  static const watch_now = 'watch_now';
   static const most_popular_stores = 'most_popular_stores';
   static const more = 'more';
   static const exclusive_coupons = 'exclusive_coupons';
@@ -66,5 +67,14 @@ abstract class  LocaleKeys {
   static const subscription_date = 'subscription_date';
   static const membership_name_here = 'membership_name_here';
   static const sixmaile = 'sixmaile';
+  static const create_new_account = 'create_new_account';
+  static const create_an_account = 'create_an_account';
+  static const log_in = 'log_in';
+  static const already_have_an_account = 'already_have_an_account';
+  static const forgot_your_password = 'forgot_your_password';
+  static const password = 'password';
+  static const please_enter_your_password = 'please_enter_your_password';
+  static const please_enter_your_email_address = 'please_enter_your_email_address';
+  static const please_enter_your_username = 'please_enter_your_username';
 
 }

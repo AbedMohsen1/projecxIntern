@@ -6,8 +6,9 @@
   "profile": "البروفايل",
   "hasilh": "حصيلة",
   "research_stores": "ابحث عن المتاجر، العلامات التجارية، التصنيفات",
-  "hasila_company": "جميع الحقوق محفوظة لصالح شركة حصيلة",
-  "dummy_text": "نص وهمي",
+  "hasila_company": "افضل العروض والكوبونات",
+  "hasila_company2": "متاجر عالمية ومحلية",
+  "watch_now": "شاهد الان",
   "most_popular_stores": "المتاجر الأكثر شعبية",
   "more": "المزيد",
   "exclusive_coupons": "الكوبونات الحصرية",
@@ -62,5 +63,14 @@
   "membership": "العضوية",
   "subscription_date": "تاريخ الاشتراك",
   "membership_name_here": "اسم العضوية هنا",
-  "sixmaile": "ذكر"
+  "sixmaile": "ذكر",
+  "create_new_account": "إنشاء حساب جديد",
+  "create_an_account": "إنشاء حساب",
+  "log_in": "تسجيل الدخول",
+  "already_have_an_account": "هل لديك حساب بالفعل؟",
+  "forgot_your_password": "نسيت كلمة المرور",
+  "password": "كلمة المرور",
+  "please_enter_your_password": "الرجاء ادخال كلمة المرور",
+  "please_enter_your_email_address": "الرجاء ادخال الايميل",
+  "please_enter_your_username": "الرجاء ادخال اسم المستخدم "
 }

@@ -1,6 +1,8 @@
 import 'package:ahd/theme/color_managment.dart';
 import 'package:ahd/screens/auth/sign_up.dart';
 import 'package:ahd/screens/bottom_main_screen.dart';
+import 'package:ahd/translations/locale_keys.g.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -52,7 +54,7 @@ class _LoginState extends State<Login> {
                 ),
                 SizedBox(width: 20),
                 Text(
-                  "حصيلة",
+                  LocaleKeys.hasilh.tr(),
                   style: TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.w500,
@@ -65,7 +67,7 @@ class _LoginState extends State<Login> {
             Padding(
               padding: EdgeInsets.all(0),
               child: Text(
-                "تسجيل الدخول",
+                LocaleKeys.log_in.tr(),
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
               ),
             ),
@@ -77,7 +79,7 @@ class _LoginState extends State<Login> {
                 keyboardType: TextInputType.emailAddress,
                 showCursor: true,
                 decoration: InputDecoration(
-                  hintText: 'الايميل',
+                  hintText: LocaleKeys.Email.tr(),
                   helperStyle: const TextStyle(
                     color: Colors.black45,
                     fontWeight: FontWeight.w300,
@@ -105,7 +107,7 @@ class _LoginState extends State<Login> {
                 maxLines: 1,
                 obscureText: _obscure,
                 decoration: InputDecoration(
-                  hintText: 'كلمة المرور',
+                  hintText: LocaleKeys.password.tr(),
                   suffixIcon: IconButton(
                     onPressed: () => setState(() => _obscure = !_obscure),
                     icon: Icon(
@@ -136,7 +138,7 @@ class _LoginState extends State<Login> {
                     ),
                   ),
                   child: Text(
-                    "نسيت كلمة المرور",
+                    LocaleKeys.forgot_your_password.tr(),
                     style: TextStyle(color: AppColors.black),
                   ),
                 ),
@@ -159,7 +161,7 @@ class _LoginState extends State<Login> {
                   minimumSize: const Size(double.infinity, 45),
                 ),
                 child: Text(
-                  'تسجيل الدخول',
+                  LocaleKeys.log_in.tr(),
                   style: TextStyle(color: AppColors.white),
                 ),
               ),
@@ -168,7 +170,8 @@ class _LoginState extends State<Login> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('إنشاء حساب جديد', style: TextStyle(color: AppColors.blu)),
+                Text(LocaleKeys.create_new_account.tr(),
+                    style: TextStyle(color: AppColors.blu)),
                 TextButton(
                   onPressed: () {
                     Navigator.push(
@@ -183,7 +186,7 @@ class _LoginState extends State<Login> {
                     ),
                   ),
                   child: Text(
-                    'هل لديك حساب بالفعل ؟',
+                    LocaleKeys.already_have_an_account.tr(),
                     style: TextStyle(color: AppColors.black),
                   ),
                 ),
@@ -197,10 +200,11 @@ class _LoginState extends State<Login> {
 
   bool _checkData() {
     setState(() {
-      _emailError =
-          _emailTextController.text.isEmpty ? "الرجاء ادخال الايميل" : null;
+      _emailError = _emailTextController.text.isEmpty
+          ? LocaleKeys.please_enter_your_email_address.tr()
+          : null;
       _passwordError = _passwordTextController.text.isEmpty
-          ? "الرجاء ادخال كلمة المرور"
+          ? LocaleKeys.please_enter_your_password.tr()
           : null;
     });
     if (_emailTextController.text.isNotEmpty &&

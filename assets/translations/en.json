@@ -6,8 +6,9 @@
   "profile": "Profile",
   "hasilh": "Hasilh",
   "research_stores": "Search for stores, brands, and categories.",
-  "hasila_company": "All rights reserved to Hasila Company",
-  "dummy_text": "dummy text",
+  "hasila_company": "Best offers and coupons",
+  "hasila_company2": "International and local stores",
+  "watch_now": "Watch now",
   "most_popular_stores": "Most popular stores",
   "more": "More",
   "exclusive_coupons": "Exclusive coupons",
@@ -62,5 +63,14 @@
   "membership": "Membership",
   "subscription_date": "Subscription date",
   "membership_name_here": "Membership name here",
-  "sixmaile": "Male"
+  "sixmaile": "Male",
+  "create_new_account": "Create a new account",
+  "create_an_account": "Create an account",
+  "log_in": "Log in",
+  "already_have_an_account": "Already have an account?",
+  "forgot_your_password": "Forgot your password?",
+  "password": "Password",
+  "please_enter_your_password": "Please enter your password",
+  "please_enter_your_email_address": "Please enter your email address",
+  "please_enter_your_username": "Please enter your username"
 }

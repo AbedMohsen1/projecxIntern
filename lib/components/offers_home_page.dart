@@ -43,7 +43,7 @@ class OffersHomePage extends StatelessWidget {
                             vertical: 4,
                           ),
                           decoration: BoxDecoration(
-                            color: AppColors.blu2,
+                            color: AppColors.blu,
                             borderRadius: BorderRadius.circular(
                               8,
                             ),
@@ -77,7 +77,7 @@ class OffersHomePage extends StatelessWidget {
                     Spacer(),
                     Container(
                       decoration: BoxDecoration(
-                        color: AppColors.blu2,
+                        color: AppColors.blu,
                         borderRadius: BorderRadius.circular(17),
                       ),
                       child: Padding(
@@ -106,7 +106,7 @@ class OffersHomePage extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    backgroundColor: AppColors.blu2,
+                    backgroundColor: AppColors.blu,
                   ),
                   child: Text(
                     LocaleKeys.activate_the_offer.tr(),

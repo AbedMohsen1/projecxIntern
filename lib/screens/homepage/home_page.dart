@@ -197,51 +197,69 @@ class _HomePageState extends State<HomePage> {
               Padding(
                 padding: EdgeInsets.all(screenWidth * 0.01),
                 child: Container(
-                  height: 200,
+                  height: screenWidth / 1.5,
                   decoration: BoxDecoration(
-                    border: Border.all(color: AppColors.black),
-                    color: AppColors.blu2,
-                    borderRadius: BorderRadius.circular(30),
+                    color: AppColors.pink,
+                    borderRadius: BorderRadius.circular(20),
                   ),
                   child: Column(
                     children: [
                       Row(
                         children: [
                           Padding(
-                            padding: const EdgeInsets.only(),
-                            child: Text(
-                              LocaleKeys.hasila_company.tr(),
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w600,
-                              ),
+                            padding: EdgeInsets.symmetric(
+                              horizontal: screenWidth * 0.02,
+                              vertical: screenWidth * 0.1,
+                            ),
+                            child: Column(
+                              children: [
+                                Text(
+                                  LocaleKeys.hasila_company.tr(),
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: screenWidth * 0.01,
+                                ),
+                                Text(
+                                  LocaleKeys.hasila_company2.tr(),
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: screenWidth * 0.05,
+                                ),
+                                Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(7)),
+                                    color: AppColors.black,
+                                  ),
+                                  width: 150,
+                                  padding: const EdgeInsets.all(10),
+                                  child: Text(
+                                    LocaleKeys.watch_now.tr(),
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      color: AppColors.white,
+                                      fontSize: 14,
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
-                          SizedBox(height: 10),
                         ],
                       ),
                       Align(
-                        alignment: Alignment.bottomRight,
-                        child: Padding(
-                          padding: EdgeInsets.only(),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(15)),
-                              color: AppColors.black,
-                            ),
-                            width: 100,
-                            padding: const EdgeInsets.all(10),
-                            child: Text(
-                              LocaleKeys.dummy_text.tr(),
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  color: AppColors.white, fontSize: 14),
-                            ),
-                          ),
-                        ),
-                      ),
+                          alignment: Alignment.bottomCenter,
+                          child: SvgPicture.asset('assets/img/img2.svg'))
                     ],
                   ),
                 ),

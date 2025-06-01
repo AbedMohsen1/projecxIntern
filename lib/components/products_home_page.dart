@@ -43,7 +43,7 @@ class ProductsHomePage extends StatelessWidget {
                             vertical: 4,
                           ),
                           decoration: BoxDecoration(
-                            color: AppColors.blu2,
+                            color: AppColors.blu,
                             borderRadius: BorderRadius.circular(
                               8,
                             ),
@@ -77,7 +77,7 @@ class ProductsHomePage extends StatelessWidget {
                     Spacer(),
                     Container(
                       decoration: BoxDecoration(
-                        color: AppColors.blu2,
+                        color: AppColors.blu,
                         borderRadius: BorderRadius.circular(17),
                       ),
                       child: Padding(
