@@ -1,4 +1,5 @@
 import 'package:ahd/router/routers.dart';
+import 'package:ahd/screens/auth/sign_up.dart';
 import 'package:ahd/screens/bottom_main_screen.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter_localizations/flutter_localizations.dart';
@@ -31,7 +32,7 @@ class _MyAppState extends State<MyApp> {
     final Routers routers = Routers();
     return MaterialApp(
       theme: ThemeData(fontFamily: 'Cairo'),
-      home: BottomBarScreen(),
+      home: SignUp(),
       locale: context.locale,
       supportedLocales: context.supportedLocales,
       localizationsDelegates: context.localizationDelegates,

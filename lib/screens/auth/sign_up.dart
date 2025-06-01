@@ -39,6 +39,8 @@ class _SignUpState extends State<SignUp> {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
@@ -73,7 +75,7 @@ class _SignUpState extends State<SignUp> {
             ),
             Container(height: 50),
             Padding(
-              padding: const EdgeInsets.only(right: 30, left: 30),
+              padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
               child: TextField(
                 controller: _usernameTextController,
                 showCursor: true,
@@ -99,7 +101,7 @@ class _SignUpState extends State<SignUp> {
             ),
             SizedBox(height: 40),
             Padding(
-              padding: const EdgeInsets.only(right: 30, left: 30),
+              padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
               child: TextField(
                 controller: _emailTextController,
                 keyboardType: TextInputType.emailAddress,
@@ -126,7 +128,7 @@ class _SignUpState extends State<SignUp> {
             ),
             SizedBox(height: 40),
             Padding(
-              padding: const EdgeInsets.only(right: 30, left: 30),
+              padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
               child: TextField(
                 controller: _passwordTextController,
                 minLines: 1,
@@ -153,7 +155,7 @@ class _SignUpState extends State<SignUp> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 30),
+              padding: EdgeInsets.only(left: screenWidth * 0.05),
               child: Align(
                 alignment: AlignmentDirectional.centerEnd,
                 child: TextButton(
@@ -171,7 +173,10 @@ class _SignUpState extends State<SignUp> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(right: 50, left: 50, top: 40),
+              padding: EdgeInsets.only(
+                  right: screenWidth * 0.1,
+                  left: screenWidth * 0.1,
+                  top: screenWidth * 0.05),
               child: ElevatedButton(
                 onPressed: () {
                   _checkData();

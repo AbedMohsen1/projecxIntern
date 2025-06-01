@@ -3,7 +3,6 @@ import 'package:ahd/screens/auth/sign_up.dart';
 import 'package:ahd/screens/bottom_main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:hexcolor/hexcolor.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -36,6 +35,8 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
@@ -70,7 +71,7 @@ class _LoginState extends State<Login> {
             ),
             Container(height: 50),
             Padding(
-              padding: const EdgeInsets.only(right: 30, left: 30),
+              padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
               child: TextField(
                 controller: _emailTextController,
                 keyboardType: TextInputType.emailAddress,
@@ -97,7 +98,7 @@ class _LoginState extends State<Login> {
             ),
             SizedBox(height: 40),
             Padding(
-              padding: const EdgeInsets.only(right: 30, left: 30),
+              padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
               child: TextField(
                 controller: _passwordTextController,
                 minLines: 1,
@@ -124,7 +125,7 @@ class _LoginState extends State<Login> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 30),
+              padding: EdgeInsets.only(left: screenWidth * 0.05),
               child: Align(
                 alignment: AlignmentDirectional.centerEnd,
                 child: TextButton(
@@ -142,13 +143,16 @@ class _LoginState extends State<Login> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(right: 50, left: 50, top: 40),
+              padding: EdgeInsets.only(
+                  right: screenWidth * 0.1,
+                  left: screenWidth * 0.1,
+                  top: screenWidth * 0.05),
               child: ElevatedButton(
                 onPressed: () {
                   _checkData();
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: AppColors.black,
+                  backgroundColor: AppColors.blu,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),
@@ -156,7 +160,7 @@ class _LoginState extends State<Login> {
                 ),
                 child: Text(
                   'تسجيل الدخول',
-                  style: TextStyle(color: HexColor("#FFFFFF")),
+                  style: TextStyle(color: AppColors.white),
                 ),
               ),
             ),
