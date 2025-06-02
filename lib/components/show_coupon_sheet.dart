@@ -1,9 +1,11 @@
+import 'package:ahd/Theme/color_managment.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void showCouponSheet(BuildContext context) {
   showModalBottomSheet(
+    backgroundColor: AppColors.white,
     context: context,
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
@@ -15,55 +17,75 @@ void showCouponSheet(BuildContext context) {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            /// شريط العنوان مع زر الإغلاق
+            IconButton(
+              icon: Icon(Icons.close),
+              onPressed: () => Navigator.pop(context),
+            ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
                   "فوغا كلوسيت",
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-                IconButton(
-                  icon: Icon(Icons.close),
-                  onPressed: () => Navigator.pop(context),
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ],
             ),
-
-            SizedBox(height: 12),
-
-            /// وصف العرض
-            Text(
-              "تسوق الأزياء الأوروبية في فوغا كلوسيت بخصومات تصل إلى 80٪ اليوم",
-              style: TextStyle(fontSize: 14),
-            ),
-
             SizedBox(height: 20),
-
-            /// وصف الرمز
-            Text(
-              "انسخ واستخدم الرمز في فوغا كلوسيت",
-              style: TextStyle(fontSize: 13, color: Colors.grey),
+            Padding(
+              padding: const EdgeInsets.all(20),
+              child: Text(
+                "تسوق الأزياء الأوروبية في فوغا كلوسيت بخصومات تصل إلى 80٪ اليوم",
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 14),
+              ),
             ),
-
-            SizedBox(height: 10),
-
-            /// الكود + زر النسخ
+            SizedBox(height: 20),
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Expanded(
-                  child: Container(
-                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 12),
-                    decoration: BoxDecoration(
-                      color: Colors.grey.shade200,
-                      borderRadius: BorderRadius.circular(10),
+                Text("فوغا كلوسيت",
+                    style: TextStyle(
+                      color: AppColors.blu,
+                    )),
+                TextButton(
+                  onPressed: () {},
+                  style: TextButton.styleFrom(
+                    visualDensity: const VisualDensity(
+                      vertical: VisualDensity.minimumDensity,
+                      horizontal: VisualDensity.minimumDensity,
                     ),
-                    child: Text(
-                      "G2Y",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        letterSpacing: 1.5,
-                      ),
+                  ),
+                  child: Text(
+                    "انسخ والصق الرمز في",
+                    style: TextStyle(
+                        color: AppColors.borderauth,
+                        fontWeight: FontWeight.w100),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 10),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: 200,
+                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 12),
+                  decoration: BoxDecoration(
+                    color: Colors.grey.shade200,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Text(
+                    "G2Y",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 1.5,
                     ),
                   ),
                 ),
@@ -78,10 +100,7 @@ void showCouponSheet(BuildContext context) {
                 ),
               ],
             ),
-
             SizedBox(height: 20),
-
-            /// رابط المتجر
             GestureDetector(
               onTap: () async {
                 final Uri url = Uri.parse("https://www.vogacloset.com/");
@@ -93,16 +112,17 @@ void showCouponSheet(BuildContext context) {
                   );
                 }
               },
-              child: Text(
-                "اذهب إلى موقع فوغا كلوسيت",
-                style: TextStyle(
-                  color: Colors.blue,
-                  decoration: TextDecoration.underline,
-                  fontWeight: FontWeight.w500,
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                child: Text(
+                  "عرض فوغا كلوسيت",
+                  style: TextStyle(
+                    color: Colors.blue,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
               ),
             ),
-
             SizedBox(height: 10),
           ],
         ),
