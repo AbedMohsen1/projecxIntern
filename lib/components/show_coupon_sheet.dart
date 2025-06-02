@@ -4,6 +4,17 @@ import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void showCouponSheet(BuildContext context) {
+  void launchurl() async {
+    final Uri url = Uri.parse("https://www.vogacloset.com/");
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url, mode: LaunchMode.externalApplication);
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text("تعذر فتح الرابط")),
+      );
+    }
+  }
+
   showModalBottomSheet(
     backgroundColor: AppColors.white,
     context: context,
@@ -102,15 +113,8 @@ void showCouponSheet(BuildContext context) {
             ),
             SizedBox(height: 20),
             GestureDetector(
-              onTap: () async {
-                final Uri url = Uri.parse("https://www.vogacloset.com/");
-                if (await canLaunchUrl(url)) {
-                  await launchUrl(url, mode: LaunchMode.externalApplication);
-                } else {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text("تعذر فتح الرابط")),
-                  );
-                }
+              onTap: () {
+                launchurl();
               },
               child: Align(
                 alignment: Alignment.bottomCenter,

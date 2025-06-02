@@ -76,6 +76,11 @@ class _CouponCardWidgetState extends State<CouponCardWidget> {
     setState(() {
       isCopied = true;
     });
+    Future.delayed(Duration(seconds: 3), () {
+      setState(() {
+        isCopied = false;
+      });
+    });
   }
 
   @override
@@ -85,7 +90,7 @@ class _CouponCardWidgetState extends State<CouponCardWidget> {
       margin: const EdgeInsets.symmetric(vertical: 12),
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: AppColors.white,
+        color: Colors.white,
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
@@ -106,10 +111,10 @@ class _CouponCardWidgetState extends State<CouponCardWidget> {
               color: AppColors.dottedborder,
               child: DottedBorder(
                 child: Text(
-                  isCopied ? LocaleKeys.copied : widget.code,
+                  isCopied ? 'تم النسخ ✅' : widget.code,
                   style: TextStyle(
                     fontSize: 12,
-                    color: isCopied ? AppColors.green : AppColors.black,
+                    color: isCopied ? Colors.green : AppColors.black,
                   ),
                 ),
               ),
