@@ -48,34 +48,52 @@ class _SignUpState extends State<SignUp> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(height: 100),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(0),
-                  child: SvgPicture.asset('assets/img/Group8.svg'),
-                ),
-                SizedBox(width: 20),
-                Text(
-                  LocaleKeys.hasilh.tr(),
-                  style: TextStyle(
-                    fontSize: 30,
-                    letterSpacing: 0.8,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ],
+            Container(
+              height: 100,
             ),
-            Container(height: 50),
             Padding(
-              padding: EdgeInsets.all(0),
+              padding: EdgeInsets.all(screenWidth * 0.05),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SvgPicture.asset('assets/img/Group8.svg'),
+                  Text(
+                    LocaleKeys.hasilh.tr(),
+                    style: TextStyle(
+                      fontSize: 30,
+                      letterSpacing: 0.8,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(screenWidth * 0.05),
               child: Text(
                 LocaleKeys.create_new_account.tr(),
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
               ),
             ),
-            Container(height: 50),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
+              child: Align(
+                alignment: context.locale.languageCode == 'ar'
+                    ? Alignment.centerRight
+                    : Alignment.centerLeft,
+                child: Text(
+                  LocaleKeys.user_name.tr(),
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 5,
+            ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
               child: TextField(
@@ -84,24 +102,49 @@ class _SignUpState extends State<SignUp> {
                 decoration: InputDecoration(
                   hintText: LocaleKeys.user_name.tr(),
                   helperStyle: const TextStyle(
-                    color: Colors.black45,
-                    fontWeight: FontWeight.w300,
+                    color: Colors.black12,
+                    fontWeight: FontWeight.w100,
                     letterSpacing: 1,
                   ),
                   filled: false,
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: BorderSide(color: AppColors.borderauth),
+                  ),
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide(color: Colors.grey.shade400),
+                    borderSide: BorderSide(color: AppColors.borderauth),
                   ),
                   errorBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide(color: Colors.red.shade200),
+                    borderSide: BorderSide(color: AppColors.red),
                   ),
                   errorText: _usernameError,
                 ),
               ),
             ),
-            SizedBox(height: 40),
+            SizedBox(
+              height: 20,
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
+              child: Align(
+                alignment: context.locale.languageCode == 'ar'
+                    ? Alignment.centerRight
+                    : Alignment.centerLeft,
+                child: Text(
+                  LocaleKeys.Email.tr(),
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 5,
+            ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
               child: TextField(
@@ -111,24 +154,49 @@ class _SignUpState extends State<SignUp> {
                 decoration: InputDecoration(
                   hintText: LocaleKeys.Email.tr(),
                   helperStyle: const TextStyle(
-                    color: Colors.black45,
-                    fontWeight: FontWeight.w300,
+                    color: Colors.black12,
+                    fontWeight: FontWeight.w100,
                     letterSpacing: 1,
                   ),
                   filled: false,
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: BorderSide(color: AppColors.borderauth),
+                  ),
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide(color: Colors.grey.shade400),
+                    borderSide: BorderSide(color: AppColors.borderauth),
                   ),
                   errorBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide(color: Colors.red.shade200),
+                    borderSide: BorderSide(color: AppColors.red),
                   ),
                   errorText: _emailError,
                 ),
               ),
             ),
-            SizedBox(height: 40),
+            SizedBox(
+              height: 20,
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
+              child: Align(
+                alignment: context.locale.languageCode == 'ar'
+                    ? Alignment.centerRight
+                    : Alignment.centerLeft,
+                child: Text(
+                  LocaleKeys.password.tr(),
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 5,
+            ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
               child: TextField(
@@ -144,35 +212,24 @@ class _SignUpState extends State<SignUp> {
                       _obscure ? Icons.visibility : Icons.visibility_off,
                     ),
                   ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: BorderSide(color: AppColors.borderauth),
+                  ),
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide(color: Colors.grey.shade400),
+                    borderSide: BorderSide(color: AppColors.borderauth),
                   ),
                   errorBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide(color: Colors.red.shade200),
+                    borderSide: BorderSide(color: AppColors.red),
                   ),
                   errorText: _passwordError,
                 ),
               ),
             ),
-            Padding(
-              padding: EdgeInsets.only(left: screenWidth * 0.05),
-              child: Align(
-                alignment: AlignmentDirectional.centerEnd,
-                child: TextButton(
-                  onPressed: () {},
-                  style: TextButton.styleFrom(
-                    visualDensity: const VisualDensity(
-                      vertical: VisualDensity.minimumDensity,
-                    ),
-                  ),
-                  child: Text(
-                    LocaleKeys.forgot_your_password.tr(),
-                    style: TextStyle(color: AppColors.black),
-                  ),
-                ),
-              ),
+            SizedBox(
+              height: 20,
             ),
             Padding(
               padding: EdgeInsets.only(
@@ -196,12 +253,16 @@ class _SignUpState extends State<SignUp> {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(
+              height: 5,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(LocaleKeys.log_in.tr(),
-                    style: TextStyle(color: AppColors.blu)),
+                Text(
+                  LocaleKeys.already_have_an_account.tr(),
+                  style: TextStyle(color: AppColors.black),
+                ),
                 TextButton(
                   onPressed: () {
                     Navigator.push(
@@ -215,10 +276,8 @@ class _SignUpState extends State<SignUp> {
                       horizontal: VisualDensity.minimumDensity,
                     ),
                   ),
-                  child: Text(
-                    LocaleKeys.already_have_an_account.tr(),
-                    style: TextStyle(color: AppColors.black),
-                  ),
+                  child: Text(LocaleKeys.log_in.tr(),
+                      style: TextStyle(color: AppColors.blu)),
                 ),
               ],
             ),

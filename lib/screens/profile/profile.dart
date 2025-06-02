@@ -43,6 +43,10 @@ class _ProfileState extends State<Profile> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
+                        Text(
+                          LocaleKeys.already_have_an_account.tr(),
+                          style: TextStyle(color: AppColors.black),
+                        ),
                         TextButton(
                           onPressed: () {
                             Navigator.push(
@@ -56,13 +60,9 @@ class _ProfileState extends State<Profile> {
                               horizontal: VisualDensity.minimumDensity,
                             ),
                           ),
-                          child: Text(
-                            LocaleKeys.already_have_an_account.tr(),
-                            style: TextStyle(color: AppColors.black),
-                          ),
+                          child: Text(LocaleKeys.log_in.tr(),
+                              style: TextStyle(color: AppColors.blu)),
                         ),
-                        Text(LocaleKeys.log_in.tr(),
-                            style: TextStyle(color: AppColors.blu)),
                       ],
                     ),
                     BorderContainer(

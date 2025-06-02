@@ -10,7 +10,7 @@ class AppColors {
   static Color border = HexColor("#E6ECF8");
   static Color dis = HexColor("#878E9E");
   static Color green = HexColor("#58C27D");
-  static Color redcolor = HexColor("#E65A5A");
   static Color dottedborder = HexColor("#F6F7FB");
   static Color red = HexColor("##E50019");
+  static Color borderauth = HexColor("#D1D8E5");
 }

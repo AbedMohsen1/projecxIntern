@@ -1,5 +1,6 @@
 import 'package:ahd/Theme/color_managment.dart';
 import 'package:ahd/components/logo_home_page.dart';
+import 'package:ahd/components/show_coupon_sheet.dart';
 import 'package:ahd/screens/favorites/like_unlike.dart';
 import 'package:ahd/translations/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -101,7 +102,9 @@ class CouponsPageHome extends StatelessWidget {
                 ),
                 SizedBox(height: 20),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    showCouponSheet(context);
+                  },
                   style: ElevatedButton.styleFrom(
                     minimumSize: const Size(double.infinity, 45),
                     shape: RoundedRectangleBorder(

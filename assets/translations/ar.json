@@ -51,8 +51,8 @@
   "frequently_asked_questions": "الأسئلة الشائعة",
   "log_out": "تسجيل خروج",
   "update_image": "تحديث الصورة",
-  "user_name": "اسم المستخدم",
-  "Email": "الايميل",
+  "user_name": "اسمك الكامل ",
+  "Email": "البريد الالكتروني",
   "mobile_number": "رقم الجوال",
   "date_of_birth": "تاريخ الميلاد",
   "male": "ذكر",
@@ -74,5 +74,8 @@
   "please_enter_your_password": "الرجاء ادخال كلمة المرور",
   "please_enter_your_username": "الرجاء ادخال اسم المستخدم",
   "added_to_favorites": "تمت الإضافة إلى المفضلة",
-  "removed_from_favorites": "تمت الإزالة من المفضلة"
+  "removed_from_favorites": "تمت الإزالة من المفضلة",
+  "you_do_not_have_an_account": "ليس لديك حساب ؟",
+  "follow_as_a_guest": "تابع  كضيف",
+  "copied": "تم نسخ الكود"
 }

@@ -74,5 +74,8 @@
   "please_enter_your_email_address": "Please enter your email address",
   "please_enter_your_username": "Please enter your username",
   "added_to_favorites": "Added to favorites",
-  "removed_from_favorites": "Removed from favorites"
+  "removed_from_favorites": "Removed from favorites",
+  "you_do_not_have_an_account": "You do not have an account?",
+  "follow_as_a_guest": "Follow as a guest",
+  "copied": "Copied"
 }
