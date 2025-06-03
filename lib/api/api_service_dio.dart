@@ -3,7 +3,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class ApiService {
   static final Dio dio = Dio(BaseOptions(
-    baseUrl: 'https://your-api-base-url.com/api/',
+    baseUrl: '',
     connectTimeout: const Duration(seconds: 10),
     receiveTimeout: const Duration(seconds: 10),
     headers: {
