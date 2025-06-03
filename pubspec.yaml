@@ -45,6 +45,7 @@ dependencies:
   easy_localization: ^3.0.7+1
   fluttertoast: ^8.2.12
   url_launcher: ^6.3.1
+  dio: ^5.8.0+1
 
 dev_dependencies:
   flutter_test:
