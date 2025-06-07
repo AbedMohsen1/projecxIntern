@@ -7,6 +7,7 @@ class LanguageButton extends StatelessWidget {
   final VoidCallback onPressed;
 
   const LanguageButton({
+    super.key,
     required this.text,
     required this.isSelected,
     required this.onPressed,

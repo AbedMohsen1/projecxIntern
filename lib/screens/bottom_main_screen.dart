@@ -49,7 +49,7 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final List<String> _labels = [
+    final List<String> labels = [
       LocaleKeys.home_page.tr(),
       LocaleKeys.stores.tr(),
       LocaleKeys.categories.tr(),
@@ -67,7 +67,7 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
         showSelectedLabels: false,
         selectedItemColor: AppColors.blu,
         unselectedItemColor: AppColors.black,
-        items: List.generate(_labels.length, (index) {
+        items: List.generate(labels.length, (index) {
           final isActive = _selectedIndex == index;
           return BottomNavigationBarItem(
             label: '',
@@ -80,7 +80,7 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
                 ),
                 const SizedBox(height: 2),
                 Text(
-                  _labels[index],
+                  labels[index],
                   style: TextStyle(
                     fontSize: 12,
                     fontWeight: isActive ? FontWeight.bold : FontWeight.normal,

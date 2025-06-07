@@ -1,10 +1,14 @@
+import 'package:ahd/Widget/label_auth_text';
+import 'package:ahd/Widget/text_field_auth.dart';
+import 'package:ahd/screens/bottom_main_screen.dart';
 import 'package:ahd/theme/color_managment.dart';
 import 'package:ahd/screens/auth/sign_up.dart';
-import 'package:ahd/screens/bottom_main_screen.dart';
 import 'package:ahd/translations/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:provider/provider.dart';
+import 'package:ahd/providers/authprovider.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -35,6 +39,19 @@ class _LoginState extends State<Login> {
     super.dispose();
   }
 
+  bool _checkData() {
+    setState(() {
+      _emailError = _emailTextController.text.isEmpty
+          ? LocaleKeys.please_enter_your_email_address.tr()
+          : null;
+      _passwordError = _passwordTextController.text.isEmpty
+          ? LocaleKeys.please_enter_your_password.tr()
+          : null;
+    });
+    return _emailTextController.text.isNotEmpty &&
+        _passwordTextController.text.isNotEmpty;
+  }
+
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -44,9 +61,7 @@ class _LoginState extends State<Login> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
-              height: 100,
-            ),
+            const SizedBox(height: 100),
             Padding(
               padding: EdgeInsets.all(screenWidth * 0.05),
               child: Row(
@@ -68,135 +83,93 @@ class _LoginState extends State<Login> {
               padding: EdgeInsets.all(screenWidth * 0.05),
               child: Text(
                 LocaleKeys.log_in.tr(),
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+                style:
+                    const TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
               ),
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
-              child: Align(
-                alignment: context.locale.languageCode == 'ar'
-                    ? Alignment.centerRight
-                    : Alignment.centerLeft,
-                child: Text(
-                  LocaleKeys.Email.tr(),
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.black,
-                  ),
-                ),
+            LabelAuthText(
+              text: LocaleKeys.Email.tr(),
+            ),
+            TextFieldAuth(
+              controller: _emailTextController,
+              hint: LocaleKeys.Email.tr(),
+              errorText: _emailError,
+              keyboardType: TextInputType.emailAddress,
+            ),
+            const SizedBox(height: 20),
+            LabelAuthText(
+              text: LocaleKeys.password.tr(),
+            ),
+            TextFieldAuth(
+              controller: _passwordTextController,
+              hint: LocaleKeys.password.tr(),
+              errorText: _passwordError,
+              obscureText: _obscure,
+              suffixIcon: IconButton(
+                onPressed: () => setState(() => _obscure = !_obscure),
+                icon: Icon(_obscure ? Icons.visibility : Icons.visibility_off),
               ),
             ),
-            SizedBox(
-              height: 5,
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
-              child: TextField(
-                controller: _emailTextController,
-                keyboardType: TextInputType.emailAddress,
-                showCursor: true,
-                decoration: InputDecoration(
-                  hintText: LocaleKeys.Email.tr(),
-                  helperStyle: const TextStyle(
-                    color: Colors.black12,
-                    fontWeight: FontWeight.w100,
-                    letterSpacing: 1,
-                  ),
-                  filled: false,
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide(color: AppColors.borderauth),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide(color: AppColors.borderauth),
-                  ),
-                  errorBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide(color: AppColors.red),
-                  ),
-                  errorText: _emailError,
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
-              child: Align(
-                alignment: context.locale.languageCode == 'ar'
-                    ? Alignment.centerRight
-                    : Alignment.centerLeft,
-                child: Text(
-                  LocaleKeys.password.tr(),
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.black,
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 5,
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
-              child: TextField(
-                controller: _passwordTextController,
-                minLines: 1,
-                maxLines: 1,
-                obscureText: _obscure,
-                decoration: InputDecoration(
-                  hintText: LocaleKeys.password.tr(),
-                  suffixIcon: IconButton(
-                    onPressed: () => setState(() => _obscure = !_obscure),
-                    icon: Icon(
-                      _obscure ? Icons.visibility : Icons.visibility_off,
+            const SizedBox(height: 20),
+            Selector<AuthProvider, bool>(
+              selector: (_, provider) => provider.isLoading,
+              builder: (context, isLoading, _) {
+                return Padding(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: screenWidth * 0.1,
+                      vertical: screenWidth * 0.02),
+                  child: ElevatedButton(
+                    onPressed: isLoading
+                        ? null
+                        : () {
+                            if (_checkData()) {
+                              context.read<AuthProvider>().login(
+                                    _emailTextController.text,
+                                    _passwordTextController.text,
+                                  );
+                            }
+                          },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: AppColors.blu,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      minimumSize: const Size(double.infinity, 45),
                     ),
+                    child: isLoading
+                        ? const SizedBox(
+                            width: 20,
+                            height: 20,
+                            child: CircularProgressIndicator(
+                              color: Colors.white,
+                              strokeWidth: 2,
+                            ),
+                          )
+                        : Text(
+                            LocaleKeys.log_in.tr(),
+                            style: TextStyle(color: AppColors.white),
+                          ),
                   ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide(color: AppColors.borderauth),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide(color: AppColors.borderauth),
-                  ),
-                  errorBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide(color: AppColors.red),
-                  ),
-                  errorText: _passwordError,
-                ),
-              ),
+                );
+              },
             ),
-            SizedBox(
-              height: 20,
-            ),
-            Padding(
-              padding: EdgeInsets.only(
-                  right: screenWidth * 0.1,
-                  left: screenWidth * 0.1,
-                  top: screenWidth * 0.05),
-              child: ElevatedButton(
-                onPressed: () {
-                  _checkData();
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: AppColors.blu,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
+            Selector<AuthProvider, String?>(
+              selector: (_, provider) => provider.loginMessage,
+              builder: (context, message, _) {
+                if (message == null) return const SizedBox.shrink();
+                return Padding(
+                  padding: const EdgeInsets.only(top: 10),
+                  child: Text(
+                    message.tr(),
+                    style: TextStyle(
+                      color:
+                          message.contains("نجاح") ? Colors.green : Colors.red,
+                      fontSize: 16,
+                    ),
+                    textAlign: TextAlign.center,
                   ),
-                  minimumSize: const Size(double.infinity, 45),
-                ),
-                child: Text(
-                  LocaleKeys.log_in.tr(),
-                  style: TextStyle(color: AppColors.white),
-                ),
-              ),
+                );
+              },
             ),
             Padding(
               padding: EdgeInsets.only(
@@ -206,9 +179,11 @@ class _LoginState extends State<Login> {
               child: ElevatedButton(
                 onPressed: () {
                   Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => BottomBarScreen()));
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const BottomBarScreen(),
+                    ),
+                  );
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: AppColors.white,
@@ -224,9 +199,7 @@ class _LoginState extends State<Login> {
                 ),
               ),
             ),
-            SizedBox(
-              height: 10,
-            ),
+            const SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -238,17 +211,13 @@ class _LoginState extends State<Login> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => SignUp()),
+                      MaterialPageRoute(builder: (context) => const SignUp()),
                     );
                   },
-                  style: TextButton.styleFrom(
-                    visualDensity: const VisualDensity(
-                      vertical: VisualDensity.minimumDensity,
-                      horizontal: VisualDensity.minimumDensity,
-                    ),
+                  child: Text(
+                    LocaleKeys.create_new_account.tr(),
+                    style: TextStyle(color: AppColors.blu),
                   ),
-                  child: Text(LocaleKeys.create_new_account.tr(),
-                      style: TextStyle(color: AppColors.blu)),
                 ),
               ],
             ),
@@ -256,23 +225,5 @@ class _LoginState extends State<Login> {
         ),
       ),
     );
-  }
-
-  bool _checkData() {
-    setState(() {
-      _emailError = _emailTextController.text.isEmpty
-          ? LocaleKeys.please_enter_your_email_address.tr()
-          : null;
-      _passwordError = _passwordTextController.text.isEmpty
-          ? LocaleKeys.please_enter_your_password.tr()
-          : null;
-    });
-    if (_emailTextController.text.isNotEmpty &&
-        _passwordTextController.text.isNotEmpty) {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => BottomBarScreen()));
-      return true;
-    }
-    return false;
   }
 }
