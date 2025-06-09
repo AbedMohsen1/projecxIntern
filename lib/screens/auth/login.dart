@@ -88,7 +88,7 @@ class _LoginState extends State<Login> {
               ),
             ),
             LabelAuthText(
-              text: LocaleKeys.Email.tr(),
+              text: LocaleKeys.password.tr(),
             ),
             TextFieldAuth(
               controller: _emailTextController,

@@ -4,7 +4,7 @@ import 'package:easy_localization/easy_localization.dart';
 class LabelAuthText extends StatelessWidget {
   final String text;
 
-  const LabelAuthText(String tr, String tr, {super.key, required this.text});
+  const LabelAuthText({super.key, required this.text});
 
   @override
   Widget build(BuildContext context) {

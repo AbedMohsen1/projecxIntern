@@ -93,20 +93,26 @@ class _SignUpState extends State<SignUp> {
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
               ),
             ),
-            LabelAuthText(text: LocaleKeys.user_name.tr()),
+            LabelAuthText(
+              text: LocaleKeys.password.tr(),
+            ),
             TextFieldAuth(
                 controller: _usernameTextController,
                 hint: LocaleKeys.user_name.tr(),
                 errorText: _usernameError),
             const SizedBox(height: 20),
-            LabelAuthText(text: LocaleKeys.Email.tr()),
+            LabelAuthText(
+              text: LocaleKeys.password.tr(),
+            ),
             TextFieldAuth(
                 controller: _emailTextController,
                 hint: LocaleKeys.Email.tr(),
                 errorText: _emailError,
                 keyboardType: TextInputType.emailAddress),
             const SizedBox(height: 20),
-            LabelAuthText(text: LocaleKeys.password.tr()),
+            LabelAuthText(
+              text: LocaleKeys.password.tr(),
+            ),
             TextFieldAuth(
               controller: _passwordTextController,
               hint: LocaleKeys.password.tr(),
