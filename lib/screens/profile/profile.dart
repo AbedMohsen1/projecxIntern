@@ -1,3 +1,4 @@
+import 'package:ahd/providers/localeprovider.dart';
 import 'package:ahd/screens/auth/login.dart';
 import 'package:ahd/screens/profile/about_in_app.dart';
 import 'package:ahd/screens/profile/bordercontainer.dart';
@@ -9,6 +10,7 @@ import 'package:ahd/theme/color_managment.dart';
 import 'package:ahd/translations/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -67,7 +69,7 @@ class _ProfileState extends State<Profile> {
                     ),
                     BorderContainer(
                       child: Padding(
-                        padding: EdgeInsets.all(screenWidth * 0.02),
+                        padding: EdgeInsets.all(screenWidth * 0.015),
                         child: Row(
                           children: [
                             TextButtonProfile(
@@ -79,18 +81,20 @@ class _ProfileState extends State<Profile> {
                               text: 'English',
                               isSelected: context.locale.languageCode == 'en',
                               onPressed: () {
-                                setState(() {
-                                  context.setLocale(Locale('en'));
-                                });
+                                context
+                                    .read<LocaleProvider>()
+                                    .setLocale(const Locale('en'));
+                                context.setLocale(const Locale('en'));
                               },
                             ),
                             LanguageButton(
                               text: 'العربية',
                               isSelected: context.locale.languageCode == 'ar',
                               onPressed: () {
-                                setState(() {
-                                  context.setLocale(Locale('ar'));
-                                });
+                                context
+                                    .read<LocaleProvider>()
+                                    .setLocale(const Locale('ar'));
+                                context.setLocale(const Locale('ar'));
                               },
                             ),
                           ],

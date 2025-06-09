@@ -4,8 +4,10 @@ import 'package:ahd/components/icon_home_page_drawer.dart';
 import 'package:ahd/components/icon_home_page_drawer_social.dart';
 import 'package:ahd/components/offers_home_page.dart';
 import 'package:ahd/components/products_home_page.dart';
+import 'package:ahd/screens/categories/categories.dart';
 import 'package:ahd/screens/categories/categories_home_page.dart';
 import 'package:ahd/components/logo_home_page.dart';
+import 'package:ahd/screens/stores/stores.dart';
 import 'package:ahd/theme/color_managment.dart';
 import 'package:ahd/translations/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -275,14 +277,21 @@ class _HomePageState extends State<HomePage> {
                   Spacer(),
                   Padding(
                     padding: EdgeInsets.only(left: screenWidth * 0.01),
-                    child: Row(
-                      children: [
-                        Text(LocaleKeys.more.tr(),
-                            style: TextStyle(color: Colors.blue, fontSize: 14)),
-                        SizedBox(width: 5),
-                        Icon(Icons.arrow_forward, color: Colors.blue),
-                        SizedBox(width: 5),
-                      ],
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Stores()));
+                      },
+                      child: Row(
+                        children: [
+                          Text(LocaleKeys.more.tr(),
+                              style:
+                                  TextStyle(color: Colors.blue, fontSize: 14)),
+                          SizedBox(width: 5),
+                          Icon(Icons.arrow_forward, color: Colors.blue),
+                          SizedBox(width: 5),
+                        ],
+                      ),
                     ),
                   ),
                 ],
@@ -366,14 +375,22 @@ class _HomePageState extends State<HomePage> {
                   Spacer(),
                   Padding(
                     padding: EdgeInsets.only(left: screenWidth * 0.01),
-                    child: Row(
-                      children: [
-                        Text(LocaleKeys.more.tr(),
-                            style: TextStyle(color: Colors.blue)),
-                        SizedBox(width: 5),
-                        Icon(Icons.arrow_forward, color: Colors.blue),
-                        SizedBox(width: 5),
-                      ],
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Categories()));
+                      },
+                      child: Row(
+                        children: [
+                          Text(LocaleKeys.more.tr(),
+                              style: TextStyle(color: Colors.blue)),
+                          SizedBox(width: 5),
+                          Icon(Icons.arrow_forward, color: Colors.blue),
+                          SizedBox(width: 5),
+                        ],
+                      ),
                     ),
                   ),
                 ],

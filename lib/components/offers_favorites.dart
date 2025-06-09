@@ -31,7 +31,7 @@ class Offers extends StatelessWidget {
                 SvgPicture.asset(
                   offer.storeLogo,
                 ),
-                SizedBox(width: 12),
+                SizedBox(width: 10),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -49,11 +49,11 @@ class Offers extends StatelessWidget {
                               child: Text(
                                 offer.discountLabel,
                                 style:
-                                    TextStyle(fontSize: 9, color: Colors.white),
+                                    TextStyle(fontSize: 8, color: Colors.white),
                               ),
                             ),
                           SizedBox(
-                            width: 10,
+                            width: 5,
                           ),
                           Container(
                             padding: EdgeInsets.symmetric(
@@ -73,9 +73,7 @@ class Offers extends StatelessWidget {
                             children: [
                               Icon(Icons.check_circle_outline_outlined,
                                   size: 20),
-                              SizedBox(height: 8),
                               LikeUnLike(),
-                              SizedBox(height: 8),
                               Icon(Icons.share_outlined, size: 20),
                             ],
                           ),
