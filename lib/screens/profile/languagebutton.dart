@@ -30,7 +30,7 @@ class LanguageButton extends StatelessWidget {
         child: Text(
           text,
           style: TextStyle(
-            color: isSelected ? Colors.white : AppColors.black,
+            color: isSelected ? AppColors.white : AppColors.black,
             fontWeight: FontWeight.w600,
           ),
         ),

@@ -88,7 +88,7 @@ void showCouponSheet(BuildContext context) {
                   width: 200,
                   padding: EdgeInsets.symmetric(vertical: 10, horizontal: 12),
                   decoration: BoxDecoration(
-                    color: Colors.grey.shade200,
+                    color: AppColors.white,
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Text(
@@ -121,7 +121,7 @@ void showCouponSheet(BuildContext context) {
                 child: Text(
                   "عرض فوغا كلوسيت",
                   style: TextStyle(
-                    color: Colors.blue,
+                    color: AppColors.blu,
                     fontWeight: FontWeight.w500,
                   ),
                 ),

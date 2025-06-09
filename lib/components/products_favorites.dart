@@ -1,3 +1,4 @@
+import 'package:ahd/Theme/color_managment.dart';
 import 'package:ahd/models/data_model.dart';
 import 'package:ahd/screens/favorites/like_unlike.dart';
 import 'package:ahd/translations/locale_keys.g.dart';
@@ -21,7 +22,9 @@ class Products extends StatelessWidget {
             margin: EdgeInsets.only(bottom: 16),
             padding: EdgeInsets.all(12),
             decoration: BoxDecoration(
-              border: Border.all(color: Colors.grey.shade300),
+              border: Border.all(
+                color: AppColors.white,
+              ),
               borderRadius: BorderRadius.circular(12),
             ),
             child: Row(
@@ -43,13 +46,15 @@ class Products extends StatelessWidget {
                               padding: EdgeInsets.symmetric(
                                   horizontal: 8, vertical: 4),
                               decoration: BoxDecoration(
-                                color: Colors.blue,
+                                color: AppColors.blu,
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               child: Text(
                                 offer.discountLabel,
-                                style:
-                                    TextStyle(fontSize: 9, color: Colors.white),
+                                style: TextStyle(
+                                  fontSize: 9,
+                                  color: AppColors.white,
+                                ),
                               ),
                             ),
                           SizedBox(
@@ -59,13 +64,15 @@ class Products extends StatelessWidget {
                             padding: EdgeInsets.symmetric(
                                 horizontal: 8, vertical: 4),
                             decoration: BoxDecoration(
-                              color: Colors.blue.shade100,
+                              color: AppColors.white,
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: Text(
                               LocaleKeys.exclusively.tr(),
                               style: TextStyle(
-                                  fontSize: 9, color: Colors.blue.shade800),
+                                fontSize: 9,
+                                color: AppColors.blu,
+                              ),
                             ),
                           ),
                           Spacer(),

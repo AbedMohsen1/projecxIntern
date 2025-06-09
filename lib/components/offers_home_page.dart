@@ -21,11 +21,11 @@ class OffersHomePage extends StatelessWidget {
             margin: const EdgeInsets.symmetric(vertical: 12),
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: AppColors.white,
               borderRadius: BorderRadius.circular(16),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.grey.shade200,
+                  color: AppColors.white,
                   blurRadius: 6,
                 ),
               ],

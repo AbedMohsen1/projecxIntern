@@ -1,3 +1,4 @@
+import 'package:ahd/Theme/color_managment.dart';
 import 'package:flutter/material.dart';
 
 class BorderContainer extends StatelessWidget {
@@ -13,9 +14,9 @@ class BorderContainer extends StatelessWidget {
       margin: EdgeInsets.symmetric(vertical: 6),
       padding: EdgeInsets.symmetric(horizontal: 12),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: AppColors.white,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.grey.shade300),
+        border: Border.all(color: AppColors.white),
       ),
       child: child,
     );

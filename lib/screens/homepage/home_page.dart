@@ -171,7 +171,7 @@ class _HomePageState extends State<HomePage> {
               Text(
                 LocaleKeys.hasilh.tr(),
                 style: TextStyle(
-                  color: Colors.black,
+                  color: AppColors.black,
                   fontWeight: FontWeight.bold,
                   letterSpacing: 1.5,
                 ),
@@ -285,10 +285,10 @@ class _HomePageState extends State<HomePage> {
                       child: Row(
                         children: [
                           Text(LocaleKeys.more.tr(),
-                              style:
-                                  TextStyle(color: Colors.blue, fontSize: 14)),
+                              style: TextStyle(
+                                  color: AppColors.blu, fontSize: 14)),
                           SizedBox(width: 5),
-                          Icon(Icons.arrow_forward, color: Colors.blue),
+                          Icon(Icons.arrow_forward, color: AppColors.blu),
                           SizedBox(width: 5),
                         ],
                       ),
@@ -350,9 +350,9 @@ class _HomePageState extends State<HomePage> {
                     child: Row(
                       children: [
                         Text(LocaleKeys.more.tr(),
-                            style: TextStyle(color: Colors.blue)),
+                            style: TextStyle(color: AppColors.blu)),
                         SizedBox(width: 5),
-                        Icon(Icons.arrow_forward, color: Colors.blue),
+                        Icon(Icons.arrow_forward, color: AppColors.blu),
                         SizedBox(width: 5),
                       ],
                     ),
@@ -385,9 +385,9 @@ class _HomePageState extends State<HomePage> {
                       child: Row(
                         children: [
                           Text(LocaleKeys.more.tr(),
-                              style: TextStyle(color: Colors.blue)),
+                              style: TextStyle(color: AppColors.blu)),
                           SizedBox(width: 5),
-                          Icon(Icons.arrow_forward, color: Colors.blue),
+                          Icon(Icons.arrow_forward, color: AppColors.blu),
                           SizedBox(width: 5),
                         ],
                       ),
@@ -411,9 +411,9 @@ class _HomePageState extends State<HomePage> {
                     child: Row(
                       children: [
                         Text(LocaleKeys.more.tr(),
-                            style: TextStyle(color: Colors.blue)),
+                            style: TextStyle(color: AppColors.blu)),
                         SizedBox(width: 5),
-                        Icon(Icons.arrow_forward, color: Colors.blue),
+                        Icon(Icons.arrow_forward, color: AppColors.blu),
                         SizedBox(width: 5),
                       ],
                     ),
@@ -443,9 +443,9 @@ class _HomePageState extends State<HomePage> {
                     child: Row(
                       children: [
                         Text(LocaleKeys.more.tr(),
-                            style: TextStyle(color: Colors.blue)),
+                            style: TextStyle(color: AppColors.blu)),
                         SizedBox(width: 5),
-                        Icon(Icons.arrow_forward, color: Colors.blue),
+                        Icon(Icons.arrow_forward, color: AppColors.blu),
                         SizedBox(width: 5),
                       ],
                     ),
@@ -475,9 +475,9 @@ class _HomePageState extends State<HomePage> {
                     child: Row(
                       children: [
                         Text(LocaleKeys.more.tr(),
-                            style: TextStyle(color: Colors.blue)),
+                            style: TextStyle(color: AppColors.blu)),
                         SizedBox(width: 5),
-                        Icon(Icons.arrow_forward, color: Colors.blue),
+                        Icon(Icons.arrow_forward, color: AppColors.blu),
                         SizedBox(width: 5),
                       ],
                     ),

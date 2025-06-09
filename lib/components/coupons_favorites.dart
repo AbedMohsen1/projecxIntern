@@ -1,3 +1,4 @@
+import 'package:ahd/Theme/color_managment.dart';
 import 'package:ahd/models/data_model.dart';
 import 'package:ahd/screens/favorites/like_unlike.dart';
 import 'package:ahd/translations/locale_keys.g.dart';
@@ -45,7 +46,7 @@ class Coupons extends StatelessWidget {
                               padding: EdgeInsets.symmetric(
                                   horizontal: 8, vertical: 4),
                               decoration: BoxDecoration(
-                                color: Colors.blue,
+                                color: AppColors.blu,
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               child:
@@ -53,7 +54,9 @@ class Coupons extends StatelessWidget {
                                   Text(
                                 offer.discountLabel,
                                 style: TextStyle(
-                                    fontSize: 12, color: Colors.white),
+                                  fontSize: 12,
+                                  color: AppColors.white,
+                                ),
                               ),
                             ),
                           SizedBox(
@@ -63,13 +66,15 @@ class Coupons extends StatelessWidget {
                             padding: EdgeInsets.symmetric(
                                 horizontal: 8, vertical: 4),
                             decoration: BoxDecoration(
-                              color: Colors.blue.shade100,
+                              color: AppColors.white,
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: Text(
                               LocaleKeys.exclusively.tr(),
                               style: TextStyle(
-                                  fontSize: 12, color: Colors.blue.shade800),
+                                fontSize: 12,
+                                color: AppColors.blu,
+                              ),
                             ),
                           ),
                           Spacer(),

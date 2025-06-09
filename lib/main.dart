@@ -1,5 +1,4 @@
 import 'package:ahd/providers/authprovider.dart';
-import 'package:ahd/providers/localeprovider.dart';
 import 'package:ahd/router/routers.dart';
 import 'package:ahd/screens/auth/sign_up.dart';
 import 'package:flutter/material.dart';
@@ -16,12 +15,9 @@ void main() async {
       supportedLocales: [Locale('en'), Locale('ar')],
       path: 'assets/translations',
       fallbackLocale: Locale('ar'),
-      child: MultiProvider(
-        providers: [
-          ChangeNotifierProvider(create: (_) => AuthProvider()),
-          ChangeNotifierProvider(create: (_) => LocaleProvider()),
-        ],
-        child: const MyApp(),
+      child: ChangeNotifierProvider(
+        create: (_) => AuthProvider(),
+        child: MyApp(),
       ),
     ),
   );
@@ -37,13 +33,11 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    final locale = context.watch<LocaleProvider>().locale;
-
     final Routers routers = Routers();
     return GetMaterialApp(
       theme: ThemeData(fontFamily: 'Cairo'),
       home: SignUp(),
-      locale: locale,
+      locale: context.locale,
       supportedLocales: context.supportedLocales,
       localizationsDelegates: context.localizationDelegates,
       debugShowCheckedModeBanner: false,

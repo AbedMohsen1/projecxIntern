@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:ahd/theme/color_managment.dart';
 
 class LabelAuthText extends StatelessWidget {
   final String text;
@@ -18,10 +19,10 @@ class LabelAuthText extends StatelessWidget {
             : Alignment.centerLeft,
         child: Text(
           text,
-          style: const TextStyle(
+          style: TextStyle(
             fontSize: 14,
             fontWeight: FontWeight.w500,
-            color: Colors.black,
+            color: AppColors.black,
           ),
         ),
       ),

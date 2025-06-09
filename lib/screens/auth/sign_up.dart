@@ -1,4 +1,4 @@
-import 'package:ahd/Widget/label_auth_text';
+import 'package:ahd/Widget/label_auth_text.dart';
 import 'package:ahd/Widget/text_field_auth.dart';
 import 'package:ahd/providers/authprovider.dart';
 import 'package:ahd/theme/color_managment.dart';
@@ -64,7 +64,7 @@ class _SignUpState extends State<SignUp> {
     double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -161,11 +161,11 @@ class _SignUpState extends State<SignUp> {
                       minimumSize: const Size(double.infinity, 45),
                     ),
                     child: isLoading
-                        ? const SizedBox(
+                        ? SizedBox(
                             width: 20,
                             height: 20,
                             child: CircularProgressIndicator(
-                              color: Colors.white,
+                              color: AppColors.white,
                               strokeWidth: 2,
                             ),
                           )
