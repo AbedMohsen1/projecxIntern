@@ -8,7 +8,6 @@ class AuthProvider extends ChangeNotifier {
 
   bool get isLoading => _isLoading;
   String? get loginMessage => _loginMessage;
-
   Future<void> login(String email, String password) async {
     _isLoading = true;
     _loginMessage = null;
@@ -38,7 +37,7 @@ class AuthProvider extends ChangeNotifier {
       _loginMessage = "تم إنشاء الحساب بنجاح ✅";
       Get.to(() => BottomBarScreen());
     } else {
-      _loginMessage = "فشل إنشاء الحساب ❌ تأكد من البيانات";
+      _loginMessage = "فشل إنشاء الحساب ❌ادخل البيانات بشكل صحيح";
     }
 
     _isLoading = false;

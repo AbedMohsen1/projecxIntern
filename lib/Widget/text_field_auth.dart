@@ -28,6 +28,8 @@ class TextFieldAuth extends StatelessWidget {
         obscureText: obscureText,
         keyboardType: keyboardType,
         decoration: InputDecoration(
+          hintStyle: TextStyle(
+              fontWeight: FontWeight.w100, color: AppColors.borderauth),
           hintText: hint,
           suffixIcon: suffixIcon,
           errorText: errorText,

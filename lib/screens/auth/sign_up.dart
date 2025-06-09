@@ -94,7 +94,10 @@ class _SignUpState extends State<SignUp> {
               ),
             ),
             LabelAuthText(
-              text: LocaleKeys.password.tr(),
+              text: LocaleKeys.user_name.tr(),
+            ),
+            SizedBox(
+              height: 5,
             ),
             TextFieldAuth(
                 controller: _usernameTextController,
@@ -102,7 +105,10 @@ class _SignUpState extends State<SignUp> {
                 errorText: _usernameError),
             const SizedBox(height: 20),
             LabelAuthText(
-              text: LocaleKeys.password.tr(),
+              text: LocaleKeys.Email.tr(),
+            ),
+            SizedBox(
+              height: 5,
             ),
             TextFieldAuth(
                 controller: _emailTextController,
@@ -112,6 +118,9 @@ class _SignUpState extends State<SignUp> {
             const SizedBox(height: 20),
             LabelAuthText(
               text: LocaleKeys.password.tr(),
+            ),
+            SizedBox(
+              height: 5,
             ),
             TextFieldAuth(
               controller: _passwordTextController,

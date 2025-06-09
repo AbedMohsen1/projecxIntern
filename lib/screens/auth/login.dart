@@ -88,7 +88,10 @@ class _LoginState extends State<Login> {
               ),
             ),
             LabelAuthText(
-              text: LocaleKeys.password.tr(),
+              text: LocaleKeys.Email.tr(),
+            ),
+            SizedBox(
+              height: 5,
             ),
             TextFieldAuth(
               controller: _emailTextController,
@@ -99,6 +102,9 @@ class _LoginState extends State<Login> {
             const SizedBox(height: 20),
             LabelAuthText(
               text: LocaleKeys.password.tr(),
+            ),
+            SizedBox(
+              height: 5,
             ),
             TextFieldAuth(
               controller: _passwordTextController,
