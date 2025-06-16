@@ -21,24 +21,24 @@ class _SignUpState extends State<SignUp> {
 
   late TextEditingController _emailTextController;
   late TextEditingController _passwordTextController;
-  late TextEditingController _usernameTextController;
+  late TextEditingController _fullNameTextController;
   String? _emailError;
   String? _passwordError;
-  String? _usernameError;
+  String? _fullNameError;
 
   @override
   void initState() {
     super.initState();
     _emailTextController = TextEditingController();
     _passwordTextController = TextEditingController();
-    _usernameTextController = TextEditingController();
+    _fullNameTextController = TextEditingController();
   }
 
   @override
   void dispose() {
     _emailTextController.dispose();
     _passwordTextController.dispose();
-    _usernameTextController.dispose();
+    _fullNameTextController.dispose();
     super.dispose();
   }
 
@@ -50,13 +50,13 @@ class _SignUpState extends State<SignUp> {
       _passwordError = _passwordTextController.text.isEmpty
           ? LocaleKeys.please_enter_your_password.tr()
           : null;
-      _usernameError = _usernameTextController.text.isEmpty
+      _fullNameError = _fullNameTextController.text.isEmpty
           ? LocaleKeys.please_enter_your_username.tr()
           : null;
     });
     return _emailTextController.text.isNotEmpty &&
         _passwordTextController.text.isNotEmpty &&
-        _usernameTextController.text.isNotEmpty;
+        _fullNameTextController.text.isNotEmpty;
   }
 
   @override
@@ -93,35 +93,25 @@ class _SignUpState extends State<SignUp> {
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
               ),
             ),
-            LabelAuthText(
-              text: LocaleKeys.user_name.tr(),
-            ),
-            SizedBox(
-              height: 5,
-            ),
+            LabelAuthText(text: LocaleKeys.user_name.tr()),
+            SizedBox(height: 5),
             TextFieldAuth(
-                controller: _usernameTextController,
-                hint: LocaleKeys.user_name.tr(),
-                errorText: _usernameError),
+              controller: _fullNameTextController,
+              hint: LocaleKeys.user_name.tr(),
+              errorText: _fullNameError,
+            ),
             const SizedBox(height: 20),
-            LabelAuthText(
-              text: LocaleKeys.Email.tr(),
-            ),
-            SizedBox(
-              height: 5,
-            ),
+            LabelAuthText(text: LocaleKeys.Email.tr()),
+            SizedBox(height: 5),
             TextFieldAuth(
-                controller: _emailTextController,
-                hint: LocaleKeys.Email.tr(),
-                errorText: _emailError,
-                keyboardType: TextInputType.emailAddress),
+              controller: _emailTextController,
+              hint: LocaleKeys.Email.tr(),
+              errorText: _emailError,
+              keyboardType: TextInputType.emailAddress,
+            ),
             const SizedBox(height: 20),
-            LabelAuthText(
-              text: LocaleKeys.password.tr(),
-            ),
-            SizedBox(
-              height: 5,
-            ),
+            LabelAuthText(text: LocaleKeys.password.tr()),
+            SizedBox(height: 5),
             TextFieldAuth(
               controller: _passwordTextController,
               hint: LocaleKeys.password.tr(),
@@ -147,9 +137,9 @@ class _SignUpState extends State<SignUp> {
                         : () {
                             if (_checkData()) {
                               context.read<AuthProvider>().register(
+                                    _fullNameTextController.text,
                                     _emailTextController.text,
                                     _passwordTextController.text,
-                                    _usernameTextController.text,
                                   );
                             }
                           },

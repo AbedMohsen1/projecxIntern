@@ -83,8 +83,9 @@ class _CategoriesState extends State<Categories> {
                         borderRadius: BorderRadius.circular(20),
                         color: AppColors.white,
                       ),
-                      padding: EdgeInsets.symmetric(horizontal: 30),
                       child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           SvgPicture.asset(
                             item["icon"]!,
@@ -92,13 +93,13 @@ class _CategoriesState extends State<Categories> {
                             width: 24,
                           ),
                           SizedBox(width: 5),
-                          Expanded(
-                            child: Text(
-                              item["name"]!,
-                              style: TextStyle(
-                                  color: AppColors.black, fontSize: 12),
-                              overflow: TextOverflow.ellipsis,
+                          Text(
+                            item["name"]!,
+                            style: TextStyle(
+                              color: AppColors.black,
+                              fontSize: 12,
                             ),
+                            overflow: TextOverflow.ellipsis,
                           ),
                         ],
                       ),

@@ -94,7 +94,7 @@ class _CouponCardWidgetState extends State<CouponCardWidget> {
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: AppColors.white,
+            color: AppColors.border,
             blurRadius: 6,
           ),
         ],
@@ -110,11 +110,14 @@ class _CouponCardWidgetState extends State<CouponCardWidget> {
             child: Container(
               color: AppColors.dottedborder,
               child: DottedBorder(
-                child: Text(
-                  isCopied ? 'تم النسخ ✅' : widget.code,
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: isCopied ? Colors.green : AppColors.black,
+                child: Padding(
+                  padding: EdgeInsets.all(10),
+                  child: Text(
+                    isCopied ? 'تم النسخ ✅' : widget.code,
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: isCopied ? Colors.green : AppColors.black,
+                    ),
                   ),
                 ),
               ),
