@@ -238,3 +238,23 @@ final List<Map<String, String>> subscriptionrecord = List.generate(
     'name': LocaleKeys.membership_name_here.tr(),
   },
 );
+
+class Country {
+  final String name;
+  final String code;
+  final String logoPath;
+
+  Country({
+    required this.name,
+    required this.code,
+    required this.logoPath,
+  });
+
+  factory Country.fromJson(Map<String, dynamic> json) {
+    return Country(
+      name: json['name'] ?? '',
+      code: json['code'] ?? '',
+      logoPath: json['logoPath'] ?? '',
+    );
+  }
+}

@@ -1,5 +1,6 @@
 // ignore_for_file: avoid_print
 
+import 'package:ahd/models/data_model.dart';
 import 'package:dio/dio.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -35,5 +36,17 @@ class ServiceDio {
         },
       ),
     );
+  }
+}
+
+Future<List<Country>> fetchCountries() async {
+  final response =
+      await Dio().get('https://mobile.hasilh.com/api/LockUp/Countries');
+
+  if (response.statusCode == 200) {
+    final List data = response.data['data'];
+    return data.map((e) => Country.fromJson(e)).toList();
+  } else {
+    throw Exception('فشل تحميل الدول');
   }
 }

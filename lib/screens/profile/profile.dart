@@ -1,7 +1,7 @@
 import 'package:ahd/screens/auth/login.dart';
 import 'package:ahd/screens/profile/about_in_app.dart';
-import 'package:ahd/screens/profile/bordercontainer.dart';
-import 'package:ahd/screens/profile/languagebutton.dart';
+import 'package:ahd/screens/profile/border_container.dart';
+import 'package:ahd/screens/profile/language_button.dart';
 import 'package:ahd/screens/profile/privacy_policy.dart';
 import 'package:ahd/screens/profile/terms_and_conditions.dart';
 import 'package:ahd/screens/profile/text_button.dart';
