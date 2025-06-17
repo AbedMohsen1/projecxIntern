@@ -40,8 +40,7 @@ class ServiceDio {
 }
 
 Future<List<Country>> fetchCountries() async {
-  final response =
-      await Dio().get('https://mobile.hasilh.com/api/LockUp/Countries');
+  final response = await ServiceDio.dio.get('/LockUp/Countries');
 
   if (response.statusCode == 200) {
     final List data = response.data['data'];
