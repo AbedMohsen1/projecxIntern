@@ -9,6 +9,8 @@ import 'package:ahd/theme/color_managment.dart';
 import 'package:ahd/translations/locale_keys.g.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -18,6 +20,23 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
+  String? selectedFlag;
+  String? selectedLang;
+
+  @override
+  void initState() {
+    super.initState();
+    loadPrefs();
+  }
+
+  Future<void> loadPrefs() async {
+    final prefs = await SharedPreferences.getInstance();
+    setState(() {
+      selectedFlag = prefs.getString('selected_country_flag');
+      selectedLang = prefs.getString('language_code');
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -78,15 +97,27 @@ class _ProfileState extends State<Profile> {
                             LanguageButton(
                               text: 'English',
                               isSelected: context.locale.languageCode == 'en',
-                              onPressed: () {
+                              onPressed: () async {
                                 context.setLocale(Locale('en'));
+                                final prefs =
+                                    await SharedPreferences.getInstance();
+                                await prefs.setString('language_code', 'en');
+                                setState(() {
+                                  selectedLang = 'en';
+                                });
                               },
                             ),
                             LanguageButton(
                               text: 'العربية',
                               isSelected: context.locale.languageCode == 'ar',
-                              onPressed: () {
+                              onPressed: () async {
                                 context.setLocale(Locale('ar'));
+                                final prefs =
+                                    await SharedPreferences.getInstance();
+                                await prefs.setString('language_code', 'ar');
+                                setState(() {
+                                  selectedLang = 'ar';
+                                });
                               },
                             ),
                           ],
@@ -103,7 +134,19 @@ class _ProfileState extends State<Profile> {
                                 title: LocaleKeys.the_state.tr(),
                                 icons: Icon(Icons.location_on_outlined)),
                             Spacer(),
-                            Icon(Icons.star_rate)
+                            selectedFlag != null
+                                ? SvgPicture.network(
+                                    selectedFlag!,
+                                    width: 30,
+                                    height: 24,
+                                    placeholderBuilder: (_) => const SizedBox(
+                                      width: 30,
+                                      height: 24,
+                                      child: CircularProgressIndicator(
+                                          strokeWidth: 1.5),
+                                    ),
+                                  )
+                                : Icon(Icons.flag_outlined),
                           ],
                         ),
                       ),

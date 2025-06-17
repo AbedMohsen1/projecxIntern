@@ -3,6 +3,7 @@ import 'package:ahd/screens/Language/choose_country.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class ChooseLanguage extends StatefulWidget {
   const ChooseLanguage({super.key});
@@ -66,9 +67,19 @@ class _ChooseLanguageState extends State<ChooseLanguage> {
                 }),
             const Spacer(),
             ElevatedButton(
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ChooseCountry()));
+              onPressed: () async {
+                final prefs = await SharedPreferences.getInstance();
+
+                await prefs.setBool('language_selected', true);
+                await prefs.setString('language_code', selectedLanguage);
+
+                context.setLocale(Locale(selectedLanguage));
+
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const ChooseCountry()),
+                );
               },
               style: ElevatedButton.styleFrom(
                 minimumSize: const Size(double.infinity, 55),

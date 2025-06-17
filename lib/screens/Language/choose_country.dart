@@ -4,6 +4,7 @@ import 'package:ahd/models/data_model.dart';
 import 'package:ahd/screens/auth/sign_up.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class ChooseCountry extends StatefulWidget {
   const ChooseCountry({super.key});
@@ -133,13 +134,29 @@ class _ChooseCountryState extends State<ChooseCountry> {
             ElevatedButton(
               onPressed: selectedCode == null
                   ? null
-                  : () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const SignUp(),
-                        ),
-                      );
+                  : () async {
+                      final prefs = await SharedPreferences.getInstance();
+
+                      final country =
+                          countries.firstWhere((c) => c.code == selectedCode);
+
+                      await prefs.setBool('country_selected', true);
+                      await prefs.setString('selected_country', country.name);
+                      await prefs.setString(
+                          'selected_country_flag', country.logoPath);
+                      await prefs.setString(
+                          'selected_country_code', country.code);
+
+                      final token = prefs.getString('token');
+
+                      if (token != null && token.isNotEmpty) {
+                        Navigator.pushReplacementNamed(context, '/home');
+                      } else {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (_) => const SignUp()),
+                        );
+                      }
                     },
               style: ElevatedButton.styleFrom(
                 minimumSize: const Size(double.infinity, 55),
