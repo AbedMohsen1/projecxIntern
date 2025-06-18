@@ -1,5 +1,6 @@
 import 'package:ahd/helpers/service_dio.dart';
 import 'package:ahd/providers/authprovider.dart';
+import 'package:ahd/providers/homeprovider.dart';
 import 'package:ahd/router/routers.dart';
 import 'package:ahd/screens/Language/choose_country.dart';
 import 'package:ahd/screens/Language/choose_language.dart';
@@ -55,14 +56,24 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Routers routers = Routers();
-    return GetMaterialApp(
-      theme: ThemeData(fontFamily: 'Cairo'),
-      home: startScreen,
-      locale: context.locale,
-      supportedLocales: context.supportedLocales,
-      localizationsDelegates: context.localizationDelegates,
-      debugShowCheckedModeBanner: false,
-      routes: routers.routers,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<AuthProvider>(
+          create: (_) => AuthProvider(),
+        ),
+        ChangeNotifierProvider<HomeProvider>(
+          create: (_) => HomeProvider(),
+        ),
+      ],
+      child: GetMaterialApp(
+        theme: ThemeData(fontFamily: 'Cairo'),
+        home: startScreen,
+        locale: context.locale,
+        supportedLocales: context.supportedLocales,
+        localizationsDelegates: context.localizationDelegates,
+        debugShowCheckedModeBanner: false,
+        routes: routers.routers,
+      ),
     );
   }
 }
