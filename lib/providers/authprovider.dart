@@ -1,6 +1,7 @@
 // ignore_for_file: avoid_print
 
 import 'package:ahd/helpers/service_dio.dart';
+import 'package:ahd/models/auth/login_model.dart';
 import 'package:ahd/screens/bottom_main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -82,4 +83,18 @@ class AuthProvider extends ChangeNotifier {
     _isLoading = false;
     notifyListeners();
   }
+
+  // Future login({
+  //   required LoginModel loginRequestModel,
+  // }) async {
+  //   try {
+  //     var response =
+  //         await LoginApi(loginRequestModel: loginRequestModel).fetch();
+  //     print(response);
+
+  //     return true;
+  //   } on Failure {
+  //     return false;
+  //   }
+  // }
 }
