@@ -240,11 +240,13 @@ final List<Map<String, String>> subscriptionrecord = List.generate(
 );
 
 class Country {
+  final int id;
   final String name;
   final String code;
   final String logoPath;
 
   Country({
+    required this.id,
     required this.name,
     required this.code,
     required this.logoPath,
@@ -252,7 +254,8 @@ class Country {
 
   factory Country.fromJson(Map<String, dynamic> json) {
     return Country(
-      name: json['name'] ?? '',
+      id: json['id'],
+      name: json['name'] ?? '[]',
       code: json['code'] ?? '',
       logoPath: json['logoPath'] ?? '',
     );

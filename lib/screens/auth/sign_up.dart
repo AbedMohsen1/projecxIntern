@@ -137,10 +137,9 @@ class _SignUpState extends State<SignUp> {
                         : () {
                             if (_checkData()) {
                               context.read<AuthProvider>().register(
-                                    _fullNameTextController.text,
-                                    _emailTextController.text,
-                                    _passwordTextController.text,
-                                  );
+                                  _fullNameTextController.text,
+                                  _emailTextController.text,
+                                  _passwordTextController.text);
                             }
                           },
                     style: ElevatedButton.styleFrom(

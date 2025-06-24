@@ -1,50 +1,57 @@
 import 'package:ahd/Theme/color_managment.dart';
 import 'package:ahd/components/logo_home_page.dart';
-import 'package:ahd/translations/locale_keys.g.dart';
+import 'package:ahd/helpers/service_dio.dart';
 import 'package:dotted_border/dotted_border.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class ExclusiveCouponsHomePage extends StatelessWidget {
+class ExclusiveCouponsHomePage extends StatefulWidget {
   const ExclusiveCouponsHomePage({super.key});
+
+  @override
+  State<ExclusiveCouponsHomePage> createState() =>
+      _ExclusiveCouponsHomePageState();
+}
+
+class _ExclusiveCouponsHomePageState extends State<ExclusiveCouponsHomePage> {
+  List<dynamic> coupons = [];
+  bool loading = true;
+
+  @override
+  void initState() {
+    super.initState();
+    fetchExclusiveCouponsService();
+  }
 
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
 
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(
-        children: [
-          Padding(
+    if (loading) {
+      return const Center(child: CircularProgressIndicator());
+    }
+
+    if (coupons.isEmpty) {
+      return const Center(child: Text('لا توجد كوبونات حالياً'));
+    }
+
+    return SizedBox(
+      height: 240,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: coupons.length,
+        itemBuilder: (context, index) {
+          final coupon = coupons[index];
+          return Padding(
             padding: EdgeInsets.all(screenWidth * 0.03),
             child: CouponCardWidget(
               screenWidth: screenWidth,
-              logoPath: 'assets/img/img3.svg',
-              code: 'NAMSHI12A',
-              description: LocaleKeys.sar_35_discount.tr(),
+              logoPath: coupon['logoPath'] ?? '',
+              code: coupon['coupon'] ?? '',
+              description: coupon['name'] ?? '',
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.all(screenWidth * 0.03),
-            child: CouponCardWidget(
-              screenWidth: screenWidth,
-              logoPath: 'assets/img/img2.svg',
-              code: 'ADM185',
-              description: LocaleKeys.sar_35_discount.tr(),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.all(screenWidth * 0.03),
-            child: CouponCardWidget(
-              screenWidth: screenWidth,
-              logoPath: 'assets/img/img4.svg',
-              code: 'SALE2025',
-              description: LocaleKeys.sar_35_discount.tr(),
-            ),
-          ),
-        ],
+          );
+        },
       ),
     );
   }
@@ -73,13 +80,9 @@ class _CouponCardWidgetState extends State<CouponCardWidget> {
 
   void handleCopy() async {
     await Clipboard.setData(ClipboardData(text: widget.code));
-    setState(() {
-      isCopied = true;
-    });
-    Future.delayed(Duration(seconds: 3), () {
-      setState(() {
-        isCopied = false;
-      });
+    setState(() => isCopied = true);
+    Future.delayed(const Duration(seconds: 2), () {
+      setState(() => isCopied = false);
     });
   }
 
@@ -102,16 +105,15 @@ class _CouponCardWidgetState extends State<CouponCardWidget> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          LogoHomePage(
-            imagePath: widget.logoPath,
-          ),
+          LogoHomePage(imagePath: widget.logoPath),
+          const SizedBox(height: 10),
           GestureDetector(
             onTap: handleCopy,
             child: Container(
               color: AppColors.dottedborder,
               child: DottedBorder(
                 child: Padding(
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   child: Text(
                     isCopied ? 'تم النسخ ✅' : widget.code,
                     style: TextStyle(
@@ -123,13 +125,13 @@ class _CouponCardWidgetState extends State<CouponCardWidget> {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(15),
-            child: Text(
-              widget.description,
-              style: TextStyle(),
-              textAlign: TextAlign.center,
-            ),
+          const SizedBox(height: 10),
+          Text(
+            widget.description,
+            style: const TextStyle(),
+            textAlign: TextAlign.center,
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
           ),
         ],
       ),

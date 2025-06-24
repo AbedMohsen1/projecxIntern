@@ -67,7 +67,7 @@ class MyApp extends StatelessWidget {
       ],
       child: GetMaterialApp(
         theme: ThemeData(fontFamily: 'Cairo'),
-        home: startScreen,
+        home: ChooseCountry(),
         locale: context.locale,
         supportedLocales: context.supportedLocales,
         localizationsDelegates: context.localizationDelegates,
