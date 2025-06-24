@@ -43,13 +43,12 @@ class BaseDioApi {
   }
 
   Future<Map<String, dynamic>> sendRequest(
-    Enum type,
-    dynamic callToken, {
+    Enum type, {
     required bool isAuthenticated,
   }) async {
     if (isAuthenticated) {
       addToHeaders('Content-Type', 'application/json');
-      addToHeaders('Authorization', 'Bearer ${callToken.token}');
+      // addToHeaders('Authorization', 'Bearer ${callToken.token}');
     }
 
     print('object from request $type');

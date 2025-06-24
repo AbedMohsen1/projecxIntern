@@ -57,7 +57,7 @@ Future<List<Country>> fetchCountries() async {
 Future<bool> fetchExclusiveCouponsService() async {
   try {
     final response = await ServiceDio.dio.get('/Home/GetExclusiveCoupons');
-    print(response);
+    // print(response);
     return true;
     // if (response.statusCode == 200 && response.data['data'] is List) {
     //   return response.data['data'];
@@ -73,7 +73,7 @@ Future<bool> fetchExclusiveCouponsService() async {
 Future<bool> fetchBestCouponsOffersService() async {
   try {
     final response = await ServiceDio.dio.get('/Home/GetBestCouponsOffers');
-    print(response);
+    // print(response);
     return true;
     // if (response.statusCode == 200 && response.data['data'] is List) {
     //   return response.data['data'];
@@ -89,7 +89,7 @@ Future<bool> fetchBestCouponsOffersService() async {
 Future<bool> fetchMostPopularStoresService() async {
   try {
     final response = await ServiceDio.dio.get('/Home/GetMostPopularStores');
-    print(response);
+    // print(response);
     return true;
     // if (response.statusCode == 200 && response.data['data'] is List) {
     //   return response.data['data'];
@@ -105,7 +105,7 @@ Future<bool> fetchMostPopularStoresService() async {
 Future<bool> fetchCategoriesService() async {
   try {
     final response = await ServiceDio.dio.get('/Home/GetCategories');
-    print(response);
+    // print(response);
     return true;
     // if (response.statusCode == 200 && response.data['data'] is List) {
     //   return response.data['data'];

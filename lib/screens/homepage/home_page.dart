@@ -4,6 +4,7 @@ import 'package:ahd/components/icon_home_page_drawer.dart';
 import 'package:ahd/components/icon_home_page_drawer_social.dart';
 import 'package:ahd/components/offers_home_page.dart';
 import 'package:ahd/components/products_home_page.dart';
+import 'package:ahd/providers/homeprovider.dart';
 import 'package:ahd/screens/categories/categories.dart';
 import 'package:ahd/screens/categories/categories_home_page.dart';
 import 'package:ahd/components/logo_home_page.dart';
@@ -14,6 +15,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -23,6 +25,17 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  Future _getExclusiveCoupons() async {
+    final homeProvider = Provider.of<HomeProvider>(context, listen: false);
+    return await homeProvider.getExclusiveCoupons();
+  }
+
+  @override
+  void initState() {
+    _getExclusiveCoupons();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
