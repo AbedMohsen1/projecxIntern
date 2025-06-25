@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:ahd/Theme/color_managment.dart';
 import 'package:ahd/helpers/service_dio.dart';
 import 'package:ahd/models/data_model.dart';

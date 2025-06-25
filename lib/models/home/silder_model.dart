@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_this
+
 class SliderModel {
   int? id;
   String? name;
@@ -30,7 +32,7 @@ class SliderModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = this.id;
     data['name'] = this.name;
     data['subTitle'] = this.subTitle;

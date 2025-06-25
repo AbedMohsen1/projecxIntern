@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_this
+
 class LoginModel {
   String? email;
   String? password;
@@ -10,7 +12,7 @@ class LoginModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['email'] = this.email;
     data['password'] = this.password;
     return data;

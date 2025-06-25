@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_this
+
 class ExclusiveCouponsModel {
   int? id;
   String? coupon;
@@ -24,7 +26,7 @@ class ExclusiveCouponsModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = this.id;
     data['coupon'] = this.coupon;
     data['name'] = this.name;

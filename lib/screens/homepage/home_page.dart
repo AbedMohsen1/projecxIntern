@@ -30,9 +30,27 @@ class _HomePageState extends State<HomePage> {
     return await homeProvider.getExclusiveCoupons();
   }
 
+  Future _getMostPopularStores() async {
+    final homeProvider = Provider.of<HomeProvider>(context, listen: false);
+    return await homeProvider.getMostPopularStores();
+  }
+
+  Future _getCategories() async {
+    final homeProvider = Provider.of<HomeProvider>(context, listen: false);
+    return await homeProvider.getCategories();
+  }
+
+  Future _getBestCouponsOffers() async {
+    final homeProvider = Provider.of<HomeProvider>(context, listen: false);
+    return await homeProvider.getBestCouponsOffers();
+  }
+
   @override
   void initState() {
     _getExclusiveCoupons();
+    _getMostPopularStores();
+    _getCategories();
+    _getBestCouponsOffers();
     super.initState();
   }
 

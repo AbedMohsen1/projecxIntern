@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:ahd/Theme/color_managment.dart';
 import 'package:ahd/translations/locale_keys.g.dart';
 import 'package:dio/dio.dart';

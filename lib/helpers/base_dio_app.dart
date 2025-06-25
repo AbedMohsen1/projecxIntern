@@ -3,9 +3,7 @@
 import 'dart:io';
 
 import 'package:ahd/helpers/requests_enum.dart';
-import 'package:ahd/translations/locale_keys.g.dart';
 import 'package:dio/dio.dart';
-import 'package:easy_localization/easy_localization.dart';
 
 import 'package:flutter/material.dart';
 
@@ -46,6 +44,7 @@ class BaseDioApi {
     Enum type, {
     required bool isAuthenticated,
   }) async {
+    addToHeaders("country-id", "1");
     if (isAuthenticated) {
       addToHeaders('Content-Type', 'application/json');
       // addToHeaders('Authorization', 'Bearer ${callToken.token}');
@@ -143,7 +142,7 @@ class BaseDioApi {
   }
 
   Future<Map<String, dynamic>> _getRequest() async {
-    addToHeaders('Accept-Language', LocaleKeys.language.tr());
+    // addToHeaders('Accept-Language', LocaleKeys.language.tr());
     // ignore: unnecessary_brace_in_string_interps
     debugPrint('headers ${toHeaders}');
 

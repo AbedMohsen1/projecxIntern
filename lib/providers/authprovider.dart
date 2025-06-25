@@ -1,7 +1,6 @@
 // ignore_for_file: avoid_print
 
 import 'package:ahd/helpers/service_dio.dart';
-import 'package:ahd/models/auth/login_model.dart';
 import 'package:ahd/screens/bottom_main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

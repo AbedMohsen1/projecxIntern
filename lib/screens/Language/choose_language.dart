@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names, use_build_context_synchronously
+
 import 'package:ahd/Theme/color_managment.dart';
 import 'package:ahd/screens/Language/choose_country.dart';
 import 'package:easy_localization/easy_localization.dart';
