@@ -2,17 +2,11 @@
 
 import 'dart:io';
 
+import 'package:ahd/Theme/failure.dart';
 import 'package:ahd/helpers/requests_enum.dart';
 import 'package:dio/dio.dart';
 
 import 'package:flutter/material.dart';
-
-class Failure {
-  String message;
-  Failure(this.message);
-  @override
-  String toString() => message;
-}
 
 class BaseDioApi {
   String? token;

@@ -1,6 +1,6 @@
 // ignore_for_file: avoid_print
 
-import 'package:ahd/helpers/base_dio_app.dart';
+import 'package:ahd/Theme/failure.dart';
 import 'package:ahd/models/home/best_coupons_offers.dart';
 import 'package:ahd/models/home/categories.dart';
 import 'package:ahd/models/home/exclusive_coupons.dart';
