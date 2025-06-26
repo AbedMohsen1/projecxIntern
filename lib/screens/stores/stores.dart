@@ -37,9 +37,10 @@ class _StoresState extends State<Stores> {
         ),
       );
 
-      if (response.statusCode == 200 && response.data['data'] is List) {
+      if (response.statusCode == 200 &&
+          response.data['data']['stores'] is List) {
         setState(() {
-          stores = response.data['data'];
+          stores = response.data['data']['stores'];
           loading = false;
         });
       } else {
@@ -57,8 +58,7 @@ class _StoresState extends State<Stores> {
   }
 
   void navigateToStoreCoupons(Map<String, dynamic> store) {
-    // هنا تضع التنقل الحقيقي إلى صفحة الكوبونات لاحقًا
-    print('فتح المتجر: ${store['storeName']}');
+    print('فتح المتجر: ${store['name']}');
   }
 
   @override
@@ -91,8 +91,6 @@ class _StoresState extends State<Stores> {
                               fontWeight: FontWeight.bold, fontSize: 18),
                         ),
                       ),
-
-                      /// ✅ الشريط الأفقي للمتاجر الشعبية
                       SizedBox(
                         height: 100,
                         child: ListView.builder(
@@ -128,7 +126,6 @@ class _StoresState extends State<Stores> {
                           },
                         ),
                       ),
-
                       Padding(
                         padding: EdgeInsets.all(screenWidth * 0.05),
                         child: Text(
@@ -137,8 +134,6 @@ class _StoresState extends State<Stores> {
                               fontWeight: FontWeight.bold, fontSize: 18),
                         ),
                       ),
-
-                      /// ✅ شبكة جميع المتاجر
                       Padding(
                         padding: EdgeInsets.all(screenWidth * 0.05),
                         child: GridView.count(
