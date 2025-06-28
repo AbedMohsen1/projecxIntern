@@ -37,8 +37,7 @@ class _StoresState extends State<Stores> {
         ),
       );
 
-      if (response.statusCode == 200 &&
-          response.data['data']['stores'] is List) {
+      if (response.statusCode == 200 && response.data['data']['stores']) {
         setState(() {
           stores = response.data['data']['stores'];
           loading = false;

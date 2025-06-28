@@ -7,6 +7,7 @@ import 'package:ahd/helpers/requests_enum.dart';
 import 'package:dio/dio.dart';
 
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class BaseDioApi {
   String? token;
@@ -38,7 +39,11 @@ class BaseDioApi {
     Enum type, {
     required bool isAuthenticated,
   }) async {
-    addToHeaders("country-id", "1");
+    final prefs = await SharedPreferences.getInstance();
+    final countryId = prefs.get('country-id')?.toString() ?? '1';
+
+    addToHeaders("country-id", countryId);
+
     if (isAuthenticated) {
       addToHeaders('Content-Type', 'application/json');
       // addToHeaders('Authorization', 'Bearer ${callToken.token}');

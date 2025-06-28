@@ -25,32 +25,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  Future _getExclusiveCoupons() async {
-    final homeProvider = Provider.of<HomeProvider>(context, listen: false);
-    return await homeProvider.getExclusiveCoupons();
-  }
-
   Future _getMostPopularStores() async {
     final homeProvider = Provider.of<HomeProvider>(context, listen: false);
     return await homeProvider.getMostPopularStores();
   }
 
-  Future _getCategories() async {
-    final homeProvider = Provider.of<HomeProvider>(context, listen: false);
-    return await homeProvider.getCategories();
-  }
-
-  Future _getBestCouponsOffers() async {
-    final homeProvider = Provider.of<HomeProvider>(context, listen: false);
-    return await homeProvider.getBestCouponsOffers();
-  }
-
   @override
   void initState() {
-    _getExclusiveCoupons();
     _getMostPopularStores();
-    _getCategories();
-    _getBestCouponsOffers();
     super.initState();
   }
 
@@ -391,10 +373,7 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
               SizedBox(height: 20),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: ExclusiveCouponsHomePage(),
-              ),
+              ExclusiveCouponsHomePage(),
               SizedBox(height: 20),
               Row(
                 children: [
@@ -451,14 +430,10 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ],
               ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    OffersHomePage(),
-                    OffersHomePage(),
-                  ],
-                ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+                child: OffersHomePage(),
               ),
               SizedBox(height: 20),
               Row(
@@ -483,15 +458,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ],
               ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    CouponsPageHome(),
-                    CouponsPageHome(),
-                  ],
-                ),
-              ),
+              CouponsPageHome(),
               SizedBox(height: 20),
               Row(
                 children: [

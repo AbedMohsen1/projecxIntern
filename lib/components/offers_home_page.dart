@@ -1,124 +1,174 @@
 import 'package:ahd/Theme/color_managment.dart';
-import 'package:ahd/components/logo_home_page.dart';
+import 'package:ahd/models/home/best_coupons_offers.dart';
+import 'package:ahd/providers/homeprovider.dart';
 import 'package:ahd/screens/favorites/like_unlike.dart';
-import 'package:ahd/translations/locale_keys.g.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:provider/provider.dart';
 
-class OffersHomePage extends StatelessWidget {
+class OffersHomePage extends StatefulWidget {
   const OffersHomePage({super.key});
+
+  @override
+  State<OffersHomePage> createState() => _OffersHomePageState();
+}
+
+class _OffersHomePageState extends State<OffersHomePage> {
+  late Future<List<BestCouponsOffersModel>> _bestCouponsOffersFuture;
+
+  Future<List<BestCouponsOffersModel>> _getBestCouponsOffers() async {
+    final homeProvider = Provider.of<HomeProvider>(context, listen: false);
+    return await homeProvider.getBestCouponsOffers();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _bestCouponsOffersFuture = _getBestCouponsOffers();
+  }
 
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
 
-    return Padding(
-      padding: EdgeInsets.all(screenWidth * 0.05),
-      child: Row(
-        children: [
-          Container(
-            width: screenWidth / 1.7,
-            margin: const EdgeInsets.symmetric(vertical: 12),
-            padding: const EdgeInsets.all(12),
-            decoration: BoxDecoration(
-              color: AppColors.white,
-              borderRadius: BorderRadius.circular(16),
-              boxShadow: [
-                BoxShadow(
+    return FutureBuilder<List<BestCouponsOffersModel>>(
+      future: _bestCouponsOffersFuture,
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const Center(child: CircularProgressIndicator());
+        } else if (snapshot.hasError) {
+          return Center(child: Text('حدث خطأ: ${snapshot.error}'));
+        } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+          return const Center(child: Text("لا توجد عروض حالياً"));
+        }
+
+        final offers = snapshot.data!;
+
+        return SizedBox(
+          height: screenWidth / 1.2,
+          child: ListView.builder(
+            padding: EdgeInsets.symmetric(horizontal: 10),
+            scrollDirection: Axis.horizontal,
+            itemCount: offers.length,
+            itemBuilder: (context, index) {
+              final offer = offers[index];
+
+              return Container(
+                width: screenWidth * 0.6,
+                margin: const EdgeInsets.only(right: 12),
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
                   color: AppColors.white,
-                  blurRadius: 6,
+                  borderRadius: BorderRadius.circular(16),
+                  boxShadow: const [
+                    BoxShadow(
+                      color: Colors.black12,
+                      blurRadius: 6,
+                    ),
+                  ],
                 ),
-              ],
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                if (true)
-                  Align(
-                    alignment: Alignment.topRight,
-                    child: Row(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    if (offer.exclusiveText != null)
+                      Align(
+                        alignment: Alignment.topRight,
+                        child: Row(
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 8, vertical: 4),
+                              decoration: BoxDecoration(
+                                color: AppColors.blu,
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: Text(
+                                offer.exclusiveText!,
+                                style: const TextStyle(
+                                  fontSize: 12,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            const Spacer(),
+                            const LikeUnLike(),
+                            const Icon(Icons.share_outlined, size: 20),
+                          ],
+                        ),
+                      ),
+                    const SizedBox(height: 20),
+                    if (offer.logoPath != null &&
+                        offer.logoPath!.endsWith('.svg'))
+                      SvgPicture.network(
+                        offer.logoPath!,
+                        height: 40,
+                        placeholderBuilder: (_) =>
+                            const CircularProgressIndicator(),
+                      )
+                    else
+                      SvgPicture.network(
+                        offer.logoPath ?? '',
+                        height: 40,
+                        errorBuilder: (_, __, ___) => const Icon(Icons.store),
+                      ),
+                    const SizedBox(height: 30),
+                    Row(
                       children: [
-                        Container(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 8,
-                            vertical: 4,
+                        Expanded(
+                          child: Text(
+                            offer.storeName ?? "",
+                            style: const TextStyle(fontSize: 12),
+                            overflow: TextOverflow.ellipsis,
                           ),
+                        ),
+                        Container(
                           decoration: BoxDecoration(
                             color: AppColors.blu,
-                            borderRadius: BorderRadius.circular(
-                              8,
-                            ),
+                            borderRadius: BorderRadius.circular(17),
                           ),
-                          child: Text(
-                            LocaleKeys.exclusively.tr(),
-                            style: TextStyle(
-                              fontSize: 12,
-                              color: AppColors.blu,
-                              fontWeight: FontWeight.bold,
+                          child: const Padding(
+                            padding: EdgeInsets.all(10),
+                            child: Text(
+                              "خصم",
+                              style:
+                                  TextStyle(fontSize: 12, color: Colors.white),
                             ),
                           ),
                         ),
-                        Spacer(),
-                        LikeUnLike(),
-                        Icon(Icons.share_outlined, size: 20),
                       ],
                     ),
-                  ),
-                SizedBox(height: 20),
-                LogoHomePage(
-                  imagePath: 'assets/img/img12.svg',
-                ),
-                SizedBox(height: 30),
-                Row(
-                  children: [
+                    const SizedBox(height: 20),
                     Text(
-                      LocaleKeys.amazon_store.tr(),
-                      style: TextStyle(fontSize: 12),
+                      offer.name ?? "",
+                      style: const TextStyle(fontSize: 14),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
                     ),
-                    Spacer(),
-                    Container(
-                      decoration: BoxDecoration(
-                        color: AppColors.blu,
-                        borderRadius: BorderRadius.circular(17),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: Text(
-                          LocaleKeys.discount.tr(),
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: AppColors.white,
-                          ),
+                    const SizedBox(height: 20),
+                    ElevatedButton(
+                      onPressed: () {
+                        // launchUrl(offer.url); // افعل هذا إذا كان لديك رابط
+                      },
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: const Size(double.infinity, 45),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
                         ),
+                        backgroundColor: AppColors.blu,
+                      ),
+                      child: Text(
+                        "تفعيل العرض",
+                        style: TextStyle(color: AppColors.white),
                       ),
                     ),
                   ],
                 ),
-                SizedBox(height: 20),
-                Text(
-                  LocaleKeys.high_quality.tr(),
-                  style: TextStyle(fontSize: 14),
-                ),
-                SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    minimumSize: const Size(double.infinity, 45),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    backgroundColor: AppColors.blu,
-                  ),
-                  child: Text(
-                    LocaleKeys.activate_the_offer.tr(),
-                    style: TextStyle(color: AppColors.white),
-                  ),
-                ),
-              ],
-            ),
+              );
+            },
           ),
-        ],
-      ),
+        );
+      },
     );
   }
 }

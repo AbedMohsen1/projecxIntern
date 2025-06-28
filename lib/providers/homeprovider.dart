@@ -39,19 +39,18 @@ class HomeProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  Future getExclusiveCoupons() async {
+  Future<List<ExclusiveCouponsModel>> getExclusiveCoupons() async {
     exclusiveCouponsList.clear();
     try {
       final response = await GetExclusiveCoupons().fetch();
       for (var type in response['data']) {
         exclusiveCouponsList.add(ExclusiveCouponsModel.fromJson(type));
       }
-      print(
-          "abd ------------------------------------------- $exclusiveCouponsList ${exclusiveCouponsList.length}");
+      print("$exclusiveCouponsList ${exclusiveCouponsList.length}");
       setExclusiveCouponsList(exclusiveCouponsList);
-      return true;
+      return exclusiveCouponsList;
     } on Failure catch (f) {
-      return f;
+      return [];
     }
   }
 
@@ -68,8 +67,7 @@ class HomeProvider with ChangeNotifier {
       for (var type in response['data']['stores']) {
         mostPopularStoresList.add(MostPopularStoresModel.fromJson(type));
       }
-      print(
-          "abd -----------------------------------------------2 $mostPopularStoresList ${mostPopularStoresList.length}");
+      print("$mostPopularStoresList ${mostPopularStoresList.length}");
       setMostPopularStoresList(mostPopularStoresList);
       return true;
     } on Failure catch (f) {
@@ -83,19 +81,18 @@ class HomeProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  Future getCategories() async {
+  Future<List<CategoriesModel>> getCategories() async {
     categoriesModelList.clear();
     try {
       final response = await GetCategories().fetch();
       for (var type in response['data']) {
         categoriesModelList.add(CategoriesModel.fromJson(type));
       }
-      print(
-          "abd ----------------------------------------------3 $categoriesModelList ${categoriesModelList.length}");
+      print("$categoriesModelList ${categoriesModelList.length}");
       setcategoriesModelList(categoriesModelList);
-      return true;
+      return categoriesModelList;
     } on Failure catch (f) {
-      return f;
+      return [];
     }
   }
 
@@ -105,7 +102,7 @@ class HomeProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  Future getBestCouponsOffers() async {
+  Future<List<BestCouponsOffersModel>> getBestCouponsOffers() async {
     bestCouponsOffersModelList.clear();
     try {
       final response = await GetBestCouponsOffers().fetch();
@@ -113,11 +110,11 @@ class HomeProvider with ChangeNotifier {
         bestCouponsOffersModelList.add(BestCouponsOffersModel.fromJson(type));
       }
       print(
-          "abd ---------------------------------------------4 $bestCouponsOffersModelList ${bestCouponsOffersModelList.length}");
+          " $bestCouponsOffersModelList ${bestCouponsOffersModelList.length}");
       setbestCouponsOffersModelList(bestCouponsOffersModelList);
-      return true;
+      return bestCouponsOffersModelList;
     } on Failure catch (f) {
-      return f;
+      return [];
     }
   }
 }

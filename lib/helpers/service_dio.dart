@@ -24,7 +24,7 @@ class ServiceDio {
         onRequest: (options, handler) async {
           final prefs = await SharedPreferences.getInstance();
           final token = prefs.getString('token');
-          final countryId = prefs.getInt('country_id');
+          final countryId = prefs.getString('country-id');
 
           if (token != null && token.isNotEmpty) {
             options.headers['Authorization'] = 'Bearer $token';

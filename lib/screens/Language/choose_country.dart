@@ -141,8 +141,8 @@ class _ChooseCountryState extends State<ChooseCountry> {
                       final country =
                           countries.firstWhere((c) => c.code == selectedCode);
 
-                      await prefs.setInt(
-                          'country-id', country.id); // ✅ حفظ معرف الدولة
+                      await prefs.setString('country-id',
+                          country.id.toString()); // ✅ حفظ معرف الدولة
                       await prefs.setBool('country_selected', true);
                       await prefs.setString('selected_country', country.name);
                       await prefs.setString(
