@@ -43,6 +43,7 @@ class BaseDioApi {
     final countryId = prefs.get('country-id')?.toString() ?? '1';
 
     addToHeaders("country-id", countryId);
+    addToHeaders('Accept-Language', 'ar');
 
     if (isAuthenticated) {
       addToHeaders('Content-Type', 'application/json');

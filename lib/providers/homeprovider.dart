@@ -69,9 +69,9 @@ class HomeProvider with ChangeNotifier {
       for (var type in response['data']['stores']) {
         mostPopularStoresList.add(MostPopularStoresModel.fromJson(type));
       }
-      print("$mostPopularStoresList ${mostPopularStoresList.length}");
+      print("storesss $mostPopularStoresList ${mostPopularStoresList.length}");
       setMostPopularStoresList(mostPopularStoresList);
-      return mostPopularStoresList;
+      return true;
     } on Failure catch (f) {
       return f;
     }
@@ -104,7 +104,7 @@ class HomeProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  Future<List<BestCouponsOffersModel>> getBestCouponsOffers() async {
+  Future getBestCouponsOffers() async {
     bestCouponsOffersModelList.clear();
     try {
       final response = await GetBestCouponsOffers().fetch();
@@ -114,7 +114,7 @@ class HomeProvider with ChangeNotifier {
       setbestCouponsOffersModelList(bestCouponsOffersModelList);
       return bestCouponsOffersModelList;
     } on Failure catch (f) {
-      return [];
+      return f;
     }
   }
 

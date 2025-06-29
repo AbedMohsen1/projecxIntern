@@ -2,6 +2,7 @@
 
 import 'package:ahd/Widget/label_auth_text.dart';
 import 'package:ahd/Widget/text_field_auth.dart';
+import 'package:ahd/models/auth/login_model.dart';
 import 'package:ahd/screens/bottom_main_screen.dart';
 import 'package:ahd/theme/color_managment.dart';
 import 'package:ahd/screens/auth/sign_up.dart';
@@ -58,7 +59,9 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
-
+    final authProvider = Provider.of<AuthProvider>(
+      context,
+    );
     return Scaffold(
       backgroundColor: AppColors.white,
       body: Form(
@@ -135,10 +138,21 @@ class _LoginState extends State<Login> {
                             ? null
                             : () {
                                 if (_formKey.currentState!.validate()) {
-                                  context.read<AuthProvider>().login(
-                                      _emailTextController.text.trim(),
-                                      _passwordTextController.text.trim(),
-                                      context);
+                                  authProvider
+                                      .login(
+                                          loginRequestModel: LoginModel(
+                                              email: _emailTextController.text
+                                                  .trim(),
+                                              password: _passwordTextController
+                                                  .text
+                                                  .trim()))
+                                      .then((value) {
+                                    if (value) {
+                                      print('login success');
+                                    } else {
+                                      print('login failed');
+                                    }
+                                  });
                                 }
                               },
                         style: ElevatedButton.styleFrom(

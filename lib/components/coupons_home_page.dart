@@ -21,11 +21,11 @@ class _CouponsPageHomeState extends State<CouponsPageHome> {
     return await homeProvider.getBestCouponsOffers();
   }
 
-  @override
-  void initState() {
-    super.initState();
-    _bestCouponsOffersFuture = _getBestCouponsOffers();
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   _bestCouponsOffersFuture = _getBestCouponsOffers();
+  // }
 
   @override
   Widget build(BuildContext context) {

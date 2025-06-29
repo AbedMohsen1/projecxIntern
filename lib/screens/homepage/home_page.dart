@@ -4,6 +4,7 @@ import 'package:ahd/components/icon_home_page_drawer.dart';
 import 'package:ahd/components/icon_home_page_drawer_social.dart';
 import 'package:ahd/components/offers_home_page.dart';
 import 'package:ahd/components/products_home_page.dart';
+import 'package:ahd/models/home/best_coupons_offers.dart';
 import 'package:ahd/providers/homeprovider.dart';
 import 'package:ahd/screens/categories/categories.dart';
 import 'package:ahd/screens/categories/categories_home_page.dart';
@@ -30,9 +31,19 @@ class _HomePageState extends State<HomePage> {
     return await homeProvider.getMostPopularStores();
   }
 
+  Future<List<BestCouponsOffersModel>> _getBestCouponsOffers() async {
+    final homeProvider = Provider.of<HomeProvider>(context, listen: false);
+    return await homeProvider.getBestCouponsOffers();
+  }
+
+  late Future _fetchHomeData;
+
   @override
   void initState() {
-    _getMostPopularStores();
+    _fetchHomeData = Future.wait([
+      _getMostPopularStores(),
+      _getBestCouponsOffers(),
+    ]);
     super.initState();
   }
 

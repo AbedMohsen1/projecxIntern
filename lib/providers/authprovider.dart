@@ -1,7 +1,14 @@
 // ignore_for_file: avoid_print
 
+import 'dart:convert';
+
+import 'package:ahd/Theme/failure.dart';
 import 'package:ahd/helpers/service_dio.dart';
+import 'package:ahd/models/auth/login_model.dart';
+import 'package:ahd/models/auth/login_response_model.dart';
+import 'package:ahd/screens/auth/login.dart';
 import 'package:ahd/screens/bottom_main_screen.dart';
+import 'package:ahd/services/api/auth/login_api.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -13,37 +20,86 @@ class AuthProvider extends ChangeNotifier {
   bool get isLoading => _isLoading;
   String? get loginMessage => _loginMessage;
 
-  Future<void> login(
-      String email, String password, BuildContext context) async {
-    _isLoading = true;
-    _loginMessage = null;
-    notifyListeners();
+  // Future<void> login(
+  //     String email, String password, BuildContext context) async {
+  //   _isLoading = true;
+  //   _loginMessage = null;
+  //   notifyListeners();
 
+  //   try {
+  //     final response = await ServiceDio.dio.post(
+  //       '/Auth/Login',
+  //       data: {'email': email, 'password': password},
+  //     );
+
+  //     final data = response.data;
+
+  //     if (response.statusCode == 200 && data['token'] != null) {
+  //       final prefs = await SharedPreferences.getInstance();
+  //       await prefs.setString('token', data['token']);
+
+  //       _loginMessage = "Success";
+
+  //       Get.offAll(() => BottomBarScreen());
+  //     } else {
+  //       _loginMessage = data['message'] ?? "فشل تسجيل الدخول ❌";
+  //     }
+  //   } catch (e) {
+  //     _loginMessage = "حدث خطأ أثناء تسجيل الدخول ❌";
+  //     print("Login error: $e");
+  //   }
+
+  //   _isLoading = false;
+  //   notifyListeners();
+  // }
+  String? token;
+  String? fullName;
+  Future login({
+    required LoginModel loginRequestModel,
+  }) async {
+    final prefs = await SharedPreferences.getInstance();
     try {
-      final response = await ServiceDio.dio.post(
-        '/Auth/Login',
-        data: {'email': email, 'password': password},
-      );
+      var response =
+          await LoginApi(loginRequestModel: loginRequestModel).fetch();
 
-      final data = response.data;
+      print(response);
+      final LoginResponseModel loginResponseModel =
+          LoginResponseModel.fromJson(response['data']);
+      token = loginResponseModel.token;
+      fullName = loginResponseModel.fullName;
 
-      if (response.statusCode == 200 && data['token'] != null) {
-        final prefs = await SharedPreferences.getInstance();
-        await prefs.setString('token', data['token']);
+      final userData = json.encode({'token': token, 'fullName': fullName});
 
-        _loginMessage = "Success";
+      prefs.setString('userData', userData);
 
-        Get.offAll(() => BottomBarScreen());
-      } else {
-        _loginMessage = data['message'] ?? "فشل تسجيل الدخول ❌";
-      }
-    } catch (e) {
-      _loginMessage = "حدث خطأ أثناء تسجيل الدخول ❌";
-      print("Login error: $e");
+      return true;
+    } on Failure {
+      return false;
+    }
+  }
+
+  bool get isAuth {
+    return token != null;
+  }
+
+  Future<bool> autoLogin() async {
+    final prefs = await SharedPreferences.getInstance();
+
+    if (!prefs.containsKey('userData')) {
+      debugPrint("no auth data");
+      return false;
+    } else {
+      debugPrint(" data ex");
+
+      final extractData = json.decode(prefs.getString('userData').toString())
+          as Map<String, dynamic>;
+      token = extractData['token'];
+      fullName = extractData['fullName'];
     }
 
-    _isLoading = false;
     notifyListeners();
+
+    return true;
   }
 
   Future<void> register(String fullName, String email, String password) async {

@@ -1,20 +1,22 @@
-// ignore_for_file: unnecessary_this
+import 'package:ahd/api_url.dart';
+import 'package:ahd/helpers/base_dio_app.dart';
+import 'package:ahd/helpers/requests_enum.dart';
+import 'package:ahd/models/auth/login_model.dart';
 
-class LoginModel {
-  String? email;
-  String? password;
+class LoginApi extends BaseDioApi {
+  LoginModel loginRequestModel;
 
-  LoginModel({this.email, this.password});
+  LoginApi({
+    required this.loginRequestModel,
+  }) : super(loginLink);
 
-  LoginModel.fromJson(Map<String, dynamic> json) {
-    email = json['email'];
-    password = json['password'];
+  @override
+  body() {
+    return loginRequestModel.toJson();
   }
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['email'] = this.email;
-    data['password'] = this.password;
-    return data;
+  Future fetch() async {
+    final response = await sendRequest(requests.post, isAuthenticated: false);
+    return response;
   }
 }
