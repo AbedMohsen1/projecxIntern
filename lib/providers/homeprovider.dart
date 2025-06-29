@@ -71,7 +71,7 @@ class HomeProvider with ChangeNotifier {
       }
       print("$mostPopularStoresList ${mostPopularStoresList.length}");
       setMostPopularStoresList(mostPopularStoresList);
-      return true;
+      return mostPopularStoresList;
     } on Failure catch (f) {
       return f;
     }

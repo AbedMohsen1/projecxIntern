@@ -49,6 +49,7 @@ class _CouponsPageHomeState extends State<CouponsPageHome> {
           child: ListView.builder(
             padding: EdgeInsets.symmetric(horizontal: 10),
             scrollDirection: Axis.horizontal,
+            physics: const BouncingScrollPhysics(),
             itemCount: offers.length,
             itemBuilder: (context, index) {
               final offer = offers[index];

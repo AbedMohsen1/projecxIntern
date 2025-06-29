@@ -55,6 +55,7 @@ class _ExclusiveCouponsHomePageState extends State<ExclusiveCouponsHomePage> {
           height: 240,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
+            physics: const BouncingScrollPhysics(),
             itemCount: coupons.length,
             itemBuilder: (context, index) {
               final coupon = coupons[index];

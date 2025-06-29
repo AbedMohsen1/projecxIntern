@@ -74,7 +74,8 @@ class _CategoriesState extends State<Categories> {
                   crossAxisSpacing: 20,
                   mainAxisSpacing: 20,
                   shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
+                  scrollDirection: Axis.horizontal,
+                  physics: const BouncingScrollPhysics(),
                   childAspectRatio: 3.0,
                   children: categories.map((item) {
                     return Container(

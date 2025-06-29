@@ -12,7 +12,8 @@ class CategoriesHomePage extends StatefulWidget {
 }
 
 class _CategoriesHomePageState extends State<CategoriesHomePage> {
-  late Future<List<CategoriesModel>> _categoriesCouponsFuture;
+  late Future<List<CategoriesModel>> _categoriesFuture;
+
   Future<List<CategoriesModel>> _getCategories() async {
     final homeProvider = Provider.of<HomeProvider>(context, listen: false);
     return await homeProvider.getCategories();
@@ -21,13 +22,13 @@ class _CategoriesHomePageState extends State<CategoriesHomePage> {
   @override
   void initState() {
     super.initState();
-    _categoriesCouponsFuture = _getCategories();
+    _categoriesFuture = _getCategories();
   }
 
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<List<CategoriesModel>>(
-      future: _categoriesCouponsFuture,
+      future: _categoriesFuture,
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(child: CircularProgressIndicator());
@@ -39,7 +40,7 @@ class _CategoriesHomePageState extends State<CategoriesHomePage> {
 
         final categories = snapshot.data!;
         return SizedBox(
-          height: 240,
+          height: 150,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: categories.length,
@@ -47,54 +48,41 @@ class _CategoriesHomePageState extends State<CategoriesHomePage> {
               final category = categories[index];
 
               return Container(
-                width: 160,
+                width: 120,
                 margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 10),
+                padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.circular(20),
-                  boxShadow: const [
+                  borderRadius: BorderRadius.circular(16),
+                  boxShadow: [
                     BoxShadow(
-                      color: Colors.black12,
-                      blurRadius: 8,
-                      offset: Offset(0, 4),
+                      color: Colors.grey.shade200,
+                      blurRadius: 6,
+                      offset: const Offset(0, 3),
                     ),
                   ],
                 ),
-                child: InkWell(
-                  onTap: () {},
-                  borderRadius: BorderRadius.circular(20),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const SizedBox(height: 12),
-                      SvgPicture.network(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Expanded(
+                      child: SvgPicture.string(
                         category.logoPath ?? '',
-                        height: 40,
-                        placeholderBuilder: (context) =>
-                            const CircularProgressIndicator(),
-                      ),
-                      const SizedBox(height: 12),
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 12, vertical: 6),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(40),
-                          border:
-                              Border.all(color: Colors.grey.shade300, width: 1),
-                          color: Colors.grey.shade100,
-                        ),
-                        child: Text(
-                          category.name ?? '',
-                          style: const TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          textAlign: TextAlign.center,
+                        placeholderBuilder: (_) => const Center(
+                          child: CircularProgressIndicator(),
                         ),
                       ),
-                      const SizedBox(height: 20),
-                    ],
-                  ),
+                    ),
+                    const SizedBox(height: 10),
+                    Text(
+                      category.name ?? '',
+                      style: const TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
                 ),
               );
             },

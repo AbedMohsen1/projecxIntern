@@ -7,7 +7,7 @@ import 'package:ahd/components/products_home_page.dart';
 import 'package:ahd/providers/homeprovider.dart';
 import 'package:ahd/screens/categories/categories.dart';
 import 'package:ahd/screens/categories/categories_home_page.dart';
-import 'package:ahd/components/logo_home_page.dart';
+import 'package:ahd/screens/stores/most_popular_stores_home.dart';
 import 'package:ahd/screens/stores/stores.dart';
 import 'package:ahd/theme/color_managment.dart';
 import 'package:ahd/translations/locale_keys.g.dart';
@@ -310,45 +310,7 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
               SizedBox(height: 20),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    SizedBox(width: 20),
-                    LogoHomePage(
-                      imagePath: 'assets/img/img1.svg',
-                      decoration: BoxDecoration(
-                        border: Border.all(color: AppColors.border),
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                    ),
-                    SizedBox(width: 15),
-                    LogoHomePage(
-                      imagePath: 'assets/img/img2.svg',
-                      decoration: BoxDecoration(
-                        border: Border.all(color: AppColors.border),
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                    ),
-                    SizedBox(width: 15),
-                    LogoHomePage(
-                      imagePath: 'assets/img/img3.svg',
-                      decoration: BoxDecoration(
-                        border: Border.all(color: AppColors.border),
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                    ),
-                    SizedBox(width: 15),
-                    LogoHomePage(
-                      imagePath: 'assets/img/img4.svg',
-                      decoration: BoxDecoration(
-                        border: Border.all(color: AppColors.border),
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              MostPopularStoresHome(),
               SizedBox(height: 20),
               Row(
                 children: [
