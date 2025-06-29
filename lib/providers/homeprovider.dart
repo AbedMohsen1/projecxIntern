@@ -2,6 +2,7 @@
 
 import 'package:ahd/Theme/failure.dart';
 import 'package:ahd/models/home/best_coupons_offers.dart';
+import 'package:ahd/models/home/best_products_model.dart';
 import 'package:ahd/models/home/categories.dart';
 import 'package:ahd/models/home/exclusive_coupons.dart';
 import 'package:ahd/models/home/most_popular_stores.dart';
@@ -10,6 +11,7 @@ import 'package:ahd/services/api/home/get_best_coupons_offers.dart';
 import 'package:ahd/services/api/home/get_categories.dart';
 import 'package:ahd/services/api/home/get_exclusivecoupons_api.dart';
 import 'package:ahd/services/api/home/get_most_popular_stores.dart';
+import 'package:ahd/services/api/home/get_products.dart';
 import 'package:flutter/foundation.dart';
 
 class HomeProvider with ChangeNotifier {
@@ -109,10 +111,28 @@ class HomeProvider with ChangeNotifier {
       for (var type in response['data']) {
         bestCouponsOffersModelList.add(BestCouponsOffersModel.fromJson(type));
       }
-      print(
-          " $bestCouponsOffersModelList ${bestCouponsOffersModelList.length}");
       setbestCouponsOffersModelList(bestCouponsOffersModelList);
       return bestCouponsOffersModelList;
+    } on Failure catch (f) {
+      return [];
+    }
+  }
+
+  List<BestProductsModel> bestProductsModelList = [];
+  setBestProductsModelList(List<BestProductsModel> value) {
+    bestProductsModelList = value;
+    notifyListeners();
+  }
+
+  Future<List<BestProductsModel>> getBestProducts() async {
+    bestProductsModelList.clear();
+    try {
+      final response = await GetProducts().fetch();
+      for (var type in response['data']) {
+        bestProductsModelList.add(BestProductsModel.fromJson(type));
+      }
+      setBestProductsModelList(bestProductsModelList);
+      return bestProductsModelList;
     } on Failure catch (f) {
       return [];
     }

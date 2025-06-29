@@ -482,15 +482,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ],
               ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    ProductsHomePage(),
-                    ProductsHomePage(),
-                  ],
-                ),
-              ),
+              ProductsHomePage(),
             ],
           ),
         ),

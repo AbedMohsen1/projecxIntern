@@ -6,3 +6,4 @@ const String getExclusiveCoupons = '$baseUrl/api/Home/GetExclusiveCoupons';
 const String getMostPopularStores = '$baseUrl/api/Home/GetMostPopularStores';
 const String getCategories = '$baseUrl/api/Home/GetCategories';
 const String getBestCouponsOffers = '$baseUrl/api/Home/GetBestCouponsOffers';
+const String getBestProducts = '$baseUrl/api/Home/GetProducts';
